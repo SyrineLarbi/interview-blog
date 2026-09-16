@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Analyst Interview</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="home" href="index.html">Interview<span>Room</span></a>
+  <nav>
+    <a href="#r1">Screen</a>
+    <a href="#r2">SQL</a>
+    <a href="#r3">Stats</a>
+    <a href="#r4">BI</a>
+    <a href="#r5">Cases</a>
+    <a href="#r6">Behavioral</a>
+    <a href="#r7">Your Qs</a>
+    <a href="#r8">Mock</a>
+  </nav>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="kicker">Role 2 of 3 · Full simulation</p>
+    <h1>Data Analyst</h1>
+    <p>Your strongest combination on paper. You didn't just report numbers — you <i>defined</i> the KPI set an
+    operation was run on, built the Power BI behind it, and then went and learned to write the SQL underneath.
+    Most analyst candidates have the tools and no business context. You have both.</p>
+    <div class="meta">
+      <span><b>32</b> questions</span>
+      <span><b>Live SQL</b> included</span>
+      <span><b>Full</b> mock transcript</span>
+    </div>
+  </div>
+
+  <div class="tools">
+    <button data-action="expand">Expand all</button>
+    <button data-action="collapse">Collapse all</button>
+    <button data-action="print">Print / PDF</button>
+  </div>
+
+  <div class="card">
+    <h3>Your positioning for this role</h3>
+    <p>There are two kinds of analyst candidate. The first knows SQL and pandas and has never owned a business
+    outcome. The second understands the business and needs someone else to pull the data. <b>You are the rare
+    third case</b>, and you should say so in almost exactly these words:</p>
+    <p><i>"I've been the person who owned the KPI, the person who built the report, and now the engineer who
+    builds the data model underneath it. I know what it costs when the number is wrong, because I've been the
+    one held to it."</i></p>
+    <p><b>The gap to close:</b> you have never had "Data Analyst" on a business card. Expect them to test whether
+    your SQL is real. It is — you write it daily and you have a genuine query-optimisation war story most
+    analysts don't. Lead with the evidence, not with the job title.</p>
+  </div>
+
+  <!-- ===================== ROUND 1 ===================== -->
+  <h2 id="r1"><span class="num">1</span>Round 1 — The screen</h2>
+
+  <details class="q" id="da1">
+    <summary>1. Tell me about yourself.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"My route into analytics came through the business rather than through a data team, and I think that's
+        my strength."</p>
+        <p>"I spent nearly five years as a Supply Chain Manager at Jumia, running fulfillment for third-party
+        sellers. Part way through, it became obvious the operation was being managed on opinion — so I defined
+        the KPI set we measured ourselves against: dispatch SLA, picking accuracy, inventory accuracy, defect
+        rate, return rate, failed-delivery rate, order cycle time. I built the Power BI reports and Excel Power
+        Query dashboards behind them, and those became what management reviewed."</p>
+        <p>"The analysis that mattered most was on returns. I introduced root-cause coding on every return, which
+        turned a pile of anecdotes into a dataset. Cutting that by cause, category and seller showed the
+        dominant cause wasn't transit damage as everyone assumed — it was products not matching their listings,
+        and it was concentrated in a small number of sellers. That killed a proposed outbound-inspection
+        programme that would have added cost to every order to fix a minority cause, and redirected us to the
+        listings instead."</p>
+        <p>"Hitting the ceiling of what Excel and Power BI could do is what pushed me further. I did a full-stack
+        diploma while working, and since 2024 I've been on Jumia's central engineering team writing SQL and
+        doing relational data modeling daily — building the internal reporting platforms operations teams run
+        on. So I've gone from consuming reports to owning the KPIs to building the data model underneath. That
+        full path is what I'd bring to an analyst role."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> it has a narrative arc (consumer → owner → builder), a concrete analysis with a
+        counter-intuitive finding and a business consequence, and it explains the engineering detour as
+        analytical ambition rather than a career wobble. About 85 seconds.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da2">
+    <summary>2. You've never actually held a Data Analyst title. Why should we consider you? <span class="tag hard">Make-or-break</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"That's true, and I'd rather deal with it head-on than hope it doesn't come up."</p>
+        <p>"What I'd say is that I've done the work without the title, in two halves that most candidates only
+        have one of. On the business side: I defined an operational KPI set from scratch, built the Power BI
+        that management reviewed weekly, and ran the analysis that changed what the business actually did. On
+        the technical side: I write SQL every day in my current role, I do relational data modeling, and I've
+        done real query optimisation — I took a production screen from a fifty-second load to six by reading
+        the execution plan, indexing the join columns, removing joins whose columns were never used, and
+        trimming over-fetched fields."</p>
+        <p>"What I'd argue the title actually signals is judgement: knowing which question is worth answering,
+        and whether a number is trustworthy. I learned that as the person being held to the number. When your
+        own dispatch SLA is on a dashboard in front of your director, you get very rigorous very quickly about
+        where the figure came from."</p>
+        <p>"So — no title. But a KPI framework I designed, dashboards in production use, an analysis that
+        redirected a strategy, and the SQL to do it myself. I'd rather be judged on that than on a job
+        description."</p>
+      </div>
+      <div class="followup">
+        <b>Likely follow-up — "Give me a concrete example of your SQL, not your Power BI."</b>
+        Go straight to the 50s→6s story with the specifics: <i>"Reproduced it, read the execution plan, found
+        three problems — join columns with no index forcing full scans, tables joined in whose columns were
+        never used in the response, and a SELECT pulling fields the screen never rendered. Fixed all three.
+        Fifty seconds to six, same hardware, identical result set — I verified the output matched before and
+        after."</i> Then be ready for <b>"why is it still six seconds?"</b> — see Q11.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da3">
+    <summary>3. Walk me through a piece of analysis you're proud of, start to finish.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"The returns root-cause analysis, because it changed a decision that was about to be made wrongly."</p>
+        <p><b>The question.</b> "Return rate was rising and it was being treated as a warehouse quality problem.
+        The proposal on the table was to add an outbound inspection step. I wasn't convinced, because our
+        outbound packing checks weren't finding much — so I wanted to know what was actually causing returns
+        before we added labour to every order."</p>
+        <p><b>Getting the data.</b> "The honest answer is that the data didn't exist in a usable form. Returns
+        were logged with free-text notes, which is unanalysable. So the first thing I did was change the
+        collection: a fixed reason-code list, short enough that people wouldn't default to 'other', worded the
+        way the team actually spoke. That's the step I'd emphasise — a lot of analysis work is upstream of the
+        analysis."</p>
+        <p><b>The analysis.</b> "After a few months I had consistent data. I built it in Power BI cut three
+        ways: by cause code, by category, and by seller — and crucially, seller return rate <i>against the
+        category average</i>, not absolute, because a 12% return rate is alarming in electronics and normal in
+        fashion. An absolute threshold would have flagged all the wrong sellers."</p>
+        <p><b>The finding.</b> "Transit damage was a minority. The dominant cause was product-not-as-described,
+        and the distribution across sellers was heavily skewed — a small group produced a share of returns far
+        out of proportion to their share of orders."</p>
+        <p><b>The outcome.</b> "The outbound inspection proposal was dropped. Instead: listings corrected for
+        the worst offenders, packaging requirements tightened where transit damage was genuinely the cause, and
+        formal corrective plans with offboarding as the endpoint for the concentrated sellers. Return rate moved
+        <span class="fill">[by X]</span>. But the durable outcome was that returns stopped being an anecdote and
+        became a monthly number with named causes and named owners."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> it follows the exact shape a senior analyst wants to hear — question, data
+        quality problem, method, finding, decision changed. The "I had to fix the collection first" section is
+        what separates someone who has done real analysis from someone who has done exercises on clean
+        datasets.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da4">
+    <summary>4. Why data analysis, and why us?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Because the part of every job I've had that I've enjoyed most is the moment the data says something
+        different from what everyone assumed. That's happened to me a few times now and it's genuinely the thing
+        I want to do all day."</p>
+        <p>"And because I've seen both failure modes up close. I've been the operator drowning in reports nobody
+        acts on, and I've been the engineer building a dashboard that nobody opens. What actually works is an
+        analyst who understands the decision well enough to answer the right question — and I learned that as
+        the person whose targets were on the dashboard."</p>
+        <p>"On you specifically — <span class="fill">[the domain: e-commerce / logistics / retail]</span> is
+        where my business context is strongest, so I'd be useful in week two rather than month three. And
+        <span class="fill">[specific thing: you're building out the data team / moving off spreadsheets /
+        scaling into new markets]</span> is exactly the stage where an analyst can still shape how things get
+        measured, rather than inheriting someone else's definitions. That's the part I want."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da5">
+    <summary>5. What are your salary expectations?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Deflect first</span>
+        <p>"I'd like to understand the scope first — whether this is a reporting-focused role or one where the
+        analyst is expected to drive the question as well, and how much of the pipeline work sits with me. Do
+        you have a band for the role?"</p>
+      </div>
+      <div class="say">
+        <span class="label">If pressed</span>
+        <p>"I'm looking at <span class="fill">[X] to [Y] gross</span>. I'd note I'm coming with an engineering
+        background as well as the analytics, so I can handle the data-pipeline side rather than needing
+        everything served to me — but I'm led more by the scope than by the last few percent. Where does that
+        sit against your band?"</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 2 ===================== -->
+  <h2 id="r2"><span class="num">2</span>Round 2 — SQL and technical</h2>
+  <p class="section-note">Expect a live SQL exercise, usually shared-screen. <b>Talk while you write.</b> A
+  correct silent answer scores lower than a slightly imperfect one where they could follow your reasoning. Always
+  state your assumptions about the schema before you start typing.</p>
+
+  <details class="q" id="da6">
+    <summary>6. Explain the difference between INNER JOIN, LEFT JOIN and the joins people get wrong.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"INNER JOIN keeps only rows that match on both sides. LEFT JOIN keeps every row from the left table
+        and fills nulls where there's no match on the right. RIGHT JOIN is the mirror of that and I almost never
+        use it — it's clearer to reorder the tables and write LEFT. FULL OUTER keeps everything from both sides."</p>
+        <p>"The mistake I watch for in practice is using INNER JOIN when you meant LEFT, and silently losing
+        rows. If I'm joining orders to returns to compute a return rate, an INNER JOIN gives me only orders that
+        <i>were</i> returned — so my rate comes out as 100% and looks like a catastrophe. That's a real error I
+        watch for, because it doesn't throw; it just gives you a confident wrong number."</p>
+        <p>"The other one is a LEFT JOIN quietly turning into an INNER JOIN because someone put a condition on
+        the right-hand table in the WHERE clause. <code>WHERE r.status = 'completed'</code> filters out the
+        nulls, so the LEFT JOIN is undone. The fix is to move that condition into the ON clause."</p>
+        <p>"And fan-out: if the right side has multiple matching rows, your left rows duplicate and any SUM
+        downstream is inflated. That's the bug that produces revenue figures that are too high, so I check the
+        grain of a join before I aggregate over it."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> anyone can recite the definitions. Naming the three ways joins go wrong in
+        production — silent row loss, WHERE undoing a LEFT JOIN, and fan-out inflating sums — is what
+        distinguishes someone who has actually shipped queries.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da7">
+    <summary>7. Live SQL: find the sellers with the highest return rate this year. <span class="tag">Write it out</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this first — before typing</span>
+        <p>"Let me state my assumptions. I'll assume an <code>order_items</code> table at one row per item
+        shipped, a <code>returns</code> table keyed on <code>order_item_id</code>, and a
+        <code>sellers</code> lookup. I need a LEFT JOIN so sellers with no returns still appear, and I'll want a
+        minimum volume threshold — otherwise a seller who shipped one item and had it returned comes top at
+        100%, which is noise."</p>
+      </div>
+      <pre><code>SELECT
+    s.seller_id,
+    s.seller_name,
+    COUNT(DISTINCT oi.order_item_id)                        AS items_shipped,
+    COUNT(DISTINCT r.order_item_id)                         AS items_returned,
+    ROUND(100.0 * COUNT(DISTINCT r.order_item_id)
+          / NULLIF(COUNT(DISTINCT oi.order_item_id), 0), 2) AS return_rate_pct
+FROM order_items   oi
+JOIN sellers       s ON s.seller_id = oi.seller_id
+LEFT JOIN returns  r ON r.order_item_id = oi.order_item_id
+WHERE oi.shipped_at >= DATE '2026-01-01'
+GROUP BY s.seller_id, s.seller_name
+HAVING COUNT(DISTINCT oi.order_item_id) >= 100
+ORDER BY return_rate_pct DESC
+LIMIT 10;</code></pre>
+      <div class="say">
+        <span class="label">Then narrate these three choices out loud</span>
+        <p>"<b>NULLIF</b> on the denominator so I get a null rather than a divide-by-zero error."</p>
+        <p>"<b>HAVING with a volume floor of 100</b> — that's the business judgement in this query. Without it
+        the top of the list is all tiny sellers and the result is useless. I'd agree the actual threshold with
+        whoever's using it."</p>
+        <p>"<b>100.0 rather than 100</b> — in some engines integer division silently truncates your rate to
+        zero. Cheap habit, saves an embarrassing dashboard."</p>
+        <p>"One caveat I'd flag to the stakeholder: this measures returns against items shipped <i>in the same
+        window</i>, but a return lags the shipment. Late in the period the rate is understated because recent
+        shipments haven't had time to come back. If this were going on a dashboard I'd either cohort it by
+        shipment month or cut the window short by the typical return window."</p>
+      </div>
+      <div class="why">
+        <b>That last caveat is the single highest-scoring thing you can say in a SQL interview.</b> It shows you
+        think about whether the number is <i>true</i>, not just whether the query runs. Most candidates never
+        mention the lag.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da8">
+    <summary>8. Explain window functions and give me a use case.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"A window function computes across a set of rows related to the current row, without collapsing them
+        the way GROUP BY does. So you keep every row and add the aggregate alongside it — that's the whole
+        point. The moment you want a row and its context together, you want a window."</p>
+        <p>"The ones I use most: <code>ROW_NUMBER</code>, <code>RANK</code> and <code>DENSE_RANK</code> for
+        top-N-within-group and for deduplication; <code>LAG</code> and <code>LEAD</code> for period-over-period
+        comparison; and <code>SUM OVER</code> for running totals or for a share-of-total on the same row."</p>
+        <p>"A real example from my own work — I wanted the top five SKUs by returns <i>within each category</i>,
+        with each one's share of its category's returns. You can't do that with GROUP BY alone, because you need
+        the category total sitting next to the individual SKU row."</p>
+      </div>
+      <pre><code>WITH ranked AS (
+    SELECT
+        category,
+        sku,
+        returns_30d,
+        RANK() OVER (PARTITION BY category ORDER BY returns_30d DESC)   AS rank_in_category,
+        ROUND(100.0 * returns_30d
+              / SUM(returns_30d) OVER (PARTITION BY category), 1)       AS pct_of_category
+    FROM sku_returns
+)
+SELECT *
+FROM ranked
+WHERE rank_in_category &lt;= 5
+ORDER BY category, rank_in_category;</code></pre>
+      <div class="say">
+        <span class="label">Add this detail — it scores well</span>
+        <p>"Note I wrap it in a CTE and filter outside. You can't put a window function in a WHERE clause,
+        because WHERE is evaluated before the window. Some engines have QUALIFY for exactly this, but Postgres
+        and MySQL don't, so the CTE is the portable way."</p>
+        <p>"On RANK versus ROW_NUMBER versus DENSE_RANK: RANK leaves gaps after a tie — 1, 2, 2, 4.
+        DENSE_RANK doesn't — 1, 2, 2, 3. ROW_NUMBER forces an arbitrary order with no ties, which is what you
+        want for deduplication but not for a leaderboard, because it silently picks a winner between two equal
+        rows."</p>
+      </div>
+      <p style="margin-top:14px"><b>Have this one ready too — month-over-month with LAG:</b></p>
+      <pre><code>SELECT
+    month,
+    orders,
+    LAG(orders) OVER (ORDER BY month)                          AS prev_month,
+    ROUND(100.0 * (orders - LAG(orders) OVER (ORDER BY month))
+          / NULLIF(LAG(orders) OVER (ORDER BY month), 0), 1)   AS mom_growth_pct
+FROM monthly_orders
+ORDER BY month;</code></pre>
+    </div>
+  </details>
+
+  <details class="q" id="da9">
+    <summary>9. How would you find and remove duplicate rows?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this — and ask the question first</span>
+        <p>"First I'd ask what counts as a duplicate, because that's a business question, not a technical one.
+        Two rows with the same email might be a genuine duplicate, or a customer who ordered twice. I need the
+        definition before I delete anything."</p>
+        <p>"To find them, group by the key and filter for counts above one:"</p>
+      </div>
+      <pre><code>SELECT customer_email, COUNT(*) AS n
+FROM customers
+GROUP BY customer_email
+HAVING COUNT(*) &gt; 1
+ORDER BY n DESC;</code></pre>
+      <div class="say">
+        <span class="label">Then for keeping one of each</span>
+        <p>"To keep a specific one — usually the most recent — I'd use ROW_NUMBER, because it gives me control
+        over <i>which</i> row survives rather than an arbitrary pick:"</p>
+      </div>
+      <pre><code>WITH numbered AS (
+    SELECT
+        *,
+        ROW_NUMBER() OVER (
+            PARTITION BY customer_email
+            ORDER BY created_at DESC, customer_id DESC
+        ) AS rn
+    FROM customers
+)
+SELECT * FROM numbered WHERE rn = 1;</code></pre>
+      <div class="say">
+        <span class="label">Close on this</span>
+        <p>"Two things I'd add. The tiebreaker on <code>customer_id</code> matters — if two rows share a
+        timestamp, without it the result is non-deterministic and your report changes between runs for no
+        visible reason. And I'd want to know <i>why</i> there are duplicates before I clean them, because if
+        it's an ingestion bug I'll be doing this every week. Cleaning the symptom is the short-term fix; the
+        real fix is upstream."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da10">
+    <summary>10. What's the difference between WHERE and HAVING? And GROUP BY pitfalls?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"WHERE filters rows before aggregation. HAVING filters groups after aggregation. So you can't use an
+        aggregate in WHERE, and there's usually no reason to put a plain row condition in HAVING — it works in
+        some engines but it's slower, because you've aggregated rows you were only going to throw away."</p>
+        <p>"Practical version: <code>WHERE shipped_at >= '2026-01-01'</code> narrows which rows go into the
+        aggregation. <code>HAVING COUNT(*) >= 100</code> drops the resulting groups that are too small to
+        trust."</p>
+        <p>"The GROUP BY pitfall I actually watch for is nulls. NULL forms its own group, so if your seller_id
+        is nullable you get a phantom row that people either ignore or, worse, treat as a real seller. I
+        usually surface it deliberately with COALESCE rather than letting it sit there unlabelled — an unlabelled
+        null group in a dashboard is how a data quality problem stays invisible for six months."</p>
+        <p>"The other is counting: <code>COUNT(*)</code> counts rows including nulls, <code>COUNT(column)</code>
+        skips nulls in that column, and <code>COUNT(DISTINCT column)</code> is different again. Choosing the
+        wrong one is one of the most common sources of a number that's quietly wrong."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da11">
+    <summary>11. A query is running slowly. Walk me through what you do. <span class="tag">Your strongest answer</span></summary>
+    <div class="body">
+      <p><b>This is your best technical story in the whole interview.</b> Most analyst candidates have never
+      profiled a query. You have a production one with a number attached.</p>
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'll give you the method and then a real example."</p>
+        <p>"Method: reproduce it first, then read the execution plan rather than guessing. I'm looking for
+        sequential scans where I expected an index lookup, the row counts at each step — especially where the
+        planner's estimate diverges badly from actual, because that usually means stale statistics — and
+        whether a join is exploding the row count before a later filter cuts it back down."</p>
+        <p>"The real one: we had a production leave-approval screen taking about fifty seconds to load. Managers
+        were effectively blocked from approving anything. I reproduced it, isolated the cost to the query
+        fetching the approval list, and read the plan. Three separate problems."</p>
+        <p>"One — join columns with no supporting index, so it was doing full table scans. Two — tables joined
+        in whose columns were never actually used in the response; someone had added them at some point and
+        nothing depended on them any more. Three — a SELECT pulling columns the screen didn't render."</p>
+        <p>"I added the indexes, dropped the unused joins, narrowed the projection. Fifty seconds to six on the
+        same hardware — about an eight-fold improvement, with the result set verified identical before and
+        after."</p>
+      </div>
+      <div class="followup">
+        <b>You will be asked "why is it still six seconds?" — this is the real test. Answer:</b>
+        <p style="margin:8px 0 0">"Because the remaining time is dominated by result-set size rather than by a
+        bad plan. The next steps would be pagination — keyset rather than OFFSET, since OFFSET degrades the
+        deeper you go — caching the approval list, or denormalising the few hot fields. I stopped there because
+        six seconds unblocked the users and the remaining work needed a product decision about pagination that
+        wasn't mine to make alone."</p>
+        <p style="margin:8px 0 0"><b>Also be ready for:</b></p>
+        <ul>
+          <li><i>"Any downside to adding indexes?"</i> → "Yes — they cost write throughput and storage. You
+          accept that when reads dominate, which they do on an approval screen people load constantly and write
+          to occasionally."</li>
+          <li><i>"Did it change behaviour?"</i> → "No. Same rows, verified against the previous output before
+          shipping."</li>
+        </ul>
+      </div>
+      <div class="why">
+        <b>Why the "still six seconds" answer matters so much:</b> naming what you deliberately <i>didn't</i> do,
+        and why, is the clearest available signal of engineering maturity. A candidate who claims they solved it
+        perfectly is either lucky or not telling the truth.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da12">
+    <summary>12. How would you model data for analytics? Explain star schema.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"A star schema is a central fact table holding the events you measure, surrounded by dimension tables
+        holding the attributes you slice by. For an e-commerce fulfillment operation the fact table would be
+        something like order items or shipments — one row per event, with the measures on it — and the
+        dimensions would be date, seller, SKU or product, warehouse, carrier, customer."</p>
+        <p>"The reason you denormalise into that shape rather than querying the transactional tables directly is
+        that analytical queries are wide scans with lots of joins, and a fully normalised OLTP schema makes
+        those expensive and hard to write. A star schema trades some redundancy for far simpler, faster reads —
+        and, just as importantly, for queries an analyst can actually read six months later."</p>
+        <p>"The decision I'd flag as the one that matters most is <b>grain</b>: exactly what one row of the fact
+        table represents. One row per order, or per order item, or per shipment. Get that wrong and every
+        aggregate downstream is subtly wrong — if your grain is order-item but you treat it as orders, your
+        order count is inflated by basket size. I'd nail down the grain in writing before building anything."</p>
+        <p>"I'd also raise slowly changing dimensions if it's relevant: if a seller moves category, do historical
+        orders keep the old category or inherit the new one? There's no universally correct answer, but there
+        is a wrong one — deciding it by accident."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> "define the grain first" is the answer of someone who has built a model and been
+        burned. Raising slowly changing dimensions unprompted is a senior signal.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 3 ===================== -->
+  <h2 id="r3"><span class="num">3</span>Round 3 — Statistics and experimentation</h2>
+  <p class="section-note">You don't need to be a statistician. You need to not say anything wrong, and to show
+  you know where the traps are. Confidence about limits beats false precision.</p>
+
+  <details class="q" id="da13">
+    <summary>13. Correlation and causation — give me a real example of getting this wrong.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Correlation means two things move together. Causation means one produces the other. The gap between
+        them is usually a confounder — a third thing driving both — or reverse causality, or just selection in
+        how the data was collected."</p>
+        <p>"A real one from my own work: return rate and delivery speed were correlated — orders delivered slower
+        were returned more. The tempting read is that slow delivery causes returns, so speed up delivery.</p>
+        <p>"But the confounder was category. The slow-delivering items were disproportionately in
+        <span class="fill">[category]</span>, which also had an inherently high return rate for completely
+        unrelated reasons — sizing, in that case. Once I segmented by category the relationship largely
+        disappeared. If I'd acted on the raw correlation I'd have spent money on logistics to fix a product
+        listing problem."</p>
+        <p>"So in practice, when I see a correlation that suggests an expensive action, I look for the
+        confounder before I present it — and if I can't rule one out, I say so explicitly rather than letting
+        the chart imply causation on my behalf."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> textbook answers use ice cream and drowning. A real confounder from your own
+        operation, with the money that would have been wasted, is far more convincing — and it's genuinely your
+        experience.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da14">
+    <summary>14. Design an A/B test. Say we want to test free delivery over a threshold.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'd work through five things: the hypothesis, the metrics, the unit and split, the sample size and
+        duration, and what could invalidate it."</p>
+        <p>"<b>Hypothesis.</b> Stated so it can be wrong: 'Offering free delivery above
+        <span class="fill">[threshold]</span> increases average order value enough to more than cover the
+        delivery cost we absorb.' Note that's deliberately not 'increases conversion' — the business question is
+        about margin, not volume."</p>
+        <p>"<b>Metrics.</b> One primary metric decided in advance — I'd use revenue per visitor, or better,
+        contribution margin per visitor, because AOV alone can rise while total profit falls. Then secondary
+        metrics: conversion rate, average basket size, delivery cost per order. And guardrails: return rate and
+        cancellation rate, because a threshold pushes people to add items they didn't really want, and those
+        come back."</p>
+        <p>"<b>Unit and split.</b> Randomise at customer level, not session level, so the same person doesn't
+        see both variants and get confused — that contaminates the measurement and annoys the customer.
+        50/50 unless there's a reason to limit exposure."</p>
+        <p>"<b>Duration and size.</b> I'd calculate the sample needed for the minimum effect worth detecting
+        before starting — if the smallest commercially interesting lift needs more traffic than we have in a
+        month, the test isn't worth running and I'd say that up front. I'd run at least one full week, ideally
+        two, to cover the weekly cycle, and I'd fix the end date in advance rather than watching it daily and
+        stopping when it looks good. Stopping early on a favourable reading is how you ship a result that
+        isn't real."</p>
+        <p>"<b>What could break it.</b> Seasonality or a promotion running concurrently. Novelty effect, where
+        behaviour shifts at first and reverts. Cross-contamination if a shared account or device sees both. And
+        the big one here — the effect on returns might only show up weeks later, so measuring at the end of the
+        test window could make it look better than it is."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> the guardrail metrics and the delayed-returns caveat are both drawn from your
+        actual operational experience, and they're exactly what a generic candidate misses. "Fix the end date in
+        advance" shows you know what peeking does.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da15">
+    <summary>15. Explain a p-value and statistical significance as if to a marketing manager.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"The way I'd put it to a non-technical stakeholder: the p-value answers 'if this change actually did
+        nothing at all, how likely is it that I'd see a difference at least this big just from random
+        variation?' If that's very unlikely — conventionally under 5% — we call it significant, meaning random
+        noise is a poor explanation for what we're seeing."</p>
+        <p>"Then I'd immediately add the two caveats, because this is where people get misled."</p>
+        <p>"First, significant does not mean important. With a large enough sample, a 0.1% lift becomes
+        statistically significant and is still commercially worthless. So I always report the effect size and a
+        confidence interval alongside it — 'we're fairly confident the lift is somewhere between 2% and 6%' is
+        far more useful to a decision than 'p equals 0.03'."</p>
+        <p>"Second, not significant doesn't mean no effect. It often just means the test was underpowered. The
+        honest statement is 'we couldn't detect an effect,' not 'there is no effect' — and those lead to very
+        different decisions."</p>
+        <p>"And I'd flag the multiple-comparisons trap: if we check twenty metrics, one will look significant by
+        chance alone. That's why I insist on naming the primary metric before the test starts."</p>
+      </div>
+      <div class="dont">
+        <b>Never say</b> "the p-value is the probability the result is due to chance" or "the probability the
+        null hypothesis is true." Both are the classic misstatements and a quantitative interviewer will
+        notice immediately. Say "if the change did nothing, how likely is data this extreme."
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da16">
+    <summary>16. How do you handle missing data and outliers?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this — missing data</span>
+        <p>"First I want to know why it's missing, because the mechanism decides the treatment. Missing at
+        random is an inconvenience. Missing for a reason is a finding. If delivery timestamps are absent only
+        for failed deliveries, then dropping those rows doesn't just lose data — it systematically biases my
+        delivery-time analysis toward successes and makes performance look better than it is."</p>
+        <p>"So: quantify it first — what percentage, and is it concentrated in a segment? A 2% scatter and a 2%
+        that's entirely one warehouse are completely different problems."</p>
+        <p>"Then the options. Leave it and report on the subset, being explicit about coverage. Drop it, only if
+        it's genuinely random and small. Impute — median rather than mean for skewed data, or a
+        segment-specific value — but I'm cautious with imputation in business reporting, because a stakeholder
+        can't see which numbers you invented. Or treat 'missing' as its own category, which is often the most
+        honest option and occasionally the most informative."</p>
+        <p>"Whatever I choose, I state it on the output. A dashboard that silently drops 8% of orders is worse
+        than no dashboard."</p>
+      </div>
+      <div class="say">
+        <span class="label">Say this — outliers</span>
+        <p>"I don't delete outliers by default. An outlier is either an error or the most interesting row in the
+        dataset, and I want to know which before I touch it."</p>
+        <p>"An order with a delivery time of 400 hours might be a data entry error — or it might be a real
+        parcel that sat in a depot for two weeks, which is exactly the case I should be investigating. I'd go
+        and look at a few individual records rather than deciding statistically."</p>
+        <p>"If they're genuine but distorting a summary, I'd use median and percentiles instead of the mean —
+        for delivery times I'd report median and p95 rather than average, because the average hides the tail and
+        the tail is what generates complaints. That's usually better than removing the rows."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da17">
+    <summary>17. Your overall metric improved but you're suspicious. What do you check? <span class="tag">Simpson's paradox</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'd segment before I believe it, because an aggregate can move purely from a change in mix while
+        every underlying segment stays flat — or even gets worse. That's Simpson's paradox, and it's not
+        exotic; it happens routinely in operational data."</p>
+        <p>"Concretely: suppose overall return rate improves. Before I report that as a win I'd check whether the
+        rate improved within each category, or whether we simply sold proportionally more of a low-return
+        category this month. If it's mix, nothing actually got better — and if that mix shift was a one-off
+        promotion, the number will snap back next month and I'll have to explain why I claimed a success."</p>
+        <p>"So my standard check on any aggregate movement is: decompose it. Did the rate change within
+        segments, or did the weights change between them? I'd usually show both — the blended number people
+        asked for, and the within-segment view underneath it."</p>
+        <p>"The same logic applies to any average that moves. Average order value rising because customers buy
+        more is a different business than average order value rising because cheap items went out of stock."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> you named the phenomenon, explained the mechanism in business terms, and gave a
+        concrete e-commerce example from your own domain. That's a complete answer in three sentences plus
+        proof.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 4 ===================== -->
+  <h2 id="r4"><span class="num">4</span>Round 4 — BI, dashboards and tooling</h2>
+
+  <details class="q" id="da18">
+    <summary>18. How do you approach building a dashboard? Someone asks you for one — what do you do?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I don't start with the dashboard. I start by asking what decision it's meant to support, because
+        'I need a dashboard' is almost never the real requirement."</p>
+        <p>"Three questions. What decision will you make differently depending on what this shows? How often
+        will you look at it — daily, weekly, monthly? And what will you do when the number is bad? If nobody
+        can answer the third one, the dashboard won't get used, and I'd rather find that out in a ten-minute
+        conversation than after two weeks of building."</p>
+        <p>"Then I design for the audience, and that's a lesson I learned the hard way. I once built one
+        dashboard meant to serve both the floor team and management, and neither used it. They need genuinely
+        different products. The team needs today against target, right now, readable across a room, with almost
+        nothing on it. Management needs trend, comparison and outliers — where are we deviating and why. Trying
+        to serve both produces something too dense for one and too shallow for the other."</p>
+        <p>"On the build itself: headline number first, trend second, breakdown third, detail on drill-down
+        rather than on the front page. Every metric defined somewhere visible, because half the arguments about
+        dashboards are actually arguments about definitions. And a data-freshness timestamp — people need to
+        know whether they're looking at this morning or last Tuesday."</p>
+        <p>"Then I'd go back two weeks later and ask whether they're using it. If they're not, that's my problem
+        to fix, not theirs."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> "what will you do when the number is bad?" is a question that visibly impresses
+        experienced stakeholders. Admitting the one-dashboard-for-two-audiences failure makes the rest
+        credible.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da19">
+    <summary>19. What's your experience with Power BI, Excel, and Python?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"<b>Power BI</b> is where I did most of my operational reporting — report building, dashboards, and
+        the data modeling behind them. That last part is the bit people underrate: most bad Power BI reports are
+        bad because of the model, not the visuals. Relationships pointing the wrong way, or the wrong grain,
+        and then you're fighting the tool with increasingly baroque measures."</p>
+        <p>"<b>Excel</b> — advanced, and specifically Power Query, which I used for anything that needed
+        repeating. If I'm doing the same cleaning steps by hand twice, that's a Power Query job. Pivot tables
+        and dashboards for the analysis that didn't justify a full report."</p>
+        <p>"<b>SQL</b> is where I work most now — daily, in a production codebase, including data modeling and
+        query optimisation rather than just reading."</p>
+        <p>"<b>Python</b> — pandas for analysis that's awkward in SQL, and I've worked with scikit-learn-style
+        modeling: I built an attrition-prediction service with XGBoost served through FastAPI, including the
+        feature work and interpreting what the model was actually keying on. I wouldn't call myself a data
+        scientist, but I'm comfortable in that territory and I know where the boundary of my competence is."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> the Power BI modeling point proves depth beyond clicking charts together. Naming
+        the limit of your ML claim — "I wouldn't call myself a data scientist" — buys you credibility on
+        everything else you claim.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 5 ===================== -->
+  <h2 id="r5"><span class="num">5</span>Round 5 — Business cases</h2>
+  <p class="section-note">Structure beats cleverness. Clarify → hypothesise → say how you'd test each → name what
+  you'd do with the answer. Always ask a clarifying question first.</p>
+
+  <details class="q" id="da20">
+    <summary>20. Orders dropped 20% week over week. You have an hour before the leadership meeting. Go.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Step 1 — validate before you investigate</span>
+        <p>"First, is it real? Before I chase a cause I'd rule out the boring explanations, because a
+        surprisingly high proportion of dramatic drops are measurement artefacts. Did a tracking or logging
+        change ship? Is a data pipeline partially failed, so I'm looking at incomplete data? Is the comparison
+        week distorted — did last week contain a promotion or a public holiday? And is it 20% against last week
+        only, or also against the same week last year? A single week-over-week comparison is a weak baseline."</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 2 — localise it</span>
+        <p>"If it's real, I'd narrow it before theorising. Segment aggressively: by channel — app, web, mobile
+        web; by geography; by category; by new versus returning customer; by device and OS; by payment method.
+        And check the shape in time — a cliff on a specific day points at an event or a release, a gradual
+        slide points at something structural like competition or seasonality."</p>
+        <p>"The value of this step is that it usually collapses the problem. If the whole drop is Android users
+        in one country from Tuesday, I'm no longer investigating 'orders' — I'm investigating a release."</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 3 — walk the funnel</span>
+        <p>"Then I'd follow the funnel to find which step broke: sessions, product views, add-to-cart, checkout
+        started, payment attempted, order confirmed. If sessions are flat and checkout conversion collapsed,
+        that's a site or payment problem. If sessions themselves dropped, it's demand or acquisition — a
+        marketing spend change, a campaign that ended, an SEO or ranking change. Those two branches go to
+        completely different teams, so identifying which is the most valuable single thing I can do in the
+        hour."</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 4 — what you actually say in the meeting</span>
+        <p>"With an hour, I'd walk in with: whether it's real, where it's concentrated, which funnel step broke,
+        my leading hypothesis with the evidence for it, and explicitly what I don't yet know. I'd much rather
+        say 'it's concentrated in mobile checkout since Tuesday's release, I'm 70% confident it's the release,
+        here's what I need two more hours to confirm' than present a confident answer I can't stand behind. In
+        an incident, the cost of a confident wrong diagnosis is that ten people spend a day fixing the wrong
+        thing."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> "is it real?" first is the professional instinct and most candidates skip
+        straight to causes. Stating your confidence level and what you don't know is what a hiring manager
+        actually wants from an analyst in an incident.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da21">
+    <summary>21. We're launching next-day delivery. How would you measure whether it worked?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'd want to know the goal before the metric, because 'did it work' means different things depending
+        on why we did it. Is this defensive — matching a competitor to stop losing customers? Is it growth —
+        acquiring new ones? Or is it margin — charging a premium? Each implies a different success measure, and
+        I've seen launches judged against a metric nobody agreed to in advance."</p>
+        <p>"Assuming it's growth, I'd structure it as one primary metric, supporting metrics, and guardrails."</p>
+        <p>"<b>Primary:</b> incremental contribution margin from customers exposed to the option. Not orders,
+        not revenue — margin, because next-day delivery has a real cost per order and it's entirely possible to
+        grow revenue into a loss."</p>
+        <p>"<b>Supporting:</b> attach rate — what share of eligible orders choose it; conversion rate on
+        eligible baskets; AOV for those orders; and repeat rate among customers who used it, which is where the
+        long-term value would show up if it exists."</p>
+        <p>"<b>Guardrails</b> — and this is where my operations background makes me suspicious. On-time delivery
+        rate <i>for the next-day promise specifically</i>: a promise you miss is worse than a promise you never
+        made, and it damages trust on the standard option too. Failed-delivery rate, because compressing the
+        window means less flexibility for the customer to be home. Return rate. Cost per delivery. And warehouse
+        dispatch SLA overall — a next-day cohort that has to be picked first can quietly degrade everything
+        else in the building. I'd want that measured explicitly, because it's the failure mode nobody plans
+        for."</p>
+        <p>"On method: staged geographic rollout rather than a national launch, so I have a comparison group and
+        can measure incrementality rather than just before-and-after. And I'd set the measurement window past
+        the return window, so returns are actually in the data before anyone declares victory."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> the guardrails section is yours alone. No analyst without warehouse experience
+        thinks to measure whether a next-day cohort cannibalises the dispatch SLA of everything else. That
+        single point makes the answer memorable.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da22">
+    <summary>22. You're the first analyst for an operations team. What do you build in your first 90 days?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"<b>Days 1–30: understand and audit.</b> I'd spend the first weeks talking to the people who'd use
+        the output and, if there's a warehouse, standing in it. Then I'd audit what exists — which numbers are
+        already reported, who trusts them, and where they disagree. In my experience the first real finding is
+        always that two teams have different numbers for the same thing, and that has to be resolved before
+        anything else is worth building."</p>
+        <p>"I'd also map what's actually available in the systems versus what people believe is available. Those
+        differ more than anyone expects."</p>
+        <p>"<b>Days 30–60: define and instrument.</b> Agree a core metric set with written definitions — for a
+        fulfillment operation I'd start from the set I built at Jumia: dispatch SLA, picking accuracy,
+        inventory accuracy, defect rate, return rate, failed-delivery rate, order cycle time. The written
+        definition matters as much as the metric; most disputes about a number are really disputes about its
+        definition. Then build one reliable daily operational view before building anything clever."</p>
+        <p>"<b>Days 60–90: find something.</b> By this point I should be producing insight rather than
+        reporting. My first target would be root-cause coding on failures — returns, failed deliveries,
+        discrepancies — because that's consistently where the concentrated, actionable findings are, and it's
+        the analysis that paid off best for me before. I'd expect to be able to show which small set of causes,
+        categories or suppliers drives a disproportionate share of the cost."</p>
+        <p>"The thing I'd deliberately avoid is spending 90 days building a beautiful dashboard nobody asked
+        for. I'd rather have one ugly daily report people actually open and one finding that changed a
+        decision."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 6 ===================== -->
+  <h2 id="r6"><span class="num">6</span>Round 6 — Behavioral</h2>
+
+  <details class="q" id="da23">
+    <summary>23. Tell me about a time a stakeholder disagreed with your analysis. <span class="tag star">STAR</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p><b>Situation.</b> "My returns analysis showed that a specific high-volume seller was generating a
+        share of returns far out of proportion to their share of orders. The commercial owner of that
+        relationship disagreed — fairly, from their position, because the seller was real revenue and my finding
+        implied a difficult conversation with them."</p>
+        <p><b>Task.</b> "Get to a decision that was actually right for the business, rather than winning an
+        argument."</p>
+        <p><b>Action.</b> "First I took their challenge seriously instead of defending. Their specific objection
+        was that the seller was in a naturally high-return category, which was a legitimate point — so I went
+        back and re-cut it against the category average rather than as an absolute rate. The seller was still an
+        outlier, but the gap was smaller than my first version had implied, and I said so."</p>
+        <p>"Then I changed what I was presenting. Instead of a return rate, I put a cost on it: the handling, the
+        re-work, the write-offs. And I proposed a corrective plan with a review date rather than an offboarding
+        recommendation, which gave them a route that didn't cost them the revenue immediately."</p>
+        <p><b>Result.</b> "They backed it, and the seller's numbers improved over
+        <span class="fill">[period]</span>. What I took from it is that a stakeholder pushing back is usually
+        giving you free information about a weakness in your analysis — mine genuinely was less rigorous than
+        it should have been, and their objection made it better. I also learned to lead with cost rather than
+        with rate, because rate is a number you can argue about and cost is a number that ends the
+        discussion."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> you conceded a real flaw and improved the work, rather than the standard "I
+        showed them the data and they agreed." Interviewers are listening for whether you can be wrong
+        gracefully — most candidates fail this one by being too victorious.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da24">
+    <summary>24. Tell me about a time your analysis was wrong. <span class="tag hard">Honesty test</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p><b>Situation.</b> "Early on I reported a sharp improvement in one of our operational metrics and
+        presented it as a genuine gain from a process change we'd made."</p>
+        <p><b>What went wrong.</b> "It wasn't real. The improvement came from a change in mix, not from the
+        process — the volume composition had shifted that month in a way that flattered the blended number.
+        Every underlying segment was roughly flat. I'd looked at the aggregate, seen it move in the direction I
+        expected because I'd just made a change I believed in, and not decomposed it."</p>
+        <p><b>Action.</b> "I found it myself the following month when the number moved back and I went looking
+        for why. I corrected it in the next review — proactively, before anyone asked — and explained exactly
+        what I'd missed."</p>
+        <p><b>Result.</b> "Uncomfortable, but it was the right call and it cost me nothing in credibility;
+        arguably the opposite. The permanent change was that I now decompose any aggregate movement before I
+        report it: did the rate change within segments, or did the weights change between them? And I'm
+        particularly careful when a number moves the way I <i>wanted</i> it to, because that's exactly when
+        I'm least likely to check."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> naming confirmation bias in yourself — "I'm most careful when the number moves
+        the way I wanted" — is a genuinely sophisticated answer, and it links back to your Simpson's paradox
+        answer, showing the lesson is real rather than rehearsed.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da25">
+    <summary>25. How do you explain a technical finding to a non-technical audience?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I lead with the decision, not the method. Executives want the 'so what' in the first sentence — the
+        analysis is supporting evidence, not the headline. So I'd open with 'we should stop doing X, here's
+        why', not with 'I ran a segmentation across six dimensions.'"</p>
+        <p>"I translate into their currency. Return rate means nothing to a commercial director; cost and lost
+        revenue mean everything. Same finding, different unit, completely different reception — I learned that
+        directly when a returns finding I'd presented as a rate went nowhere, and the same finding presented as
+        a cost got acted on within a week."</p>
+        <p>"I say what I'm not sure about. Non-technical audiences often assume analysis is certain, so if
+        there's a caveat that could change the decision, it goes in the main message rather than a footnote. And
+        if there's a caveat that <i>wouldn't</i> change the decision, I leave it out entirely — including every
+        limitation you can think of is a way of hiding."</p>
+        <p>"And I use one chart, not five. If I can't make the point with one, I don't understand it well enough
+        yet."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da26">
+    <summary>26. Three people want three urgent things. How do you prioritise?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'd ask each of them two questions: what decision does this feed, and when is that decision being
+        made. That usually re-sorts the list by itself, because at least one 'urgent' request turns out to feed
+        a meeting next month and one turns out to be needed in two hours."</p>
+        <p>"Then I'd weigh by decision value and by effort. A 20-minute query that unblocks a real decision
+        beats a two-day analysis that's interesting, and I'd do the quick one first even if it's from the more
+        junior requester."</p>
+        <p>"I'd also look for the hidden case: sometimes two of the three requests are the same underlying
+        question asked differently, and I can serve both once."</p>
+        <p>"Then I'd be explicit and visible about the order rather than quietly doing them in sequence. 'I can
+        get you this by Thursday; here's what I'm doing first and why — tell me if that's wrong.' Most conflicts
+        over analyst time resolve themselves the moment the requesters can see each other's requests. If two
+        genuinely can't both be met, that's an escalation, and I'd rather escalate on Monday with options than
+        miss both on Friday."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="da27">
+    <summary>27. What's your biggest weakness?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I over-invest in getting the data right before I share anything. It comes from being on the
+        receiving end of a wrong number — when it's your own KPI on a screen in front of your director, you
+        become very reluctant to publish something you haven't checked three times."</p>
+        <p>"The cost is that I sometimes hold back a finding that was decision-ready at 90% confidence while I
+        chase the last 10%, and by the time it's perfect the meeting has happened."</p>
+        <p>"What I do about it now is separate the two cases explicitly. If it's a recurring report or anything
+        that becomes a definition people will rely on, the rigour is correct and I keep it. If it's a one-off
+        question feeding a decision this week, I share the directional answer with the confidence level
+        attached — 'here's what it looks like, here's what I haven't verified yet' — rather than waiting. Being
+        explicit about confidence turned out to be the whole fix."</p>
+      </div>
+      <div class="dont">
+        <b>Don't say</b> "I'm a perfectionist" without the cost and the fix. The structure that works is: real
+        flaw → concrete cost → specific mechanism you use now.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 7 ===================== -->
+  <h2 id="r7"><span class="num">7</span>Your questions, money, and follow-up</h2>
+
+  <div class="card">
+    <h3>Questions to ask them — pick three or four</h3>
+    <ul>
+      <li><b>"When an analysis here produces an uncomfortable answer, what usually happens to it?"</b> — The
+      best question on this list. The answer tells you whether this is a data-driven company or a company that
+      says it is.</li>
+      <li><b>"How much of this role is answering questions people bring you, versus finding the questions
+      yourself?"</b> — Tells you whether it's a reporting job or an analyst job. Ask early.</li>
+      <li><b>"What's the state of the data? Do you have a warehouse and a modeling layer, or would I be pulling
+      from production systems?"</b> — Determines what your first six months look like more than anything else
+      in the job description.</li>
+      <li><b>"Who owns metric definitions? If two teams disagree about what 'active customer' means, who
+      decides?"</b> — Signals real experience; you already know this is where the pain is.</li>
+      <li><b>"What's an analysis this team did in the last year that actually changed something?"</b> — If they
+      struggle to answer, that's your answer.</li>
+      <li><b>"If I'm successful, what's different in six months?"</b></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Closing statement</h3>
+    <div class="say">
+      <span class="label">Say this</span>
+      <p>"One thing I'd add. I know I don't have 'Data Analyst' in my job history, and I'd ask you to weigh what
+      I do have: I designed an operational KPI framework from nothing, built the reporting management ran on,
+      produced analysis that reversed a decision the business was about to get wrong, and I write the SQL and
+      build the data models myself."</p>
+      <p>"What I'd bring that's harder to hire for is that I've been the person accountable for the number, not
+      just the person producing it. I know what it costs when a report is wrong, and I know why a technically
+      correct dashboard goes unused. I'd really like to do this job here."</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Follow-up email — within 24 hours</h3>
+    <pre><code>Subject: Thank you — Data Analyst conversation
+
+Dear [Name],
+
+Thank you for your time today — I especially enjoyed [specific thing:
+the case question about X / what you said about the data warehouse migration].
+
+It left me more interested, not less. The part that stands out is
+[specific element of the role], which lines up closely with what I did at
+Jumia: defining the operational KPI set, building the Power BI behind it,
+and running the returns root-cause analysis that redirected our quality
+strategy.
+
+On [the question you answered least well] — [two or three sentences doing
+it properly].
+
+I'm happy to walk through any of my work in more detail, including the
+query optimisation I mentioned.
+
+Best regards,
+Syrine Larbi
++216 24 428 833</code></pre>
+  </div>
+
+  <!-- ===================== ROUND 8 ===================== -->
+  <h2 id="r8"><span class="num">8</span>Full mock interview — read out loud</h2>
+  <p class="section-note">A senior analyst or data lead interviewing you. They will test whether your SQL is real.
+  Note how the pushback escalates.</p>
+
+  <div class="transcript">
+
+    <div class="stage">Round 2 · Data Lead · technical screen</div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>So, your background is supply chain and then software engineering. Help me understand what makes you an
+      analyst.</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>I came to analytics through the business rather than through a data team, and I'd argue that's the
+      useful direction.</p>
+      <p>At Jumia I ran fulfillment for third-party sellers. Part way through I realised the operation was being
+      managed on opinion, so I defined the KPI set — dispatch SLA, picking accuracy, inventory accuracy, defect
+      rate, return rate, failed-delivery rate, cycle time — and built the Power BI behind it. Those became what
+      management reviewed.</p>
+      <p>Then I hit the ceiling of what I could do with Power BI on top of data I didn't control. That's why I
+      learned to build the layer underneath, and I've been writing SQL daily on Jumia's engineering team for
+      two and a half years since.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Let's test that. Here's a schema: <code>order_items</code>, <code>returns</code>,
+      <code>sellers</code>. Give me the top sellers by return rate this year.</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Let me state assumptions first. <code>order_items</code> is one row per item shipped,
+      <code>returns</code> keys on <code>order_item_id</code>, <code>sellers</code> is a lookup.</p>
+      <p>I need a LEFT JOIN to returns — if I use an INNER JOIN I only get items that were returned and every
+      seller comes out at 100%. And I want a minimum volume threshold, otherwise a seller who shipped one item
+      that came back tops the list at 100% and the report is noise.</p>
+      <p><i>[writes]</i> So: count distinct order items as the denominator, count distinct returns as the
+      numerator, NULLIF on the denominator to avoid a divide-by-zero, multiply by 100.0 rather than 100 so
+      integer division doesn't truncate it to zero, GROUP BY seller, HAVING at least a hundred items shipped,
+      order descending.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Good. Why a hundred?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Honestly, it's a placeholder — that's a business decision, not a technical one, and I'd agree it with
+      whoever's using the report. The principle is that below some volume the rate is dominated by variance
+      rather than by seller behaviour.</p>
+      <p>There's actually a bigger caveat I'd raise before anyone puts this on a dashboard. This measures
+      returns against items shipped in the same window, but returns lag shipment by days or weeks. So late in
+      the period the rate is understated — recent shipments haven't had time to come back yet. If a seller
+      onboarded in November, they'd look great in a December report purely because of the lag.</p>
+      <p>I'd either cohort it by shipment month and let each cohort mature, or cut the window short by the
+      typical return window. Which one depends on whether they want it live or accurate.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p><i>[writes something down]</i> Most people don't mention that. Okay — window functions. Do you use
+      them?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Regularly. RANK and ROW_NUMBER for top-N-within-group and deduplication, LAG for period comparison,
+      SUM OVER for running totals and share-of-total.</p>
+      <p>A real case: I wanted the top five SKUs by returns within each category, plus each SKU's share of its
+      category's returns. GROUP BY can't do that, because I need the category total next to the individual
+      row.</p>
+      <p>One thing worth mentioning — you can't filter on a window function in WHERE, since WHERE evaluates
+      before the window. So I wrap it in a CTE and filter outside. Some engines have QUALIFY for that, Postgres
+      and MySQL don't.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>What's the difference between RANK and DENSE_RANK?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>RANK leaves gaps after ties — 1, 2, 2, 4. DENSE_RANK doesn't — 1, 2, 2, 3. And ROW_NUMBER never ties,
+      it just picks an order, which makes it right for deduplication and wrong for a leaderboard, because it
+      silently chooses between two genuinely equal rows.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Fine. Scenario. Your dashboard shows return rate improved 3 points this month. The ops director is
+      delighted. What do you check before you let them announce it?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Whether it's mix or whether it's real.</p>
+      <p>The blended rate can improve while every single category stays flat, purely because we sold
+      proportionally more of a low-return category that month. So I'd decompose it: did the rate improve
+      <i>within</i> segments, or did the weights change <i>between</i> them?</p>
+      <p>I'd also check whether anything changed in how returns are logged or counted, and whether the return
+      lag is flattering the recent weeks.</p>
+      <p>I ask because I got this exact thing wrong once. Early on I reported an improvement as a genuine
+      process gain, and it was mix. I found it myself the next month when it reverted. Now I decompose any
+      aggregate movement before reporting it — and I'm especially careful when the number moves the way I
+      wanted it to, because that's when I'm least likely to look.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Last thing. What's the hardest part of this job, in your view?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Getting the analysis used. The technical work is the easy part.</p>
+      <p>I've built a dashboard nobody opened — one I designed to serve both the floor team and management, and
+      it served neither. And I've had a finding go nowhere presented as a rate, then get acted on within a week
+      when I re-presented it as a cost.</p>
+      <p>So the hard part is understanding the decision well enough to answer the right question, in the right
+      unit, for the right person. That's the bit I think my operations background actually gives me — I've been
+      the stakeholder ignoring a report, so I know what it takes to not be ignored.</p>
+    </div>
+
+    <div class="stage">End of segment</div>
+
+  </div>
+
+  <h2><span class="num">9</span>Cheat sheet</h2>
+  <div class="card">
+    <table>
+      <tr><th>Trap</th><th>Your one-liner</th></tr>
+      <tr><td>Rate with small denominators</td><td>"I'd add a volume threshold — otherwise 1 return out of 1 is 100%."</td></tr>
+      <tr><td>Returns / conversions measured too early</td><td>"Returns lag shipment, so the recent window is understated. Cohort it."</td></tr>
+      <tr><td>Aggregate moved</td><td>"Did the rate change within segments, or the weights between them?"</td></tr>
+      <tr><td>Correlation shown</td><td>"What's the confounder? Let me segment before I claim causation."</td></tr>
+      <tr><td>Metric dropped</td><td>"Is it real first — pipeline, tracking change, comparison-week distortion."</td></tr>
+      <tr><td>Asked for a dashboard</td><td>"What decision does this support, and what do you do when it's bad?"</td></tr>
+      <tr><td>INNER vs LEFT</td><td>"INNER silently drops rows — that's how a return rate comes out as 100%."</td></tr>
+      <tr><td>Significance</td><td>"Significant isn't important. Report the effect size and interval."</td></tr>
+      <tr><td>Your killer credential</td><td>"50 seconds to 6 — execution plan, indexed the join columns, dropped unused joins, trimmed the projection."</td></tr>
+    </table>
+  </div>
+
+  <footer>
+    Data Analyst simulation · built from your Jumia KPI, Power BI and SQL work ·
+    <a href="index.html">back to Interview Room</a> ·
+    <a href="supply-chain-manager.html">Supply Chain</a> ·
+    <a href="developer.html">Developer</a>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

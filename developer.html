@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Developer Interview</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="home" href="index.html">Interview<span>Room</span></a>
+  <nav>
+    <a href="#r1">Screen</a>
+    <a href="#r2">Backend</a>
+    <a href="#r3">Frontend</a>
+    <a href="#r4">DevOps</a>
+    <a href="#r5">Design</a>
+    <a href="#r6">Behavioral</a>
+    <a href="#r7">Your Qs</a>
+    <a href="#r8">Mock</a>
+  </nav>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="kicker">Role 3 of 3 · Full simulation</p>
+    <h1>Full-Stack Developer</h1>
+    <p>TypeScript, NestJS, Next.js, Prisma, Docker, Kubernetes. Two years and eight months on Jumia's central
+    engineering team, one legacy rebuild in production, one 50-second screen taken to six, and an ML-backed
+    side project most mid-level candidates can't match.</p>
+    <div class="meta">
+      <span><b>34</b> questions</span>
+      <span><b>Code</b> included</span>
+      <span><b>System design</b> walkthrough</span>
+    </div>
+  </div>
+
+  <div class="tools">
+    <button data-action="expand">Expand all</button>
+    <button data-action="collapse">Collapse all</button>
+    <button data-action="print">Print / PDF</button>
+  </div>
+
+  <div class="card">
+    <h3>Your positioning for this role</h3>
+    <p>You have roughly three years of engineering experience and no CS degree. Do not try to out-fundamentals a
+    CS graduate on algorithms — compete where you're genuinely strong:</p>
+    <ul>
+      <li><b>You ship to production for real users.</b> 1,000+ employees depend on the platform you rebuilt.
+      That's not a portfolio project.</li>
+      <li><b>You did a legacy migration.</b> Retool → Next.js/NestJS/Prisma/MariaDB, on a live system. Far
+      harder than greenfield, and a senior signal.</li>
+      <li><b>You have a real performance win with a mechanism.</b> 50s → 6s. Most candidates at your level have
+      never read an execution plan.</li>
+      <li><b>You understand the business.</b> Five years running an operation. When a product manager describes
+      a workflow, you've lived it.</li>
+    </ul>
+    <p><b>The trap:</b> apologising for the bootcamp. Never open with it, never frame it as "only" a diploma.
+    You studied it while running a warehouse full time — that's a stronger signal than a degree someone did with
+    no competing demands.</p>
+  </div>
+
+  <!-- ===================== ROUND 1 ===================== -->
+  <h2 id="r1"><span class="num">1</span>Round 1 — The screen</h2>
+
+  <details class="q" id="dv1">
+    <summary>1. Tell me about yourself.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'm a full-stack developer with about three years building production TypeScript systems on Jumia's
+        central engineering team — Next.js on the front, NestJS and Prisma on the back, Postgres and MariaDB
+        underneath."</p>
+        <p>"The main thing I've worked on is Jumia's internal HR platform. It started as a Retool low-code app
+        and I rebuilt it as a real Next.js, NestJS, Prisma and MariaDB application serving over a thousand
+        employees — leave management, performance reviews, headcount reporting, exit interviews, all integrated
+        with Okta SSO. That's a live-system migration rather than a greenfield build, so a lot of the work was
+        doing it without breaking things people used daily."</p>
+        <p>"The piece I'd point to is a performance fix. The production leave-approval screen was taking about
+        fifty seconds to load and managers were effectively blocked. I traced it to the approval-list query,
+        read the execution plan, and found three problems: join columns with no index forcing full scans,
+        tables joined in whose columns were never used in the response, and a SELECT pulling fields the screen
+        didn't render. Fixed all three — fifty seconds to six, same hardware, identical result set."</p>
+        <p>"I own things end to end: API design, data modeling, the Playwright and Cucumber test suites, Docker,
+        and shipping through GitHub Actions to Kubernetes. Outside work I built an attrition-prediction platform
+        with an XGBoost model served through FastAPI behind a NestJS API."</p>
+        <p>"And my route in is unusual — I spent five years as a supply chain manager at Jumia first, studied a
+        full-stack diploma evenings and weekends while doing that job, then moved internally into engineering.
+        So I tend to understand the business side of what I'm building."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> stack in sentence one, the flagship project with the hard part named (live
+        migration), the metric with its mechanism, breadth, then the differentiator last as a positive. About
+        95 seconds — trim the ML project if you're running long.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv2">
+    <summary>2. Walk me through your most technically complex project.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this — HR Insight AI</span>
+        <p>"HR Insight AI. It predicts employee attrition — who's likely to leave, why, and what retention would
+        cost. I built it because I'd worked on HR systems and everyone had the data and nobody could act on
+        it."</p>
+        <p>"<b>Architecture.</b> Three services. A NestJS API as the system of record with Postgres and Prisma.
+        A separate Python FastAPI service serving an XGBoost model. And a Next.js dashboard. The reason the
+        model lives in its own service rather than in the Node process is that they have completely different
+        lifecycles — the model gets retrained and redeployed on its own schedule, it has Python dependencies I
+        don't want anywhere near the API, and if inference is slow or down I want the rest of the platform to
+        keep working."</p>
+        <p>"<b>The hardest part</b> was report generation. It's a six-stage pipeline — fetch, feature-build,
+        inference, aggregate, LLM summary, render — and it takes long enough that a request/response call
+        would time out and the user would stare at a spinner with no idea whether it was working. So I stream
+        live progress to the client over WebSocket, stage by stage. That changes the perceived experience
+        completely, and it also means a failure tells you <i>which stage</i> failed rather than just
+        failing."</p>
+        <p>"<b>The part I'm most careful about</b> is the RBAC. Four roles — Admin, HR Manager, Team Manager,
+        Viewer — and I enforce it at the query level, not in the controller. A team manager literally cannot
+        construct a query that returns another team's data, because the scope is applied when the query is
+        built. Checking permissions in the controller and then running an unscoped query is how data leaks
+        happen: one forgotten check and the whole thing is exposed. Every mutating action is also audit-logged
+        with actor, entity and IP."</p>
+        <p>"There's also a what-if simulation mode — HR can model the attrition impact of changing engagement,
+        overtime, pay or promotion cadence — plus per-team analytics, a cross-team heatmap, PDF export, and deep
+        health probes for the database, the ML service and the LLM separately, so I know which dependency is
+        down rather than just that something is."</p>
+      </div>
+      <div class="followup">
+        <b>Expect these:</b>
+        <ul>
+          <li><i>"Why XGBoost and not a neural network?"</i> → "Tabular data with modest row counts — gradient
+          boosting outperforms deep learning on that shape of problem, trains in seconds, and gives me feature
+          importance, which matters because HR needs to know <i>why</i> someone's flagged. An unexplainable
+          attrition score is useless in that context, and possibly unethical."</li>
+          <li><i>"How do you know the model is any good?"</i> → Be honest: "I evaluate on a held-out set and I
+          care more about recall than raw accuracy, since missing someone who leaves costs more than a false
+          alarm. I'd also say the class imbalance is real and it's the thing I'd want to keep working on."</li>
+          <li><i>"What would you do differently?"</i> → "Version the model and store which version produced each
+          prediction. Right now a prediction from three months ago isn't reproducible, and for anything
+          affecting people's careers it should be."</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv3">
+    <summary>3. Your background is unusual — supply chain, then a bootcamp. Why you over a CS graduate? <span class="tag hard">Hard</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'd give you three reasons, and I'd concede one thing."</p>
+        <p>"First, I've shipped and maintained production software that real people depend on daily. A thousand
+        employees use the platform I rebuilt to request leave and run performance reviews. That's different
+        from coursework — I've had to migrate a live system without breaking it, debug something under
+        pressure at nine in the morning when the approval screen is down, and live with my own design decisions
+        for two years."</p>
+        <p>"Second, I understand why software gets built. I spent five years running an operation and being the
+        user of badly designed internal tools. When a product manager describes a workflow, I've usually lived
+        some version of it — so I ask the question that stops us building the wrong thing, which in my
+        experience saves more time than any amount of algorithmic skill."</p>
+        <p>"Third, I taught myself this while working full time managing a warehouse. Evenings and weekends for
+        a year. Whatever your stack is, I'll learn it — I've already proved I can do that under much worse
+        conditions than a normal onboarding."</p>
+        <p>"The concession: a CS graduate will have deeper formal grounding in algorithms and complexity theory
+        than I do. I've closed a lot of that gap deliberately and I keep working on it, but I'm not going to
+        claim parity on something I learned on the job. What I'd say is that in three years of production work,
+        the problems I've actually had to solve have been about data modeling, query performance, API design
+        and system boundaries — and those I'm strong on."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> three concrete claims and one honest concession. The concession is what makes
+        the three claims believable — and it lets you redirect to the ground where you genuinely win.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv4">
+    <summary>4. Why are you leaving Jumia?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I've been there seven years across two careers and it's been a genuinely good place to grow — they
+        backed an internal move from operations into engineering, which not many companies would do."</p>
+        <p>"What I want next is technical depth I can't get where I am. I've been mostly the owner of internal
+        HR tooling, which means I've had good breadth — front end, API, data modeling, CI/CD — but I've been
+        the main person on my area rather than working alongside more senior engineers. I want a team where I'm
+        not the most experienced person in the room on my own codebase, with real code review and people to
+        learn from."</p>
+        <p>"<span class="fill">[If relevant]</span> I'm also interested in working at a different scale —
+        internal tooling for a thousand users is a different set of problems from
+        <span class="fill">[customer-facing scale / the domain they work in]</span>, and I want that
+        exposure."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> "I want to be around more senior engineers" is one of the strongest reasons a
+        mid-level developer can give. It's honest, it flatters the team you're joining, and it signals you'll
+        take mentorship rather than resist it.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv5">
+    <summary>5. What are your salary expectations?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Deflect</span>
+        <p>"I'd like to understand the level first — whether you're hiring at mid or senior, and what the
+        ownership looks like. Do you have a band for the role?"</p>
+      </div>
+      <div class="say">
+        <span class="label">If pressed</span>
+        <p>"For a full-stack role at this level I'm looking at <span class="fill">[X] to [Y]</span>. I'd weight
+        toward the upper end given I cover both front and back end plus the CI/CD and testing side rather than
+        needing a separate specialist. But scope and team matter more to me than the last few percent — where
+        does that sit for you?"</p>
+      </div>
+      <div class="followup">
+        <b>If remote and international:</b> be clear early that you're in Tunis and the currency/arrangement
+        matters. "I'm based in Tunis and open to full remote — is the band quoted for my location or is it a
+        global rate?" Getting that mismatch out in round one saves everyone a wasted process.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 2 ===================== -->
+  <h2 id="r2"><span class="num">2</span>Round 2 — Backend, databases and APIs</h2>
+
+  <details class="q" id="dv6">
+    <summary>6. Tell me about the 50-second query. All of it. <span class="tag">They will dig</span></summary>
+    <div class="body">
+      <p><b>Know this cold.</b> It's the strongest thing on your CV, so it gets the most scrutiny. Vagueness
+      here reads as "I read about this" and undoes the whole claim.</p>
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"The leave-approval screen in the production HR platform was taking about fifty seconds to load.
+        Managers were effectively blocked from approving leave."</p>
+        <p>"I reproduced it first, then isolated the cost to the query fetching the approval list — not the
+        rendering, not the network. Then I read the execution plan, and there were three separate problems
+        rather than one."</p>
+        <p>"One: the join columns had no supporting index, so it was doing full table scans on every load.
+        Two: there were tables joined in whose columns were never actually used in the response — they'd been
+        added at some point and nothing depended on them any more, but every one was still being joined. Three:
+        the SELECT was pulling columns the screen never rendered, so we were moving data nobody looked at."</p>
+        <p>"I added indexes on the join columns, dropped the unused joins, and narrowed the projection to what
+        the screen actually displays. Fifty seconds to six on the same hardware — about eight times faster. I
+        verified the result set was identical before and after, same rows, before shipping it."</p>
+      </div>
+      <div class="followup">
+        <b>The four follow-ups you will get:</b>
+        <ul>
+          <li><b>"Why is it still six seconds?"</b> — the one they're really waiting for. <i>"Because the
+          remaining time is dominated by result-set size, not by a bad plan. The next steps would be pagination
+          — keyset rather than OFFSET, since OFFSET degrades the deeper you page — caching the approval list,
+          or denormalising the two or three hot fields. I stopped because six seconds unblocked the users and
+          pagination was a product decision I didn't own alone."</i></li>
+          <li><b>"What's the downside of adding indexes?"</b> — <i>"They cost write throughput and storage —
+          every insert and update maintains them. You take that trade when reads dominate, which they do on an
+          approval screen that's loaded constantly and written to occasionally. I wouldn't add them the same way
+          to a high-write audit table."</i></li>
+          <li><b>"How did you know which index?"</b> — <i>"From the plan: the columns in the join predicates
+          that were driving the sequential scans. Composite where the query filtered and joined on more than
+          one column, with the more selective column first."</i></li>
+          <li><b>"Did it change behaviour?"</b> — <i>"No. Same rows, verified against the previous output."</i></li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv7">
+    <summary>7. How does a database index actually work, and when would you not add one?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"A B-tree index is a sorted structure that lets the database find rows by a column's value without
+        scanning the table — logarithmic lookup instead of linear. The trade is that it's a second structure the
+        database has to keep in sync, so every insert, update and delete on that column costs more, and it uses
+        storage."</p>
+        <p>"Where I add them: columns in WHERE clauses, join columns, foreign keys, and anything you frequently
+        ORDER BY. Composite indexes when you filter on multiple columns together — and there the order matters,
+        because a composite index on (a, b) helps a query filtering on a, or on a and b, but generally not one
+        filtering on b alone. That's the leftmost-prefix rule and it's the thing people most often get wrong."</p>
+        <p>"Where I wouldn't: on a low-cardinality column like a boolean or a status with three values, because
+        the index doesn't narrow much and the planner will often ignore it anyway. On a table that's
+        write-heavy and rarely queried that way. And I wouldn't add indexes speculatively — every index is
+        permanent write cost paid for a read benefit you might not be getting. I'd rather measure with the query
+        plan first."</p>
+        <p>"One thing I'd add from experience: an index doesn't help if the query can't use it. Wrapping the
+        column in a function — <code>WHERE DATE(created_at) = ...</code> — usually defeats it, because the
+        database can't match the expression to the indexed value. You rewrite it as a range on the raw column
+        instead."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> the leftmost-prefix rule and the function-defeats-the-index point are both things
+        people learn by being burned, not by reading. They're short and they prove the experience is real.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv8">
+    <summary>8. What's the N+1 problem? Have you hit it?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"It's when you run one query to fetch a list, then one more query per item in that list to fetch a
+        relation — so a hundred rows becomes a hundred and one round trips. It's the classic ORM performance
+        bug, and it's insidious because it's invisible on a dev machine with ten rows and catastrophic in
+        production with ten thousand."</p>
+        <p>"In Prisma the fix is usually <code>include</code> or <code>select</code> on the relation, so it
+        becomes one query with a join, or a batched second query instead of N. In a resolver-style API you'd
+        use a dataloader to batch the lookups per request."</p>
+        <p>"I've hit it, and what I'd emphasise is how I found it: it doesn't show up as an error, it shows up
+        as a page that's fine in dev and slow in production. So the habit that actually matters is logging
+        queries per request in development. If a single endpoint fires forty queries, something is looping."</p>
+      </div>
+      <pre><code>// N+1 — one query for leaves, then one per leave for the employee
+const leaves = await prisma.leaveRequest.findMany({ where: { status: 'PENDING' } });
+for (const leave of leaves) {
+  leave.employee = await prisma.employee.findUnique({ where: { id: leave.employeeId } });
+}
+
+// Fixed — the relation is fetched with the list, and only the fields the screen needs
+const leaves = await prisma.leaveRequest.findMany({
+  where: { status: 'PENDING' },
+  select: {
+    id: true,
+    startDate: true,
+    endDate: true,
+    employee: { select: { id: true, fullName: true, department: true } },
+  },
+});</code></pre>
+      <div class="why">
+        <b>Note the <code>select</code>:</b> pointing out that you fetch only the fields the screen renders ties
+        this answer straight back to your 50s→6s story. Interviewers notice consistency like that.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv9">
+    <summary>9. How do you design a REST API? Walk me through your thinking.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I start from the resources and the operations the client actually needs, not from the database
+        tables — those are usually similar but not identical, and mapping the API one-to-one onto your schema
+        means every schema change becomes a breaking API change."</p>
+        <p>"Then the conventions: nouns not verbs, plural collections, nesting only one level deep.
+        <code>GET /leave-requests</code>, <code>GET /leave-requests/:id</code>,
+        <code>POST /leave-requests</code>, <code>PATCH /leave-requests/:id</code>. Correct status codes — 200,
+        201 with a Location header on create, 204 on delete, 400 for a malformed request, 401 unauthenticated,
+        403 authenticated but not allowed, 404, 409 for a conflict, 422 for semantically invalid."</p>
+        <p>"Things I insist on. Validation at the boundary — in NestJS that's DTOs with class-validator and a
+        global validation pipe, so nothing unvalidated reaches a service. Consistent error shape across every
+        endpoint, because clients have to handle errors and inconsistency there is how you get defensive junk
+        in the front end. Pagination on every collection from day one — a collection endpoint with no
+        pagination is a production incident waiting for the data to grow. And versioning, or at least a plan
+        for it, before the first external consumer."</p>
+        <p>"Two things I'd flag from experience. Non-CRUD actions don't fit neatly — 'approve this leave
+        request' isn't really a PATCH. I'd model it as a sub-resource, <code>POST
+        /leave-requests/:id/approval</code>, rather than bending the verb, because the action has its own rules
+        and its own audit trail."</p>
+        <p>"And idempotency on anything that mutates money or state. If the client retries after a timeout, the
+        second call must not create a second record. That's an idempotency key on the request, and it's the
+        thing most often left out until it causes a duplicate."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv10">
+    <summary>10. How does authentication work in your system? JWT vs sessions?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"In the HR platform, authentication is Okta SSO — the identity provider handles login and MFA, and my
+        application trusts the token it issues. That's the right call for an internal company-wide tool: I don't
+        want to own password storage or reset flows for a thousand employees, and it means access is revoked
+        centrally the day someone leaves."</p>
+        <p>"On JWT versus sessions generally — the real trade is revocation. A session is server-side state, so
+        you delete it and the user is out immediately. A JWT is self-contained and stateless, which scales
+        nicely, but you can't un-issue it: if it's valid for an hour, it's valid for an hour even if you've
+        just disabled the account. The usual compromise is short-lived access tokens with a refresh token you
+        <i>can</i> revoke, which gives you most of the scalability and caps the exposure window."</p>
+        <p>"Storage matters too. Putting a JWT in localStorage means any XSS on your site can read it. An
+        httpOnly cookie can't be read by JavaScript, but then you need CSRF protection. Neither is free — you
+        pick which attack you'd rather defend against, and I'd generally take httpOnly cookies plus SameSite."</p>
+        <p>"On authorisation, which is the part that actually matters — I enforce RBAC at the query level rather
+        than in the controller. In HR Insight AI there are four roles and the scope is applied when the query is
+        built, so a team manager can't construct a request that returns another team's data. Checking in the
+        controller and then running an unscoped query works right up until someone adds an endpoint and forgets
+        the check."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> the "authentication is easy, authorisation is where the bugs are" instinct, plus
+        naming the localStorage/cookie trade honestly rather than reciting one as correct, is exactly the
+        security maturity interviewers probe for.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv11">
+    <summary>11. When would you use PostgreSQL versus MongoDB?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"My default is Postgres, and I'd want a specific reason to move off it."</p>
+        <p>"Relational fits when your data has relationships you'll query across — which is almost always true
+        in business software. Employees, leave requests, approvals, teams: everything is joins. You get
+        transactional integrity, foreign keys that actually prevent orphaned rows, and a query planner that's
+        had thirty years of work put into it. And crucially you can ask questions of the data you didn't
+        anticipate when you designed it, which is exactly what happens with any system that lives more than a
+        year."</p>
+        <p>"I'd reach for a document store when documents are genuinely self-contained and the shape varies —
+        event payloads, flexible content, third-party responses I don't control the schema of. Or when I
+        genuinely need horizontal write scaling beyond what a single relational primary handles, though that's
+        a much rarer situation than people assume when they choose it."</p>
+        <p>"I've used MongoDB, and honestly the lesson I took is that schemaless doesn't mean no schema — it
+        means the schema lives in your application code, undocumented, in several versions at once. You end up
+        writing the validation and the migration logic yourself, badly. Postgres also does JSONB well, so you
+        can have a schema for the structured part and flexibility for the part that varies, which covers most
+        of the actual use case."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv12">
+    <summary>12. Explain transactions. When have you needed one?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"A transaction groups operations so they all succeed or all roll back — the database never ends up in
+        a half-applied state. ACID is atomicity, consistency, isolation, durability; the two I actually think
+        about day to day are atomicity and isolation."</p>
+        <p>"A concrete case from the HR platform: approving a leave request isn't one write. You update the
+        request status, decrement the employee's leave balance, and write an audit record. If the balance
+        update succeeds and the status update fails, you've deducted someone's leave without granting it —
+        which is exactly the kind of bug that's discovered three months later by a very annoyed employee. So
+        those go in a transaction."</p>
+        <p>"In Prisma that's <code>prisma.$transaction</code> with an interactive callback, so all three writes
+        share the same client and commit or roll back together."</p>
+        <p>"Isolation is the subtler part. Two managers approving concurrently, or a read-then-write on a
+        balance, can produce a lost update — both read 10, both write 9, and one approval vanishes. The fix is
+        either an atomic operation in the database — <code>decrement</code> rather than read-modify-write — or
+        explicit locking, or optimistic concurrency with a version column. I'd prefer the atomic decrement where
+        the operation allows it, because it's the simplest and it can't be forgotten."</p>
+      </div>
+      <pre><code>await prisma.$transaction(async (tx) => {
+  await tx.leaveRequest.update({
+    where: { id: requestId },
+    data:  { status: 'APPROVED', approvedById: approverId },
+  });
+
+  // atomic decrement — not read-then-write, so concurrent approvals can't lose an update
+  await tx.leaveBalance.update({
+    where: { employeeId_year: { employeeId, year } },
+    data:  { remainingDays: { decrement: days } },
+  });
+
+  await tx.auditLog.create({
+    data: { actorId: approverId, entity: 'LeaveRequest', entityId: requestId, action: 'APPROVE' },
+  });
+});</code></pre>
+    </div>
+  </details>
+
+  <details class="q" id="dv13">
+    <summary>13. When would you add caching? What's hard about it?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'd treat caching as a later resort rather than a first response, because it hides problems rather
+        than fixing them. On the 50-second query, caching would have masked a bad query plan and left the
+        underlying cost in place for the next person. I fixed the query first — that's the right order."</p>
+        <p>"Where caching genuinely earns its place: expensive computations that are read far more often than
+        they change, data from a slow external service, and anything where slightly stale is acceptable —
+        reference data, aggregate dashboards, config."</p>
+        <p>"The hard part is always invalidation, and specifically knowing every path that can change the
+        underlying data. Time-based expiry is crude but it's honest — you're explicitly accepting staleness up
+        to the TTL, and it can't be wrong in a way you didn't anticipate. Event-based invalidation is correct
+        when it works and fails silently when someone adds a new write path and forgets to invalidate. I'd
+        lean on TTL for anything where a short staleness window is tolerable, and reserve explicit invalidation
+        for the cases where it isn't."</p>
+        <p>"I'd also warn about caching per-user data with a key that isn't properly scoped — that's how you
+        serve one user another user's dashboard, and it's a much worse bug than the slowness you were trying to
+        fix."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv14">
+    <summary>14. When do you move work to a background job? You mention BullMQ.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Anything the user doesn't need to wait for, and anything that can fail independently of the request.
+        Sending emails, generating PDFs, processing uploads, syncing to an external service, scheduled
+        reporting."</p>
+        <p>"The reasoning is that if I do it inline, three things go wrong: the request is slow, a failure in a
+        secondary concern fails the primary action — the leave request didn't get created because the
+        notification email bounced, which is absurd — and I have no retry story. A queue gives me all three:
+        fast response, isolation, and retry with backoff."</p>
+        <p>"BullMQ is Redis-backed, so I get persistence, retries with exponential backoff, delayed jobs, and
+        repeatable jobs for scheduled work."</p>
+        <p>"Two things I'd insist on. Jobs must be idempotent, because at-least-once delivery means a job can
+        run twice — a retry after a timeout where the work actually succeeded. If running it twice sends two
+        emails or creates two records, that's a bug waiting for a bad network day. And you need a dead-letter
+        path plus monitoring: a queue silently accumulating failed jobs is worse than a loud error, because
+        nobody finds out until a user asks where their report went."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> "the leave request failed because the email bounced" is a concrete absurdity that
+        makes the principle memorable. Idempotency and dead-lettering are the two things juniors miss.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv15">
+    <summary>15. WebSockets versus polling — how did you decide?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I use WebSockets when the server needs to push without being asked and latency matters. In HR
+        Insight AI, report generation is a six-stage pipeline that takes long enough that a plain
+        request/response would time out, so I stream stage-by-stage progress to the client over a socket. The
+        user sees which stage is running rather than a spinner, and a failure tells them exactly where it
+        broke."</p>
+        <p>"I wouldn't reach for it by default. Polling is simpler, works through every proxy and load balancer
+        without special handling, and needs no reconnection logic. If an update every thirty seconds is fine,
+        polling is the right answer and WebSockets are over-engineering."</p>
+        <p>"What people underestimate is the operational cost. Sockets are stateful connections, so a client
+        reconnecting needs to recover state — which means the progress has to live server-side, not only in the
+        socket messages, or a refresh loses everything. And with multiple server instances you need a shared
+        adapter, Redis in Socket.IO's case, or a message published on instance A never reaches a client
+        connected to instance B. That's a bug that doesn't exist in development with one process and appears
+        the moment you scale out."</p>
+        <p>"For one-directional server-to-client streaming, server-sent events are also worth considering —
+        simpler than WebSockets, works over plain HTTP, and progress updates are exactly that shape. I'd
+        consider SSE if I were rebuilding it."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv16">
+    <summary>16. What's your testing strategy? You list Jest, Playwright and Cucumber.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Roughly a pyramid, weighted by where the risk actually is rather than by dogma."</p>
+        <p>"<b>Unit tests</b> with Jest for logic with branches — leave-balance calculation, eligibility rules,
+        anything with edge cases. Fast, and they're where I want the exhaustive cases: negative values, zero,
+        boundaries, dates crossing a year end."</p>
+        <p>"<b>Integration tests</b> with Supertest against the API, hitting a real test database rather than
+        mocks. These are the ones I trust most, honestly. A heavily mocked unit test verifies that your mocks
+        agree with each other — it won't catch a broken Prisma query or a migration that didn't run."</p>
+        <p>"<b>End-to-end</b> with Playwright for the critical user journeys only: log in, submit a leave
+        request, approve it. Not every screen. E2E tests are slow and flaky in proportion to how many you have,
+        and a flaky suite is worse than no suite because people start ignoring failures — which is when a real
+        failure gets ignored too."</p>
+        <p>"<b>Cucumber</b> on top for BDD-style scenarios where the behaviour needs to be readable by
+        non-engineers — HR workflows have rules that come from policy, and having the scenario in language a
+        business owner can check is genuinely useful. I'd be honest that Cucumber adds indirection and I'd only
+        use it where someone non-technical actually reads it. Otherwise it's ceremony."</p>
+        <p>"On coverage as a target — I don't chase a percentage. It's easy to get 90% coverage that asserts
+        nothing. I'd rather have thorough tests on the leave-balance logic and the permission checks, and
+        nothing on a presentational component."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> criticising a tool you actually use ("Cucumber adds indirection") signals
+        judgement rather than tool-collecting. The flaky-E2E point and the coverage-target point are both
+        opinions earned from real projects.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 3 ===================== -->
+  <h2 id="r3"><span class="num">3</span>Round 3 — Frontend</h2>
+
+  <details class="q" id="dv17">
+    <summary>17. Next.js: server rendering, static generation or client-side — how do you choose?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I choose on two axes: does this content need to be fresh per request, and does it need to be
+        indexed or fast on first paint for someone who isn't logged in."</p>
+        <p>"<b>Static</b> for content that's the same for everyone and changes rarely — marketing pages, docs.
+        It's a file on a CDN, it's as fast as the web gets, and there's nothing to go down."</p>
+        <p>"<b>Server-rendered</b> when the content is per-request or personalised and the first paint matters —
+        a dashboard where you want data present in the initial HTML rather than a skeleton that fills in."</p>
+        <p>"<b>Client-side</b> for anything behind authentication that's highly interactive and where SEO is
+        irrelevant. Most of the HR platform is this: it's an internal tool, everyone's logged in, nobody's
+        Googling a leave request. Server-rendering it would add complexity for no benefit."</p>
+        <p>"In the App Router the practical version is that components are server components by default and I
+        add <code>'use client'</code> only where I need state, effects or event handlers — which keeps the
+        client bundle smaller by default. Data fetching sits in server components where it can, and I use
+        TanStack Query on the client for anything that needs caching, background refetch and optimistic updates.
+        That combination is what I'd default to."</p>
+        <p>"The mistake I'd flag is server-rendering an authenticated dashboard reflexively because SSR is
+        'better'. You pay in complexity and server cost for a benefit that doesn't apply behind a login."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv18">
+    <summary>18. How do you manage state in React? When do you reach for a library?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I start by separating server state from client state, because conflating them is the source of most
+        React state complexity."</p>
+        <p>"<b>Server state</b> — data that lives in a database and that you're caching in the browser. That's
+        TanStack Query's job: caching, deduplication, background refetch, stale-while-revalidate, optimistic
+        updates. Putting server data into Redux means hand-writing all of that yourself, badly, which is what
+        most 'Redux is bloated' complaints are actually about."</p>
+        <p>"<b>Client state</b> — form inputs, which modal is open, a filter selection. Local
+        <code>useState</code> first, lifted only as far as it needs to go. Context for genuinely global,
+        rarely-changing things like theme or the current user. I'd only reach for a dedicated store if I had
+        complex client state shared across distant parts of the tree, and in three years I haven't needed
+        it."</p>
+        <p>"For forms specifically I use React Hook Form, because uncontrolled inputs avoid a re-render on every
+        keystroke and it handles validation cleanly — HR forms get large, and a controlled form of forty fields
+        re-rendering on each character is noticeably laggy."</p>
+        <p>"The general principle I'd state: most state problems are really 'this state is in the wrong place'
+        problems. Adding a library rarely fixes that."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv19">
+    <summary>19. A page in your app is slow on the front end. How do you diagnose it?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Measure before changing anything — the same discipline as the backend query. I'd open the network
+        tab and the performance profiler and find out which of three things it is: waiting on the network,
+        shipping too much JavaScript, or re-rendering too much."</p>
+        <p>"<b>Network</b> — is it one slow request or a waterfall of dependent ones? A waterfall usually means
+        components each fetching their own data in sequence, and the fix is to lift the fetch or parallelise.
+        And if the payload is huge, that's often the same over-fetching problem I had on the backend: the API
+        returning fields the screen never renders."</p>
+        <p>"<b>Bundle</b> — check what's actually being shipped. The usual culprits are a heavy date or chart
+        library imported wholesale, and components that could be lazily loaded. Route-level code splitting and
+        dynamic imports for anything below the fold or behind an interaction."</p>
+        <p>"<b>Rendering</b> — the profiler shows which components re-render and why. Usually it's a context
+        value or an object/array recreated on every parent render, so everything downstream re-renders. Fixes
+        are memoisation, stable keys, splitting a context that's too broad, and virtualising long lists rather
+        than rendering two thousand rows."</p>
+        <p>"And I'd measure on a realistic device and connection. Everything is fast on a developer laptop on
+        office wifi — that's how performance problems survive to production."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv20">
+    <summary>20. What security issues do you actively think about?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Four that I handle deliberately in the code I write."</p>
+        <p>"<b>Injection.</b> Parameterised queries always — Prisma handles that for me, but the moment I drop
+        to raw SQL I use the parameterised form rather than string interpolation. That's the one place an ORM
+        stops protecting you and it's exactly where people get careless."</p>
+        <p>"<b>Broken access control</b>, which I'd argue is the most common serious bug in business software.
+        Being logged in isn't authorisation. The specific failure is an endpoint that checks the user is
+        authenticated and then fetches a record by an ID from the URL without checking the record belongs to
+        them. That's why I scope at the query level rather than in the controller — the data access itself
+        can't return what you're not allowed to see."</p>
+        <p>"<b>XSS.</b> React escapes by default, so the real risk is the escape hatches —
+        <code>dangerouslySetInnerHTML</code> and anything rendering user-supplied HTML or markdown. If I have
+        to render user HTML, it gets sanitised with a maintained library, not a regex."</p>
+        <p>"<b>Secrets and exposure.</b> Nothing in the repo, everything through environment variables and the
+        secret store. And on the API side, not leaking internals in error responses — a stack trace in a 500
+        tells an attacker your framework, your file layout and sometimes your query."</p>
+        <p>"I'd also mention file uploads, since I built the S3 document upload: validate type and size
+        server-side rather than trusting the client, never trust the supplied filename, and serve via
+        time-limited signed URLs rather than making the bucket public."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> leading with broken access control rather than SQL injection shows you know
+        what actually breaks in modern business applications, and it ties back to the RBAC design you already
+        described. The file-upload detail proves it's from real work.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 4 ===================== -->
+  <h2 id="r4"><span class="num">4</span>Round 4 — DevOps and delivery</h2>
+
+  <details class="q" id="dv21">
+    <summary>21. Walk me through your deployment pipeline.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Push to a branch, open a pull request. GitHub Actions runs on the PR: lint, type-check, unit and
+        integration tests, and a build. Nothing merges red. Review, then merge to main, which builds a Docker
+        image, tags it, pushes it to the registry, and deploys to Kubernetes."</p>
+        <p>"The development environment is dockerised too, and that's deliberate — same base image, same
+        service topology locally as in the cluster. It removes the 'works on my machine' class of problem
+        almost entirely, and it means a new person is productive on day one instead of spending a day
+        installing things."</p>
+        <p>"Migrations are the part I'm most careful about, because they're the step that can't easily be rolled
+        back. Prisma migrations run as a distinct step, and I write them to be backwards-compatible with the
+        currently-running version wherever possible — add a nullable column, deploy code that writes to it,
+        backfill, then make it required in a later migration. Dropping a column in the same deploy as the code
+        that stopped using it is how you get a broken rollback."</p>
+        <p>"On Kubernetes specifically, readiness and liveness probes matter more than people expect — a
+        readiness probe that returns healthy before the app can actually serve traffic means the rollout sends
+        requests to a pod that isn't ready, and you get errors during every deploy. In HR Insight AI I built
+        deep probes that check the database, the ML service and the LLM separately, so I can tell which
+        dependency is down instead of just seeing 'unhealthy'."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv22">
+    <summary>22. Something is broken in production right now. What do you do?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Stop the bleeding first, understand it second. Those are different phases and mixing them up costs
+        users."</p>
+        <p>"<b>Assess.</b> What's the actual impact — is everything down or is one feature degraded, and for how
+        many people? That decides urgency and who I wake up."</p>
+        <p>"<b>Mitigate.</b> If a recent deploy correlates with the start, roll back first and diagnose
+        afterwards. Rolling back is almost always faster than fixing forward under pressure, and a rollback is
+        reversible. If it's not a deploy, is there a feature flag I can turn off, or a degraded mode I can put
+        it in?"</p>
+        <p>"<b>Communicate.</b> Tell people early, even without a cause. 'We're aware, we're on it, next update
+        in thirty minutes' stops the flood of duplicate reports and stops someone else starting a parallel
+        investigation. This is the step engineers skip and it's the one the business notices most."</p>
+        <p>"<b>Diagnose.</b> What changed — deploy, migration, config, a dependency, or traffic? Logs and
+        metrics around the start time. The question is always 'what's different now versus an hour ago.'"</p>
+        <p>"<b>Then a blameless post-mortem.</b> What happened, why it wasn't caught, and one concrete
+        preventive action. And the honest test of whether the process worked: did we find out from monitoring or
+        from a user? If a user told us first, then the real action item is the alerting, not the bug."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> "roll back first, diagnose after" and "did we find out from monitoring or from a
+        user" are both hallmarks of someone who has actually been on call rather than read about incident
+        response.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 5 ===================== -->
+  <h2 id="r5"><span class="num">5</span>Round 5 — System design</h2>
+  <p class="section-note">Never start coding or naming technologies. Clarify requirements → estimate scale →
+  sketch the components → pick the data model → then discuss bottlenecks and trade-offs. Talk continuously.</p>
+
+  <details class="q" id="dv23">
+    <summary>23. Design an order-tracking system for an e-commerce marketplace. <span class="tag">Your home turf</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Step 1 — clarify (never skip this)</span>
+        <p>"Let me check what we're building. Is this customer-facing tracking, internal operational visibility,
+        or both? Roughly what order volume — thousands a day or millions? Do status updates come from our own
+        warehouse systems, from third-party carriers, or both? And does 'real-time' mean seconds, or is a couple
+        of minutes acceptable? That last one changes the architecture more than anything else."</p>
+        <p><i>Assume they say: both audiences, ~100k orders/day, mixed internal and carrier sources, minutes is
+        fine.</i></p>
+      </div>
+      <div class="say">
+        <span class="label">Step 2 — scale estimate, out loud</span>
+        <p>"100,000 orders a day, maybe 6 to 10 status events each — so under a million writes a day, which is
+        roughly a dozen writes a second average, call it ten times that at peak. That's comfortably within a
+        single well-indexed Postgres primary; I don't need anything exotic for the write path."</p>
+        <p>"Reads are the asymmetric part. Customers check tracking repeatedly — that's easily ten to a hundred
+        times the write volume, and it's heavily skewed toward recent orders. So this is a read-scaling problem
+        with a very cacheable access pattern, and that's what I'd design around."</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 3 — components</span>
+        <p>"An <b>ingestion API</b> receiving status events from warehouse systems and carrier webhooks. I'd
+        make it accept and acknowledge quickly, pushing the event onto a queue rather than processing inline —
+        carriers retry aggressively and will hammer you if you're slow, and I don't want a slow database write
+        to cause a carrier to think delivery of the webhook failed."</p>
+        <p>"A <b>worker</b> consuming that queue: validate, map the carrier's vocabulary to our canonical status
+        set, write the event, update the order's current state. Mapping is a real piece of work here — every
+        carrier has different status names and granularity, and you want that normalised at the boundary rather
+        than leaking into every downstream consumer."</p>
+        <p>"A <b>read API</b> serving tracking, cached aggressively."</p>
+        <p>"And a <b>notification path</b> — an event on a status change fanning out to email or push,
+        asynchronously, because a notification failure must never affect the tracking record."</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 4 — data model, and the key decision</span>
+        <p>"Two tables. An append-only <code>order_status_events</code> table — order id, status, timestamp,
+        source, raw payload — and an <code>orders</code> table carrying the current denormalised state."</p>
+        <p>"The important choice is that events are immutable and append-only. I never update an event. That
+        gives me the full history for free, which operations absolutely will need for disputes — 'when did this
+        actually leave the warehouse' is a question I got asked constantly in my supply chain role. And it makes
+        the system idempotent-friendly: a duplicate webhook is detectable on a natural key of order plus status
+        plus timestamp rather than corrupting state."</p>
+        <p>"The denormalised current status on the order is the deliberate redundancy — it means the common read
+        doesn't have to scan and sort the event history. It's derived data, so I accept it can drift, and I'd
+        be able to rebuild it from the event log if it ever did."</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 5 — the bottleneck and the trade-offs</span>
+        <p>"The read path is the bottleneck, and it's very cacheable: cache current status by order ID in Redis
+        with a short TTL, invalidated on status change. Recent orders dominate reads, so hit rates should be
+        high."</p>
+        <p>"Events arriving out of order is the correctness problem people miss — carriers do send them late and
+        out of sequence. So I'd order by the carrier's event timestamp, not arrival time, and I wouldn't let an
+        older event overwrite a newer status. That's a rule worth stating explicitly because it's a silent data
+        corruption otherwise."</p>
+        <p>"Duplicates: at-least-once delivery from carriers means the ingestion has to be idempotent. Natural
+        key, or an idempotency key where the carrier provides one."</p>
+        <p>"On scaling further — the event table grows indefinitely, so partition by month and archive old
+        partitions to cold storage. And if read volume outgrew a single database, read replicas before
+        anything more dramatic, accepting replication lag on a use case where a few seconds of staleness is
+        genuinely fine."</p>
+        <p>"What I'd deliberately <i>not</i> do at this scale is reach for microservices or event sourcing as a
+        whole architecture. The volume doesn't justify it and it would cost more in operational complexity than
+        it returns."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> you clarified, you estimated out loud, you identified the read/write asymmetry
+        early and designed for it, you named a subtle correctness bug (out-of-order events) unprompted, and you
+        explicitly declined to over-engineer. The supply chain aside about dispute history is a genuine
+        advantage — use it.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv24">
+    <summary>24. Now traffic grows 10×. What breaks first?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'd resist guessing and say what I'd measure — but if I had to predict, in order: the database read
+        path, then the write path, then the queue workers."</p>
+        <p>"<b>Reads first</b>, because they're already the dominant load. Mitigation in escalating order: make
+        sure the cache hit rate is actually good before adding hardware — a 60% hit rate usually means the TTL
+        or the key design is wrong, and fixing that is free. Then read replicas. Then reconsider what's being
+        queried; often it's one expensive endpoint, not a general capacity problem."</p>
+        <p>"<b>Writes second.</b> A hundred-plus writes a second at peak is still fine for Postgres, but index
+        maintenance on a fast-growing event table starts to hurt, and this is where I'd re-examine whether every
+        index on that table is earning its cost. Partitioning by month helps, because writes concentrate in the
+        current partition and its indexes stay smaller."</p>
+        <p>"<b>Workers third</b> — they scale horizontally, which is the easy case, as long as the work is
+        genuinely idempotent and there's no ordering assumption between workers. Since I made events
+        append-only with timestamp-based ordering rather than arrival ordering, that holds."</p>
+        <p>"The thing I'd want before any of this is visibility: p95 and p99 latency per endpoint, database
+        query time, cache hit rate, queue depth and consumer lag. Scaling without those is guessing, and the
+        usual outcome is paying for capacity that doesn't address the actual bottleneck. I'd rather find the one
+        slow query — which, from experience, is very often what it really is."</p>
+      </div>
+      <div class="why">
+        <b>The closing line lands</b> because you have a concrete story behind it. "It's very often one slow
+        query" from someone who found a 50-second one is a credible claim, not a platitude.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv25">
+    <summary>25. How to handle a live coding exercise.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">The protocol — follow it even if you know the answer instantly</span>
+        <p><b>1. Restate the problem.</b> "So, given an array of orders, I need to return the top N sellers by
+        return rate. Let me check — should ties be broken deterministically, and what do I do with a seller who
+        has zero shipments?"</p>
+        <p><b>2. Give an example by hand.</b> Work one small case out loud. It catches misunderstandings before
+        you've written thirty lines of the wrong thing, and it shows them how you think.</p>
+        <p><b>3. State the naive approach, then improve it.</b> "The brute force is nested loops, which is
+        O(n²). I can do it in one pass with a map keyed by seller, which is O(n) time and O(k) space where k is
+        the number of sellers." Saying this <i>before</i> coding is worth more than silently writing the optimal
+        version.</p>
+        <p><b>4. Write it, narrating.</b> Talk continuously. "I'm using a Map rather than an object so I don't
+        have to worry about prototype keys..." Silence is the single most common way candidates fail a coding
+        round with correct code.</p>
+        <p><b>5. Test it out loud.</b> Walk through your own example. Then edge cases without being prompted:
+        empty input, one element, all identical, nulls. Finding your own bug is a strong positive signal, not a
+        negative one.</p>
+        <p><b>6. Say the complexity and what you'd change in production.</b> "This is O(n log n) because of the
+        sort at the end. In production I'd push this into SQL rather than doing it in the application — the
+        database can do the grouping and the ranking far more efficiently, and I wouldn't be loading the whole
+        order table into memory."</p>
+      </div>
+      <div class="followup">
+        <b>If you get completely stuck:</b> say so, out loud, with structure. <i>"I'm stuck on how to handle
+        the tie case efficiently. Let me talk through what I've considered: I could sort and scan, which is
+        O(n log n), or maintain a heap, which is O(n log k). Let me try the simpler one and optimise if there's
+        time."</i> Interviewers hire people who get unstuck visibly. They don't hire silence.
+      </div>
+      <div class="why">
+        <b>Your advantage here:</b> you can legitimately steer toward SQL and data modeling, which is where your
+        strength is. "I'd do this in the database" is usually the <i>correct</i> production answer, not a dodge
+        — just write the in-memory version first, then say it.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 6 ===================== -->
+  <h2 id="r6"><span class="num">6</span>Round 6 — Behavioral</h2>
+
+  <details class="q" id="dv26">
+    <summary>26. Tell me about the legacy migration. Why rebuild rather than improve it? <span class="tag star">STAR</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p><b>Situation.</b> "Jumia's internal HR platform was a Retool app — a low-code tool. It worked for what
+        it originally was, but it had grown into the system a thousand employees used for leave, performance
+        reviews and headcount reporting, and it had outgrown the tool."</p>
+        <p><b>The problem.</b> "The limits were real rather than aesthetic. Business logic was scattered across
+        UI components instead of living in one place, so the same rule existed in three versions. There was no
+        meaningful test coverage possible. Version control and code review didn't work the way they do for a
+        normal codebase. And it couldn't integrate properly with Okta SSO, which mattered because access control
+        for an HR system is not optional."</p>
+        <p><b>Action.</b> "I rebuilt it as Next.js, NestJS, Prisma and MariaDB. Incrementally, not as a big
+        bang — module by module, running alongside the existing app rather than replacing it in one cut. I
+        modeled the schema properly first, because the data model was where most of the accumulated mess
+        lived."</p>
+        <p>"The part I'd emphasise is that I treated the old system as the specification. It encoded years of
+        undocumented policy decisions — edge cases in leave accrual, approval chains that varied by department.
+        A rewrite that only implements the happy path breaks for exactly the people whose case is unusual, and
+        they're the ones who complain loudest and are hardest to placate. So I went looking for those cases
+        before I wrote the replacement."</p>
+        <p><b>Result.</b> "It's in production serving 1,000+ employees, with Okta SSO, Playwright and Cucumber
+        coverage, and a proper CI/CD pipeline to Kubernetes. It's also where the 50-to-6-second fix happened —
+        which is only possible because there's now a real query to optimise instead of a generated one."</p>
+        <p>"If I did it again, I'd invest earlier in documenting the old behaviour rather than discovering it
+        module by module. I found edge cases later than I should have."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> "the old system is the specification" is genuine engineering wisdom about legacy
+        migration, and the incremental rather than big-bang choice is what senior engineers listen for. The
+        self-critique at the end is specific rather than performative.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv27">
+    <summary>27. Tell me about a disagreement with a colleague over a technical decision. <span class="tag star">STAR</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this — adapt to a real one</span>
+        <p><b>Situation.</b> "On the HR platform rebuild there was a push to keep some of the existing structure
+        to move faster, where I wanted to remodel the schema properly first. Both positions were reasonable —
+        theirs was about delivery date, mine was about the cost of building on a bad foundation."</p>
+        <p><b>Task.</b> "Reach a decision that was actually right, without turning it into a standoff or just
+        deferring because someone was more senior."</p>
+        <p><b>Action.</b> "I stopped arguing in the abstract and made it concrete. I took two specific features
+        we had coming and wrote out what each would require under both schemas — the queries, the edge cases,
+        the migration risk. That turned 'the model is wrong' from an opinion into a comparison of two pieces of
+        work someone could evaluate."</p>
+        <p>"I also proposed a middle path rather than insisting on all or nothing: remodel the core entities
+        where the pain was concentrated, keep the peripheral structure as it was for now. That got most of the
+        benefit without the full cost, and it was a proposal someone could say yes to."</p>
+        <p><b>Result.</b> "We did the partial remodel and it was the right call — the later features were
+        straightforward on the new core. What I took from it is that technical disagreements go on much longer
+        when they're argued at the level of principle. The moment I turned it into 'here's what next quarter
+        looks like either way', it resolved in one conversation. And I'd genuinely have gone with their
+        approach if the comparison had come out the other way."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> the last sentence is essential. It shows you disagree in order to reach the right
+        answer, not to win — which is exactly what a team lead is screening for.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv28">
+    <summary>28. Tell me about a bug you caused in production. <span class="tag hard">Honesty test</span></summary>
+    <div class="body">
+      <p><b>You must have one.</b> "I've never broken production" means you haven't shipped anything
+      meaningful, or you're not being straight. Pick something real, contained, and fixed.</p>
+      <div class="say">
+        <span class="label">Say this — swap in your real one</span>
+        <p><b>Situation.</b> "I shipped a change to <span class="fill">[the leave / approval flow]</span> that
+        worked correctly in every case I'd tested and broke for a specific edge case in production — <span
+        class="fill">[e.g. a request spanning a year boundary, or an employee with no assigned manager]</span>."</p>
+        <p><b>What happened.</b> "A user hit it within a few hours. The failure was contained to that specific
+        case rather than breaking the screen for everyone, which was luck as much as design."</p>
+        <p><b>Action.</b> "I reverted first and diagnosed after — rolling back is faster than fixing forward
+        under pressure and it's reversible. Then I reproduced it locally, wrote a failing test for exactly that
+        case, fixed it, and shipped with the test in place."</p>
+        <p><b>Result and the real lesson.</b> "Fixed the same day. But the more useful outcome was
+        understanding <i>why</i> I missed it: my test data was all well-formed, because I'd generated it myself
+        from the happy path. Real HR data has employees with no manager, contracts that started mid-year,
+        historic records with fields that didn't exist when they were created. So I changed how I build test
+        fixtures — I now seed from realistic shapes including the awkward ones, and when I touch something with
+        edge cases I go looking for the weird rows in production data first."</p>
+        <p>"That's also a habit from my operations background, honestly. In a warehouse you learn quickly that
+        the exception is the thing that costs you, not the normal case."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> the lesson is about a systematic gap in your process, not "I'll be more careful."
+        And the closing line connects it to your unusual background in a way that's genuine rather than
+        contrived.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv29">
+    <summary>29. How do you approach code review — giving and receiving?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Giving: I separate what's blocking from what's a preference, explicitly, because an unlabelled pile
+        of comments is demoralising and slow. I'll write 'blocking:' on a correctness or security issue and
+        'nit:' on style, so the author knows what they actually have to address."</p>
+        <p>"I comment on the code, never the person — 'this query will N+1 when the list grows' rather than 'you
+        should know better'. And I ask rather than assert when I'm unsure: 'what happens here if the array is
+        empty?' is better than asserting a bug that might not be one, and it's how I learn the parts of the
+        codebase I don't know."</p>
+        <p>"What I look for, in order: correctness and edge cases, then security — particularly authorisation,
+        since that's the one that's expensive to get wrong — then whether it'll be comprehensible in six
+        months, then performance where it plausibly matters. Style is last and mostly should be automated; if
+        we're arguing about formatting in a review, the linter config is the problem."</p>
+        <p>"Receiving: I try to treat it as free information rather than judgement. If a reviewer misunderstood
+        my code, that's usually a signal it needs clarifying, not that they read it carelessly. And when I
+        disagree, I'd rather move it to a five-minute conversation than have a comment thread go four levels
+        deep — text makes technical disagreement sound sharper than anyone means it."</p>
+        <p>"One thing I'd add — I'm coming from a context where I was often the main person on my own codebase,
+        so I've had less code review than I'd like. That's genuinely part of why I'm looking to join a bigger
+        team."</p>
+      </div>
+      <div class="why">
+        <b>The closing admission is strategic:</b> it turns a real gap in your experience into evidence of
+        self-awareness and a reason you want this job. Interviewers reward that far more than a claim of
+        expertise they can't verify.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv30">
+    <summary>30. What's your biggest weakness?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I've worked mostly as the main person on my own area, so I've had less exposure to other engineers'
+        code and to being reviewed than someone with the same years on a larger team. That shows up as blind
+        spots — patterns I've settled into because they worked, without anyone pushing back on whether there
+        was a better way."</p>
+        <p>"I've tried to compensate deliberately: reading open source in the stack I use, building side
+        projects that force me into unfamiliar territory — the ML service in HR Insight AI was partly that —
+        and asking for review even when nobody required it."</p>
+        <p>"But I'd be honest that it's not fully solved by self-study, and it's one of the main reasons I want
+        to join a team where I'm not the most experienced person on my own codebase. I'd rather be the one
+        learning than the one everyone asks."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> it's a genuine, verifiable-sounding weakness, you've shown initiative on it, and
+        it doubles as your reason for wanting the role. That triple is the strongest structure a weakness answer
+        can have.
+      </div>
+      <div class="dont">
+        <b>Don't say</b> "I'm a perfectionist" or "I take on too much." And don't name a weakness that's core to
+        the job — "I'm not great at debugging" is disqualifying, not humble.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="dv31">
+    <summary>31. How do you keep learning?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"By building things that force me past what I already know. HR Insight AI is the clearest example —
+        I'd never served a machine learning model in production before, so I built the whole thing: feature
+        engineering, XGBoost, a FastAPI inference service, streaming a long-running pipeline over WebSocket.
+        I learn far better from a project with a real failure mode than from a course."</p>
+        <p>"I also deliberately pick up the thing adjacent to what I need rather than only what's required.
+        Kubernetes came from wanting to understand what happened after CI handed off the image, not from
+        someone assigning it."</p>
+        <p>"And I read the documentation and changelogs for the tools I use daily rather than tutorials.
+        Tutorials teach you one path; the docs tell you what the tool is actually for and what its limits are.
+        Most of what I know about Prisma's query behaviour came from that rather than from a blog post."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 7 ===================== -->
+  <h2 id="r7"><span class="num">7</span>Your questions, closing, follow-up</h2>
+
+  <div class="card">
+    <h3>Ask three or four of these</h3>
+    <ul>
+      <li><b>"What does code review look like here? How long does a PR typically wait?"</b> — Tells you about
+      team health more reliably than anything they'll volunteer. Long waits mean an overloaded team.</li>
+      <li><b>"How much of the codebase is legacy, and what's the appetite for paying down technical debt?"</b>
+      — You've done a migration; you have standing to ask. The answer tells you what your year looks like.</li>
+      <li><b>"What happens when production breaks? Is there on-call, and what's the culture around
+      post-mortems?"</b> — "Blameless" in the answer is a genuinely good sign.</li>
+      <li><b>"How do you decide what to build? How close is engineering to the users?"</b> — Plays directly to
+      your background and tells you whether you'll be a ticket-taker.</li>
+      <li><b>"What would I be working on in my first three months?"</b> — If they can't answer specifically,
+      the role isn't well defined.</li>
+      <li><b>"Who would I learn most from on this team?"</b> — Signals you want mentorship, which for a
+      mid-level hire is exactly the right thing to want.</li>
+      <li><b>"How do you handle testing and deployment? What's your rollback story?"</b></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Closing statement</h3>
+    <div class="say">
+      <span class="label">Say this</span>
+      <p>"One thing before we finish. I know my route into engineering is unusual, so I'd point at what I've
+      actually done with it: I rebuilt a legacy platform that a thousand people use daily, I took a production
+      screen from fifty seconds to six by reading the query plan rather than guessing, and I own things end to
+      end from the schema to the Kubernetes deploy."</p>
+      <p>"What I'd add is that I came from the business side, so I tend to ask what a feature is for before I
+      ask how to build it. And I'm looking for a team where I can be around more senior engineers — that's the
+      main thing I'm missing and the main reason I'm here. I'd really like this role."</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Follow-up email — within 24 hours</h3>
+    <pre><code>Subject: Thank you — Full-Stack Developer conversation
+
+Dear [Name],
+
+Thank you for your time today. I enjoyed the [system design discussion /
+conversation about your migration off X] more than I expected to — it's
+exactly the kind of problem I like.
+
+It confirmed my interest in the role. [Specific thing about their stack or
+challenge] lines up closely with what I've been doing at Jumia: rebuilding
+a legacy Retool platform into Next.js, NestJS and Prisma for 1,000+ users,
+and owning it through to Kubernetes.
+
+One thing I'd add on [the question you answered least well]: [two or three
+sentences doing it properly].
+
+My work is at github.com/SyrineLarbi if it's useful — hr-insight-ai is the
+most representative of how I build.
+
+Best regards,
+Syrine Larbi
++216 24 428 833</code></pre>
+  </div>
+
+  <!-- ===================== ROUND 8 ===================== -->
+  <h2 id="r8"><span class="num">8</span>Full mock interview — read out loud</h2>
+
+  <div class="transcript">
+
+    <div class="stage">Round 2 · Senior Engineer · technical interview</div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Your CV says you cut a page load from 50 seconds to 6. Walk me through that. I want the actual detail.</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>The leave-approval screen in our HR platform. Managers were effectively blocked — fifty seconds to load
+      an approval list.</p>
+      <p>I reproduced it first, then isolated the cost to the query fetching the list rather than to rendering
+      or the network. Read the execution plan, and there were three separate problems.</p>
+      <p>Join columns with no supporting index, so full table scans on every load. Tables joined in whose columns
+      were never used in the response — added at some point, nothing depending on them any more. And a SELECT
+      pulling columns the screen never rendered.</p>
+      <p>Added the indexes, dropped the unused joins, narrowed the projection. Fifty to six on the same hardware,
+      and I verified the result set was identical before and after.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Six seconds is still terrible. Why didn't you finish the job?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Agreed, it's not good. The remaining time is dominated by result-set size rather than by a bad plan —
+      the plan is fine now, we're just moving a lot of rows.</p>
+      <p>The next steps would be pagination, and specifically keyset rather than OFFSET, because OFFSET gets
+      worse the deeper you page. Or caching the approval list, or denormalising the two or three hot fields.</p>
+      <p>I stopped because six seconds unblocked the users, and pagination changes how the screen behaves — a
+      manager scanning forty pending requests at once is a different workflow from paging through them. That
+      was a product decision I didn't want to make unilaterally, so I raised it and moved on to the next thing.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Fine. Downside of adding indexes?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Write cost and storage — every insert and update has to maintain them. You take that trade when reads
+      dominate, which they do on an approval screen people load constantly and write to occasionally.</p>
+      <p>I wouldn't apply the same reasoning to a high-write table like an audit log, where I'd be much more
+      conservative about how many indexes I put on it.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Okay. Design question. Order tracking for a marketplace — hundred thousand orders a day, updates from
+      our warehouse and from carriers. Go.</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Couple of questions first. Is this customer-facing, internal operational visibility, or both? And when
+      you say real-time, do you mean seconds or is a couple of minutes acceptable?</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Both audiences. A minute or two is fine.</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Good, that opens things up considerably.</p>
+      <p>Scale first. 100k orders a day, six to ten status events each, so under a million writes a day — call
+      it a dozen a second average, ten times that at peak. That's comfortable for a single well-indexed
+      Postgres primary. Reads are the asymmetric part: customers refresh tracking repeatedly, so ten to a
+      hundred times the write volume, heavily skewed toward recent orders. So this is a read-scaling problem
+      with a very cacheable access pattern, and that's what I'd design around.</p>
+      <p>Components: an ingestion API taking events from warehouse systems and carrier webhooks. I'd acknowledge
+      fast and push onto a queue rather than processing inline — carriers retry aggressively and I don't want a
+      slow write causing a webhook to be considered failed.</p>
+      <p>A worker consumes the queue, validates, maps each carrier's status vocabulary to our canonical set, and
+      writes. That mapping is real work — every carrier names things differently — and I want it normalised at
+      the boundary rather than leaking downstream.</p>
+      <p>Data model: an append-only events table, plus the current status denormalised onto the order.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Why append-only? You're storing a lot of rows you'll never read.</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Three reasons.</p>
+      <p>It gives me the full history, which operations will need — "when did this actually leave the warehouse"
+      is a dispute question I got asked constantly in my previous life running fulfillment, and if you've been
+      overwriting a status field you can't answer it.</p>
+      <p>It makes ingestion idempotent-friendly. Carriers deliver at least once, so duplicates are guaranteed. A
+      natural key of order plus status plus timestamp means a duplicate is detectable rather than corrupting
+      state.</p>
+      <p>And the denormalised current status is derived data, so if it ever drifts I can rebuild it from the
+      log. If the log is the only copy and I overwrite it, I have nothing to recover from.</p>
+      <p>On storage — I'd partition by month and archive old partitions to cold storage. The rows are small and
+      the recent partition is the only hot one.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>What breaks in this design that you haven't mentioned?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Out-of-order events. Carriers genuinely send them late and out of sequence, so an "in transit" event
+      can arrive after "delivered".</p>
+      <p>If I order by arrival time, I'd overwrite a delivered order back to in-transit, and the customer sees
+      their delivered parcel become undelivered. That's a silent data corruption, not an error — nothing throws.
+      So I order by the carrier's event timestamp and I never let an older event overwrite a newer status.</p>
+      <p>The second one is clock skew between carriers, which makes those timestamps not strictly comparable
+      across sources. I'd keep the source on each event and be careful about ordering events from different
+      systems against each other rather than assuming a global ordering exists.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p><i>[writing]</i> Last question. What's the biggest gap in your experience?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>I've mostly been the main person on my own area, so I've had less code review and less exposure to
+      other engineers' code than someone with the same three years on a bigger team. I've compensated where I
+      can — side projects that push me into unfamiliar territory, reading source rather than tutorials — but
+      self-study doesn't replace someone senior telling you there was a better way.</p>
+      <p>That's honestly the main reason I'm looking. I'd rather be the one learning than the one everyone asks.</p>
+    </div>
+
+    <div class="stage">End of segment</div>
+
+  </div>
+
+  <h2><span class="num">9</span>Cheat sheet</h2>
+  <div class="card">
+    <table>
+      <tr><th>They ask</th><th>You say</th></tr>
+      <tr><td>Slow query</td><td>Reproduce → execution plan → indexes on join columns, drop unused joins, narrow projection. 50s → 6s.</td></tr>
+      <tr><td>Still 6 seconds?</td><td>Result-set size, not the plan. Next: keyset pagination, cache, denormalise hot fields.</td></tr>
+      <tr><td>Index downside</td><td>Write throughput and storage. Fine when reads dominate.</td></tr>
+      <tr><td>N+1</td><td>One query per row. Fix with <code>include</code>/<code>select</code>. Find it by logging queries per request.</td></tr>
+      <tr><td>Auth vs authz</td><td>Authn is easy; authz is where the bugs are. Scope at query level, not in the controller.</td></tr>
+      <tr><td>Postgres vs Mongo</td><td>Postgres by default. Schemaless means the schema lives undocumented in your app code.</td></tr>
+      <tr><td>Transactions</td><td>Approve leave = status + balance + audit. All or nothing. Atomic decrement, not read-then-write.</td></tr>
+      <tr><td>Caching</td><td>Fix the query first. Invalidation is the hard part. TTL is crude but honest.</td></tr>
+      <tr><td>Production down</td><td>Assess → roll back → communicate → diagnose → blameless post-mortem.</td></tr>
+      <tr><td>System design opener</td><td>Clarify, estimate out loud, components, data model, then bottlenecks.</td></tr>
+      <tr><td>Weakness</td><td>Less code review than peers; compensating deliberately; it's why I want this team.</td></tr>
+    </table>
+  </div>
+
+  <footer>
+    Developer simulation · built from your Jumia engineering work and GitHub projects ·
+    <a href="index.html">back to Interview Room</a> ·
+    <a href="supply-chain-manager.html">Supply Chain</a> ·
+    <a href="data-analyst.html">Data Analyst</a>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
