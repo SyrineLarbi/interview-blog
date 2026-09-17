@@ -214,6 +214,56 @@ h2 .num {
   margin-top: 12px;
 }
 
+/* course: analogy box */
+.analogy {
+  background: #eef4ff;
+  border: 1px solid #c9dcff;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 13px 15px;
+  margin: 12px 0;
+  font-size: 15px;
+  color: #1c3c6e;
+}
+.analogy .label {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.analogy p { margin: 0 0 9px; }
+.analogy p:last-child { margin-bottom: 0; }
+
+/* course: one-sentence definition */
+.oneline {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 14px 16px;
+  background: #fffdf5;
+  border: 1px solid #ecdfae;
+  border-radius: 8px;
+  margin: 0 0 14px;
+  color: #4a3c10;
+}
+
+/* course: lesson number badge */
+.lesson {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 9px;
+  border-radius: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
 /* fill-in-the-blank placeholder */
 .fill {
   background: #fff3bf;
@@ -370,4 +420,7 @@ footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line);
   :root:not([data-theme="light"]) .q > summary:hover { background: #1c2027; }
   :root:not([data-theme="light"]) .followup { border-color: #423618; color: #e8d5a0; }
   :root:not([data-theme="light"]) .dont { border-color: #4a221e; color: #f3b5af; }
+  :root:not([data-theme="light"]) .analogy { background: #12203a; border-color: #23395e; color: #b9d0f5; }
+  :root:not([data-theme="light"]) .oneline { background: #22200f; border-color: #46401d; color: #ecdca3; }
+  :root:not([data-theme="light"]) .lesson { background: #58a6ff; color: #0f1115; }
 }
