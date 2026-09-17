@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Product Interview</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="home" href="index.html">Interview<span>Room</span></a>
+  <nav>
+    <a href="#r1">Screen</a>
+    <a href="#r2">GenAI</a>
+    <a href="#r3">RAG</a>
+    <a href="#r4">Learning AI</a>
+    <a href="#r5">Arabic</a>
+    <a href="#r6">Metrics</a>
+    <a href="#r7">Responsible AI</a>
+    <a href="#r8">The Case</a>
+    <a href="#r9">Behavioral</a>
+    <a href="#r10">Mock</a>
+  </nav>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="kicker">Role 4 · Stretch role · Full simulation</p>
+    <h1>AI Product Manager / Lead</h1>
+    <p>An AI-powered learning platform. They want product vision, LLM and RAG fluency, learner modeling,
+    knowledge tracing, and someone who can manage other PMs. You don't have the title — so this file is built to
+    win on the intersection you genuinely own: <b>product judgement + engineering + data + AI + native
+    Arabic</b>.</p>
+    <div class="meta">
+      <span><b>38</b> questions</span>
+      <span><b>Diagrams</b> you can whiteboard</span>
+      <span><b>Full</b> design case</span>
+    </div>
+  </div>
+
+  <div class="tools">
+    <button data-action="expand">Expand all</button>
+    <button data-action="collapse">Collapse all</button>
+    <button data-action="print">Print / PDF</button>
+  </div>
+
+  <div class="card">
+    <h3>Read this first — an honest assessment</h3>
+    <p><b>The gap is real.</b> The posting asks for 8+ years of product management and managing other PMs. You
+    have zero years with the title. No script closes that entirely, and if they are strict on it, you won't get
+    this role — that's not a reason to skip the interview, it's a reason to be strategic about which ground you
+    fight on.</p>
+    <p><b>Where you genuinely win:</b></p>
+    <ul>
+      <li><b>You've shipped an AI product end to end.</b> HR Insight AI isn't a chatbot demo — it has user
+      segments, role-based access, an inference service, an LLM layer, a simulation mode and an audit trail.
+      Presented as a product case rather than a project, it beats most PM candidates' AI exposure, which is
+      usually "I wrote the PRD for a feature that used GPT."</li>
+      <li><b>You can talk to ML engineers as a peer.</b> Most AI PMs can't. You've served a model in production,
+      you know what retraining costs, you know why the inference service is separate.</li>
+      <li><b>You have done product work without the title.</b> Killing the outbound-inspection proposal was a
+      prioritisation decision worth real money, made on evidence, against the prevailing view. That is the job.</li>
+      <li><b>Native Arabic, Tunisian.</b> For an Arabic EdTech platform this is close to a cheat code — Maghrebi
+      is the dialect LLMs handle worst, and you can speak to diglossia, code-switching and Arabizi from
+      experience rather than from a paper.</li>
+    </ul>
+    <p><b>Your strategy in one line:</b> don't audition as a generic PM — they have plenty. Audition as
+    <i>the person who can stand between the ML team and the business and be believed by both.</i></p>
+  </div>
+
+  <div class="card">
+    <h3>The 5-question frame — use it for every concept</h3>
+    <p>Don't memorise definitions. For each of <b>LLMs, RAG, agents, recommenders, knowledge tracing,
+    personalisation, evaluation</b>, be able to answer these five out loud in under a minute. Every technical
+    answer in this file is built on this shape, and it's what makes you sound like a PM rather than someone who
+    read a blog post.</p>
+    <table>
+      <tr><th>#</th><th>Question</th><th>Why it matters in the room</th></tr>
+      <tr><td>1</td><td>What problem does it solve?</td><td>Proves you start from the user, not the tech.</td></tr>
+      <tr><td>2</td><td>How does it work, roughly?</td><td>Proves you can brief an engineer.</td></tr>
+      <tr><td>3</td><td>When would I use it — and when not?</td><td>This is the PM question. Anyone can describe RAG; few can say when it's the wrong tool.</td></tr>
+      <tr><td>4</td><td>What goes wrong?</td><td>Separates practitioners from enthusiasts. Always have failure modes ready.</td></tr>
+      <tr><td>5</td><td>How would I measure success?</td><td>The Product Lead question. Never finish an answer without it.</td></tr>
+    </table>
+  </div>
+
+  <!-- ===================== ROUND 1 ===================== -->
+  <h2 id="r1"><span class="num">1</span>Round 1 — The screen and the experience gap</h2>
+
+  <details class="q" id="pm1">
+    <summary>1. Tell me about yourself.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I sit at an intersection that's unusual and, I'd argue, useful for this role: operations and
+        business ownership, engineering, and AI."</p>
+        <p>"I spent nearly five years running end-to-end fulfillment at Jumia for third-party sellers. That's
+        where I learned to own outcomes rather than deliverables — I defined the KPI set the operation was
+        measured on, built the reporting management used to plan and decide, and ran the analysis that changed
+        what we actually did. One example I'd point to: returns were rising and there was a proposal to add an
+        inspection step to every outbound order. I root-cause-coded the returns and found the dominant cause
+        wasn't damage, it was products not matching their listings — concentrated in a handful of sellers. So we
+        killed a programme that would have added cost to every order to address a minority cause, and fixed the
+        listings instead. That's a prioritisation call, and it's the kind of decision I think this job is
+        mostly made of."</p>
+        <p>"The central team then asked me to build an internal help centre for the agents because engineering
+        had no capacity — I'd been studying development alongside the job — and when it shipped they offered me
+        a place on the team. I've spent two and a half years there building internal platforms in TypeScript,
+        NestJS and Next.js."</p>
+        <p>"On AI specifically: I built an attrition-prediction platform end to end — an XGBoost model behind a
+        FastAPI inference service, a NestJS API, role-based access enforced at the query level, LLM-generated
+        executive summaries, and a what-if simulation so HR can model the impact of changing pay or workload
+        rather than just being told a score. The product lesson from that one was that the prediction is the
+        easy part; the hard part is making it actionable and trustworthy for a non-technical user."</p>
+        <p>"And I'm a native Arabic speaker — Tunisian, so Maghrebi dialect — with professional English and
+        French, which I suspect is relevant to a learning platform in this market."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> it never claims the PM title, but it demonstrates three PM behaviours with
+        evidence — owning a metric, killing a bad initiative on data, shipping an AI product with a real
+        user-facing design decision. Ending on Arabic plants the differentiator early.
+      </div>
+      <div class="dont">
+        <b>Don't</b> open with "I'm a full-stack developer." In this room that positions you as an engineer who
+        wants to try product, which is the least useful frame available to you.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm2">
+    <summary>2. This role asks for 8+ years of product management. You haven't been a PM. <span class="tag hard">The decisive question</span></summary>
+    <div class="body">
+      <p><b>Answer this head-on and early.</b> If you let it sit unspoken, every good answer you give afterwards
+      is discounted. Concede cleanly, then reframe onto ground you own.</p>
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"You're right, and I'm not going to argue the number. I haven't held the title for eight years, and
+        if that's a hard requirement then I'd rather we both know that now."</p>
+        <p>"What I'd ask you to weigh is what I've actually done against what the role needs. I've owned
+        outcomes and been accountable for a metric set in front of leadership. I've made prioritisation calls
+        with real money attached and defended them against the prevailing view. I've rolled a process out across
+        sites I had no authority over, which is influence work, not management work. And I've built and shipped
+        an AI product end to end — data model, inference service, LLM layer, access control, the lot."</p>
+        <p>"What I genuinely don't have is years of formal PM craft: running a discovery programme at scale,
+        managing a portfolio of PMs, operating a roadmap across multiple squads. I'd be learning parts of that
+        on the job and I'd want support on it."</p>
+        <p>"Where I'd back myself is the part that's hardest to hire: someone who can sit between an ML team and
+        the business and be believed by both. I can read an evaluation harness and tell you whether the number
+        means anything, and I can explain to a commercial stakeholder why the tutor is wrong 4% of the time and
+        what that costs. Most PM candidates can do one of those. Most engineers can do the other."</p>
+      </div>
+      <div class="followup">
+        <b>Follow-ups to expect:</b>
+        <ul>
+          <li><i>"So why are you applying?"</i> → "Because the job description describes the work I've been
+          drifting toward for three years, and because I'd rather be told no on a role that's right than be
+          comfortable in one that isn't. If the level is wrong but the direction is right, I'd genuinely want
+          to know whether there's a role here a step below this one."</li>
+          <li><i>"Would you consider a Senior PM role instead of Lead?"</i> → <b>Say yes.</b> "Absolutely. I'm
+          optimising for the problem and the team, not the title. If you think the right fit is a level down,
+          I'd take that conversation seriously."</li>
+          <li><i>"How would you manage PMs having never done it?"</i> → See Q37. Have that answer ready; don't
+          improvise it.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> naming what you can't do buys credibility for everything you claim you can. The
+        "believed by both" line is your single strongest sentence in the whole interview — it reframes the
+        hiring decision from "does she have eight years" to "who else can do this."
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm3">
+    <summary>3. Why AI, and why EdTech? <span class="tag">Your authentic answer</span></summary>
+    <div class="body">
+      <p><b>Don't give the generic answer.</b> You have a true one that almost nobody can match, so use it.</p>
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"EdTech first, because I'm the user. I changed career by studying software development in the
+        evenings and weekends while running a warehouse operation full time. I know exactly what adult learning
+        under time pressure feels like — what makes you keep going and what makes you quit at 11pm."</p>
+        <p>"And the thing I remember most clearly is how undifferentiated it was. The course had no idea what I
+        already knew. I sat through material I understood because it was in the sequence, and I got stuck on
+        things where a single well-targeted explanation would have saved me a week. That's not a small
+        inefficiency — for someone studying on top of a full-time job, wasted time is the thing that makes
+        people drop out. That's the problem this kind of product exists to solve, and I've lived the cost of it
+        not being solved."</p>
+        <p>"AI second, because it's the first technology that plausibly delivers the thing education has wanted
+        for decades — one-to-one tutoring at scale. Bloom's work suggested individual tutoring produces
+        dramatically better outcomes than classroom instruction; the reason we don't do it is economics, not
+        pedagogy. LLMs change that cost curve. I'd add that I'm not naive about it — a model that's confidently
+        wrong in front of a student is worse than no tutor, and that's the product problem, not the model
+        problem."</p>
+        <p>"And in this region specifically, the access gap is real. I'm Tunisian. Quality tutoring is a
+        function of what your family can afford, and that's true across the whole of MENA. A product that closes
+        even part of that is one I'd be glad to spend years on."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> it's true, it's specific, and it's personal without being sentimental. The
+        "I know what makes you quit at 11pm" line is the kind of thing an interviewer repeats to the panel
+        afterwards. Mentioning Bloom's 2-sigma finding signals you've read the field, and immediately
+        qualifying it stops you sounding like a hype merchant.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm4">
+    <summary>4. Walk me through an AI product you've built. <span class="tag">Present it as a product case</span></summary>
+    <div class="body">
+      <p><b>Critical:</b> tell HR Insight AI as a <i>product case</i>, not an engineering project. Problem →
+      user → decision → solution → architecture → metrics → what you'd change. Never say "I built a website."</p>
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"<b>The problem.</b> I'd worked on HR systems and the pattern was always the same: the organisation
+        had the data to see attrition coming and no way to act on it. By the time someone resigned, the decision
+        had been made weeks earlier. So the problem wasn't prediction — it was that nobody could do anything
+        with a prediction."</p>
+        <p>"<b>The users.</b> Four distinct ones, which drove most of the design. An HR manager wants to know who
+        is at risk and what it would cost to retain them. A team manager wants their own team, and must not see
+        anyone else's. An admin needs configuration and audit. A viewer needs read-only reporting. Those are
+        different products sharing a data layer, and treating them as one would have failed all four."</p>
+        <p>"<b>The key product decision.</b> A risk score alone is useless and slightly hostile — it tells a
+        manager someone might leave and leaves them with nothing to do. So I built a what-if simulation:
+        adjust engagement, overtime, pay, promotion cadence or training, and see the modelled effect on
+        attrition risk. That converts the product from a prediction into a decision tool, which is the whole
+        difference between something people look at once and something they use."</p>
+        <p>"<b>The architecture.</b> NestJS API with Postgres as the system of record, a separate Python FastAPI
+        service serving an XGBoost model, and a Next.js dashboard. The model is a separate service deliberately
+        — different deployment cadence, different dependencies, and if inference is down the rest of the
+        platform still works. Report generation is a six-stage pipeline that streams progress over WebSocket,
+        because it takes long enough that a spinner would read as broken. And an LLM generates the executive
+        summary from model output, because a non-technical user needs prose, not feature importances."</p>
+        <p>"<b>The trust layer.</b> For a product that makes claims about named employees, this was the part I
+        spent most on. Four-role access control enforced at the query level rather than in the controller — a
+        team manager cannot construct a request that returns another team. Every mutating action audit-logged
+        with actor, entity and IP. I chose XGBoost over a neural network partly for performance on tabular data
+        and partly for feature importance: an unexplainable score about someone's career isn't acceptable."</p>
+        <p>"<b>What I'd do differently.</b> I didn't version the models or store which version produced each
+        prediction, so a prediction from three months ago isn't reproducible. For anything affecting people's
+        careers that's a real governance gap and it would be the first thing I'd fix."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> every section is a product decision with a reason, not a technology. The what-if
+        simulation is the standout — it's exactly the "prediction versus decision" instinct they're hiring for.
+        Volunteering the model-versioning gap is a responsible-AI signal that costs you nothing and buys a lot.
+      </div>
+      <div class="followup">
+        <b>If they ask "was it used in production?"</b> — be straight: <i>"HR Insight AI is my own project, not
+        a deployed company system — I'd rather be clear about that. The platform I did ship to production is
+        Jumia's internal HR system, used by over a thousand employees, where I rebuilt a legacy low-code app
+        into a real application and took one critical screen from a fifty-second load to six seconds."</i>
+        Never let them discover the distinction themselves.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm5">
+    <summary>5. What are your salary expectations?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Deflect, then anchor on scope</span>
+        <p>"I'd want to understand the level first, given we've discussed that my background isn't a standard
+        eight-year PM track. If the role lands as Lead the band is different from Senior PM, and I'd rather
+        agree the scope and then talk numbers. What range have you budgeted?"</p>
+      </div>
+      <div class="say">
+        <span class="label">If pressed</span>
+        <p>"For a senior AI product role I'd be looking at <span class="fill">[X] to [Y]</span>. I'd note I'm
+        bringing the technical depth and the Arabic-market context rather than eight years of formal PM
+        practice, so I'm realistic that the right number might sit below the top of your band — I'm more
+        interested in the problem and the team than in maximising the offer."</p>
+      </div>
+      <div class="followup">
+        <b>Remote / location:</b> flag it early. "I'm based in Tunis — is this role open to full remote, and is
+        the band quoted for my location or globally?" A mismatch here wastes four rounds.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 2 ===================== -->
+  <h2 id="r2"><span class="num">2</span>Round 2 — Generative AI fundamentals</h2>
+  <p class="section-note">The test is whether you can discuss these as a PM — trade-offs, failure modes, cost —
+  rather than reciting definitions. Every answer should end at "and here's how I'd measure it."</p>
+
+  <details class="q" id="pm6">
+    <summary>6. Explain how an LLM application actually works.</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Draw this, then talk</span>
+      </div>
+      <pre><code>User input
+    ↓
+Application layer  ── input validation · PII stripping · rate limiting
+    ↓
+Context assembly   ── system prompt + retrieved content + conversation
+                      history + learner profile
+    ↓
+LLM inference      ── model choice · temperature · max tokens
+    ↓
+Output layer       ── safety filter · citation check · format validation
+    ↓
+Response to user
+    ↓
+Logging & evaluation ── traces · user feedback · offline eval set</code></pre>
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"The thing I'd emphasise as a PM is that the model is one box in the middle, and almost every
+        product decision lives in the boxes around it. What goes into context, what we're allowed to send,
+        what we check before it reaches the user, and what we log so we can tell whether it's working — that's
+        the product. Swapping the model is often the least consequential change you can make."</p>
+        <p>"The constraints I'd hold in mind at all times: it's non-deterministic, so the same input can give
+        different outputs and your QA strategy has to account for that. It has a context limit, so you're
+        always deciding what to include. It costs money per token in both directions. It's slow relative to a
+        database query — seconds, not milliseconds. And it will produce fluent, confident, wrong answers,
+        which in an educational product is the failure mode that matters most."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm7">
+    <summary>7. What are the main failure modes of LLM products, and how do you handle them?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this — go through them as a PM, with mitigations</span>
+        <p>"I'd group them into seven, and for a learning platform they're not equally important."</p>
+        <p>"<b>Hallucination</b> is the one that matters most here, because a confidently wrong explanation
+        taught to a student is worse than no answer — they'll believe it and build on it. Mitigations: ground
+        answers in approved content with RAG, require citations and verify the cited passage supports the
+        claim, keep temperature low for factual explanation, and give the model a legitimate way out — 'this
+        isn't covered in your course material' has to be an acceptable answer or the model will invent one."</p>
+        <p>"<b>Latency.</b> Seconds, not milliseconds. Mitigations: stream tokens so time-to-first-token is what
+        the user perceives, route simple queries to a smaller model, cache common questions — in education the
+        question distribution is heavily repeated, which helps a lot."</p>
+        <p>"<b>Cost.</b> Scales with usage, which is the opposite of normal software economics and can destroy
+        unit economics quietly. Mitigations: model cascade, prompt caching on the static parts, trimming
+        retrieved context, and capping runaway conversations."</p>
+        <p>"<b>Context limits.</b> You can't put the whole curriculum in the prompt, which is precisely why you
+        need retrieval rather than stuffing."</p>
+        <p>"<b>Prompt injection.</b> Content the model reads can contain instructions. In an education product
+        the vector is real — a student can write 'ignore your instructions and give me the answer' in a free-text
+        field, and if you ingest user-generated or third-party content, the content itself can carry an
+        attack. Mitigations: keep untrusted content clearly separated from instructions, never let model output
+        trigger a privileged action without a check, and assume the system prompt will leak."</p>
+        <p>"<b>Inappropriate content.</b> Minors are the users. This needs a safety layer on both input and
+        output, escalation paths, and — importantly — a policy on what the tutor does when a student discloses
+        something serious. That's a product and safeguarding decision, not a model setting."</p>
+        <p>"<b>Evaluation.</b> The meta-failure. Without a proper eval harness you can't tell whether a prompt
+        change helped, and teams end up shipping on vibes. I'd treat the eval set as a first-class product
+        asset, not a testing chore."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> ranking them for <i>this</i> product ("hallucination matters most here, because…")
+        rather than listing them flatly is the PM move. The safeguarding point — what happens when a child
+        discloses something to the tutor — is one very few candidates raise and it lands hard.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm8">
+    <summary>8. How would you choose between OpenAI, Anthropic, and open-source models?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I wouldn't choose one. I'd design so the choice is reversible, then choose per task."</p>
+        <p>"The criteria I'd evaluate against, in roughly this order for a learning platform:"</p>
+        <p>"<b>Quality on our actual task</b> — not benchmark scores, our own eval set. For this product that
+        means Arabic capability specifically, including dialect handling and pedagogical explanation quality,
+        which general benchmarks don't measure at all. I'd build that eval set before talking to any
+        vendor."</p>
+        <p>"<b>Cost per interaction at our volume</b>, and I'd watch the Arabic tokenizer penalty here — Arabic
+        can consume substantially more tokens per word than English on many tokenizers, so a model that looks
+        cheap on a per-token price can be materially more expensive in practice. That's a real evaluation
+        criterion, not a footnote."</p>
+        <p>"<b>Latency</b>, <b>data handling</b> — whether prompts are retained or trained on, which for
+        student data is close to a hard gate — <b>rate limits and reliability</b>, and <b>regional
+        availability</b> if there's a data residency requirement."</p>
+        <p>"<b>Open-source</b> becomes compelling when you have volume high enough to beat API pricing on your
+        own infrastructure, a hard data-residency requirement, or a need to fine-tune deeply. The honest cost is
+        that you take on serving, scaling, evaluation and an ML-ops burden most teams underestimate. I wouldn't
+        start there — I'd start on an API, learn what the product actually needs, and revisit once volume makes
+        the economics obvious."</p>
+        <p>"Architecturally I'd insist on an abstraction layer from day one so switching is a configuration
+        change, and I'd route by task: a small cheap model for classification and routing, a strong model for
+        explanation and generation. That's usually a large cost saving for no quality loss on the easy paths."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> "I'd build our own eval set before talking to a vendor" is the sentence that
+        marks you as someone who has done this. The Arabic tokenizer point is a genuinely sharp, market-specific
+        observation that most candidates won't have.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm9">
+    <summary>9. How would you control LLM costs at scale?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"First I'd make the unit economics visible, because most teams can't answer 'what does one student
+        cost us per month' and that's the number the whole business depends on. Cost per interaction, cost per
+        active learner per month, and how that trends against the revenue per learner. If cost per learner grows
+        with engagement and revenue doesn't, we have a product that gets worse as it succeeds."</p>
+        <p>"Then the levers, cheapest first."</p>
+        <p>"<b>Model routing.</b> Most requests don't need the strongest model. Classification, routing,
+        short-answer grading, formatting — small model. Explanation and generation — strong model. Often a
+        large share of traffic can move down a tier with no measurable quality loss, and that's the single
+        biggest lever."</p>
+        <p>"<b>Caching.</b> Two kinds. Prompt caching on the static prefix — system prompt, curriculum context —
+        which most providers support and which cuts input cost substantially. And semantic caching of full
+        answers, which works unusually well in education because thousands of students ask near-identical
+        questions about the same lesson."</p>
+        <p>"<b>Context discipline.</b> Retrieval quality directly drives cost — retrieving 20 chunks when 4
+        would do is paying five times for the same answer, and often getting a worse one because of the noise.
+        Better retrieval is cheaper <i>and</i> better, which is a rare combination."</p>
+        <p>"<b>Truncating conversation history</b> rather than resending everything, and summarising long
+        sessions."</p>
+        <p>"<b>Guardrails on abuse</b> — per-user rate limits and caps, because a small number of users will
+        otherwise generate a disproportionate share of spend."</p>
+        <p>"And one thing I'd resist: cutting cost by degrading the tutor for everyone. I'd rather cap the
+        heaviest users and keep quality high for the median, because quality is the product."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm10">
+    <summary>10. What are AI agents, and would you use them here?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"An agent is an LLM given tools and a loop — it can decide to call a function, read the result, and
+        decide what to do next, rather than producing one response. The distinction that matters is autonomy:
+        a workflow is a path you designed with a model at some steps; an agent chooses its own path."</p>
+        <p>"<b>Where I'd use an agentic workflow in a learning platform:</b> content generation pipelines —
+        draft an exercise, check it against the curriculum, verify the answer key by solving it independently,
+        flag for human review. Grading workflows where the model retrieves the rubric, evaluates, and cites the
+        specific criterion. A study-planning assistant that reads the learner model, queries the content
+        catalogue and proposes a schedule."</p>
+        <p>"<b>Where I would not:</b> anywhere autonomous and student-facing with no human in the loop. An agent
+        that can take multiple unsupervised steps in front of a child, in an educational context, is a risk I
+        can't justify against the benefit. The failure modes compound — one bad step becomes a bad plan."</p>
+        <p>"My general position is that most things people call agents are better built as constrained
+        workflows: you get most of the capability with far more predictability, and you can actually evaluate
+        them. Evaluating a free-roaming agent is genuinely hard because the trajectory differs every run, and
+        if I can't evaluate it I can't ship it to students."</p>
+        <p>"If I did ship one, I'd want: a step budget, tool permissions scoped tightly, full trace logging,
+        and a human checkpoint before anything reaches a learner."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> declining to use the fashionable technology, with a clear reason, is a stronger
+        signal than enthusiasm for it. "If I can't evaluate it I can't ship it to students" is a line worth
+        landing.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 3 ===================== -->
+  <h2 id="r3"><span class="num">3</span>Round 3 — RAG (know this cold)</h2>
+  <p class="section-note">Expect to draw this on a whiteboard. Practise sketching it from memory until it takes
+  under a minute.</p>
+
+  <details class="q" id="pm11">
+    <summary>11. Draw and explain a RAG pipeline. <span class="tag">Whiteboard this</span></summary>
+    <div class="body">
+      <pre><code>┌─ INGESTION (offline, runs when content changes) ─────────────┐
+│                                                              │
+│  Approved educational content                                │
+│  (lessons · textbooks · worked examples · past questions)    │
+│         ↓                                                    │
+│  Chunking          — split into retrievable units,           │
+│                      respecting lesson/section boundaries    │
+│         ↓                                                    │
+│  Embedding model   — each chunk → vector                     │
+│         ↓                                                    │
+│  Vector database   — stored with metadata:                   │
+│                      subject · grade · language · curriculum │
+│                      node · difficulty · source              │
+└──────────────────────────────────────────────────────────────┘
+
+┌─ SERVING (online, per student question) ─────────────────────┐
+│                                                              │
+│  Student question + learner profile                          │
+│         ↓                                                    │
+│  Query processing  — rewrite, translate dialect → MSA,       │
+│                      expand with curriculum context          │
+│         ↓                                                    │
+│  Retrieval         — hybrid: keyword (BM25) + vector,        │
+│                      FILTERED by grade / subject / language  │
+│         ↓                                                    │
+│  Re-ranking        — cross-encoder picks the best 3–5        │
+│         ↓                                                    │
+│  Prompt assembly   — system prompt (pedagogy rules)          │
+│                      + retrieved chunks + learner level      │
+│         ↓                                                    │
+│  LLM                                                         │
+│         ↓                                                    │
+│  Safety & citation check — claims supported by sources?      │
+│                            age-appropriate? on-curriculum?   │
+│         ↓                                                    │
+│  Response + citations → student                              │
+│         ↓                                                    │
+│  Logging → eval set, feedback, retrieval-quality metrics     │
+└──────────────────────────────────────────────────────────────┘</code></pre>
+      <div class="say">
+        <span class="label">Say this while you draw</span>
+        <p>"Two halves — ingestion offline, serving online. The part I'd emphasise as a PM is the metadata
+        filter at retrieval. In education you must never retrieve a grade-11 explanation for a grade-8 student,
+        or content from a curriculum they're not following. That's a filter before the semantic search, not
+        something you hope the ranking handles."</p>
+        <p>"And the re-ranking step earns its place: initial retrieval is optimised for recall, re-ranking for
+        precision. Sending five good chunks instead of twenty mediocre ones is cheaper, faster and produces a
+        better answer."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm12">
+    <summary>12. Why RAG instead of just prompting the model?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Four reasons, and they're all product reasons rather than technical ones."</p>
+        <p>"<b>Trust and correctness.</b> The platform needs answers grounded in our approved curriculum, not in
+        whatever the model absorbed during pretraining. A model's own knowledge can be outdated, wrong for our
+        syllabus, or right in general but taught with a method the student hasn't learned yet — which is its
+        own kind of wrong in education."</p>
+        <p>"<b>Currency without retraining.</b> Curriculum changes, textbooks get updated, exam formats change.
+        With RAG that's re-indexing content, which is hours. With a fine-tuned model it's a training cycle."</p>
+        <p>"<b>Citations.</b> We can show the student which lesson the answer came from, which lets them verify
+        and go deeper — and it lets teachers trust the system. Citation is a pedagogical feature, not just an
+        audit trail."</p>
+        <p>"<b>Access control.</b> Retrieval is filterable. A student only ever sees content for their grade,
+        their curriculum, their language, their entitlement. You cannot implement that inside a model's
+        weights."</p>
+        <p>"The product considerations I'd manage alongside it: retrieval quality is now a metric I own —
+        if retrieval is bad, the best model in the world gives a bad answer, and teams misdiagnose that as a
+        model problem constantly. Then hallucination rate <i>despite</i> grounding, latency added by the
+        retrieval hop, token cost from the added context, citation accuracy, and access-control correctness."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> "if retrieval is bad, the best model gives a bad answer, and teams misdiagnose
+        that as a model problem" is the insight of someone who has debugged one of these. Say it.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm13">
+    <summary>13. When would you fine-tune instead of using RAG?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"They solve different problems and the framing I'd use is: <b>RAG gives the model knowledge.
+        Fine-tuning gives it behaviour.</b>"</p>
+        <p>"<b>RAG</b> for anything factual, changing, citable or access-controlled — the curriculum content
+        itself."</p>
+        <p>"<b>Fine-tuning</b> for consistent form rather than facts. In this product that would be: a
+        consistent pedagogical style — Socratic questioning rather than giving the answer away, which is
+        surprisingly hard to hold with prompting alone across long conversations. Structured output for grading
+        against a rubric. Arabic dialect handling, where a base model is weak and you have examples. And
+        cost or latency reduction — fine-tuning a small model on a narrow task can match a large model at a
+        fraction of the price."</p>
+        <p>"They compose. The realistic architecture is a fine-tuned model for the tutoring style, retrieving
+        from the curriculum. Not either/or."</p>
+        <p>"What I'd insist on before approving a fine-tune: do we have enough high-quality examples, typically
+        thousands and they must be <i>good</i> examples — fine-tuning on mediocre tutoring produces a reliably
+        mediocre tutor. Do we have an eval set to prove it improved anything. And who owns retraining when the
+        base model is deprecated, because that's a recurring cost people sign up for without noticing."</p>
+        <p>"In practice I'd exhaust prompting and retrieval first. Most problems people try to fine-tune away
+        are prompt or retrieval problems, and fine-tuning is the most expensive way to discover that."</p>
+      </div>
+      <div class="why">
+        <b>Memorise the one-liner:</b> "RAG gives the model knowledge, fine-tuning gives it behaviour." It's
+        the cleanest possible answer and it will be quoted back to you.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm14">
+    <summary>14. How would you measure whether retrieval is working?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'd separate retrieval metrics from generation metrics, because if you only measure the final answer
+        you can't tell whether a bad response was a retrieval failure or a model failure — and those have
+        completely different fixes."</p>
+        <p>"<b>Retrieval:</b> build a golden set of questions with the correct source passages labelled by
+        subject-matter experts, then measure recall at k — did the right chunk appear in the top k — and
+        precision, how much of what we retrieved was actually relevant. Recall at k is the one I'd watch
+        hardest, because if the right content isn't retrieved, nothing downstream can save it."</p>
+        <p>"<b>Grounding:</b> of the claims in the answer, what proportion are supported by the retrieved
+        passages? That's the direct measure of hallucination under RAG and it can be evaluated with a model
+        judge validated against human labels."</p>
+        <p>"<b>Citation accuracy:</b> does the cited source actually support the sentence it's attached to? A
+        confident citation pointing at the wrong passage is worse than no citation, because it manufactures
+        trust."</p>
+        <p>"<b>Coverage and refusal:</b> how often do we have nothing good to retrieve? That's not a failure —
+        it's a content gap, and it's one of the most valuable outputs of the whole system. A ranked list of
+        questions students ask that our curriculum doesn't answer is a content roadmap I'd hand straight to the
+        pedagogy team."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> turning retrieval failures into a content roadmap is a product insight, not an
+        engineering one. It shows you'd extract business value from a technical metric.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 4 ===================== -->
+  <h2 id="r4"><span class="num">4</span>Round 4 — Learning-specific AI</h2>
+  <p class="section-note">This is where they separate candidates. Generic AI PMs know RAG; very few know
+  knowledge tracing. Own this section.</p>
+
+  <details class="q" id="pm15">
+    <summary>15. What is a learner model and what goes in it?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"It's the system's evolving belief about what a student knows, how they learn, and what they should
+        do next. Everything adaptive depends on it — without it, 'personalised' means recommending by popularity
+        or by whatever they clicked last."</p>
+      </div>
+      <pre><code>LEARNER MODEL
+├── Mastery per concept      probability they've mastered each curriculum node
+│                            (not a score — a belief, with uncertainty)
+├── Prerequisite state       which upstream concepts are shaky
+├── Learning rate            how many attempts they typically need
+├── Error patterns           the specific misconceptions, not just "wrong"
+├── Forgetting curve         when each concept needs review
+├── Engagement signals       session length, time of day, drop-off points
+├── Preferences              video vs text vs worked example — what works for them
+└── Affective state          frustration / boredom signals (hesitantly — see below)</code></pre>
+      <div class="say">
+        <span class="label">Then make these three points</span>
+        <p>"<b>Mastery is a belief, not a score.</b> 'You got 60%' is a measurement of the past. 'We're 60%
+        confident you've mastered this' is a prediction about the future, and it's the second one that lets you
+        decide what to teach next. The distinction sounds academic and it drives the entire architecture."</p>
+        <p>"<b>Error patterns are the most underused field.</b> Knowing a student got a question wrong is
+        low-information. Knowing they consistently make a specific mistake — say, sign errors when moving terms
+        across an equals sign — lets you target the actual misconception rather than re-teaching the whole
+        topic. That requires distractors in your question bank to be designed diagnostically, which is a
+        content decision, not a model decision. I'd push hard on that early because it's very expensive to
+        retrofit."</p>
+        <p>"<b>On affective state</b> — inferring frustration or boredom is technically possible and I'd be
+        cautious with it. It's a step toward emotional inference about minors, so I'd want a clear purpose, a
+        privacy review, and probably a simpler design: just ask them. A 'this is too hard' button is more
+        accurate, more transparent and more respectful than a model guessing."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> the mastery-as-belief point is the conceptual core of adaptive learning and
+        stating it crisply signals you understand the field. Declining to infer emotions from children is a
+        responsible-AI position that will be noticed.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm16">
+    <summary>16. How do you determine whether a student has mastered a concept? <span class="tag">Knowledge tracing</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Not with a percentage score, which is the naive answer and it's wrong in an instructive way."</p>
+        <p>"If a student answers four questions — right, right, wrong, wrong — a score says 50%. But the
+        <i>sequence</i> matters enormously. Right-right-wrong-wrong and wrong-wrong-right-right are the same
+        score and opposite stories: one is a student who lost the thread or hit harder items, the other is a
+        student who just learned it. Also, questions differ in difficulty, and a student can get something right
+        by guessing or wrong by a careless slip despite knowing it."</p>
+        <p>"So the problem is estimating a latent variable — probability of mastery — from noisy, ordered
+        evidence. That's knowledge tracing."</p>
+      </div>
+      <table>
+        <tr><th>Approach</th><th>How it works</th><th>Trade-off</th></tr>
+        <tr>
+          <td><b>Bayesian Knowledge Tracing</b></td>
+          <td>Hidden Markov model per skill with four parameters: prior knowledge, learn rate, guess rate, slip
+          rate. Updates belief after each answer.</td>
+          <td>Interpretable, cheap, works on little data, easy to explain to teachers. Assumes one skill per
+          question and no forgetting.</td>
+        </tr>
+        <tr>
+          <td><b>Item Response Theory</b></td>
+          <td>Models student ability and item difficulty on the same scale.</td>
+          <td>Excellent for assessment and adaptive testing. Not really a model of learning over time.</td>
+        </tr>
+        <tr>
+          <td><b>Deep Knowledge Tracing</b></td>
+          <td>An RNN/LSTM over the whole interaction sequence.</td>
+          <td>Handles multi-skill items and captures cross-concept relationships. Needs a lot of data and is
+          hard to explain — a real problem when a parent asks why their child was marked not-mastered.</td>
+        </tr>
+        <tr>
+          <td><b>Attention / transformer-based</b> (SAKT, AKT)</td>
+          <td>Attention over past interactions — which earlier items are relevant to this one.</td>
+          <td>Best accuracy on large datasets; most data-hungry and least interpretable.</td>
+        </tr>
+      </table>
+      <div class="say">
+        <span class="label">Then give the PM answer — this is the part they're testing</span>
+        <p>"What I'd actually do: start with Bayesian Knowledge Tracing, or even an Elo-style rating, and not
+        because it's the most accurate. Three reasons. It works at low data volume, and at launch we have no
+        data. It's interpretable, so we can explain to a student, a teacher or a parent why the system thinks
+        what it thinks — which is a product requirement, not a nice-to-have. And it gives us the labelled
+        interaction data we'd need to train anything deeper later."</p>
+        <p>"I'd move to a deep model when we have the volume and when we can demonstrate the accuracy gain
+        translates into a better <i>learning outcome</i>, not just a better AUC on held-out predictions. Those
+        are not the same thing, and it's an easy trap — a model that predicts the next answer better doesn't
+        automatically teach better."</p>
+        <p>"I'd also add forgetting from the start, which classic BKT ignores. Mastery decays. A spaced-repetition
+        schedule layered on top is often a bigger win for retention than a more sophisticated tracer."</p>
+      </div>
+      <div class="why">
+        <b>This is your single best differentiating answer.</b> Choosing the simpler model for interpretability
+        and cold-start reasons, and separating "better prediction" from "better learning", is exactly the
+        judgement an AI Product Lead is hired for.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm17">
+    <summary>17. How would you build a recommendation system for learning content?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Open with the key distinction</span>
+        <p>"Learning recommendation is not content recommendation, and confusing them is the main way these
+        products fail. Netflix optimises for what you'll engage with. A learning platform that optimises for
+        engagement will serve easy, satisfying content and students will feel great and learn nothing. The
+        objective is mastery, and the right recommendation is frequently the thing the student would <i>not</i>
+        choose."</p>
+      </div>
+      <div class="say">
+        <span class="label">Then the architecture</span>
+        <p>"I'd build it as constrained optimisation rather than as a pure ML ranker:"</p>
+      </div>
+      <pre><code>CANDIDATE GENERATION
+   ├── prerequisite graph  — what is this student now eligible for?
+   ├── weak concepts       — mastery below threshold
+   └── review due          — spaced repetition schedule says revisit
+
+              ↓  (hard constraints applied here)
+
+FILTERING
+   ├── prerequisites satisfied?   never recommend what they can't access
+   ├── grade / curriculum match
+   └── already mastered + not due → drop
+
+              ↓
+
+RANKING
+   ├── expected learning gain     ← the objective
+   ├── difficulty targeting       ← zone of proximal development
+   ├── exam / deadline proximity
+   └── variety and format preference
+
+              ↓
+
+EXPLORATION  — bandit: occasionally try something uncertain,
+               because otherwise you never learn what works
+
+              ↓
+
+EXPLAIN IT   — "Recommended because you struggled with X"</code></pre>
+      <div class="say">
+        <span class="label">Close with these three points</span>
+        <p>"<b>Difficulty targeting is the core of it.</b> Content should be hard enough to require effort and
+        easy enough to succeed — roughly a 70 to 85% success rate is the range usually cited for productive
+        struggle. Too easy is boredom and no learning; too hard is failure and quitting. That target is a
+        product parameter I'd want to tune empirically per subject."</p>
+        <p>"<b>The prerequisite graph is a content asset, not a model output.</b> Someone has to define that
+        algebra comes before quadratics. That's expert curriculum work and it's the highest-leverage,
+        least-glamorous investment in the whole system. I'd fund it early, because every adaptive feature
+        depends on it and no amount of ML substitutes for it."</p>
+        <p>"<b>Explainability is a feature.</b> 'Recommended because you missed two questions on fractions last
+        week' builds trust and teaches the student something about their own learning. An unexplained
+        recommendation feels arbitrary and gets ignored."</p>
+        <p>"And cold start: a new student has no history, so I'd use a short diagnostic placement, curriculum
+        defaults by grade, and adapt fast in the first sessions rather than demanding a long assessment before
+        anyone can start. Making a child take a 45-minute test before their first lesson is a product failure
+        even if it's statistically ideal."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm18">
+    <summary>18. How would you build an AI tutor from scratch? <span class="tag">The signature question</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Open exactly like this</span>
+        <p>"I wouldn't start with the model. I'd start with what good tutoring actually is, because if we get
+        that wrong we'll build a very fast way of giving students answers, which is the opposite of the
+        product."</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 1 — define the behaviour</span>
+        <p>"The single most important product decision: <b>the tutor must not give answers</b>. A human tutor
+        asks what you've tried, finds the misconception, gives a hint, and lets you complete the step. If our
+        tutor solves the homework, we've built a cheating tool that measurably reduces learning while looking
+        extremely impressive in a demo."</p>
+        <p>"So the target behaviour is Socratic: diagnose first, hint progressively, escalate to a worked
+        example only after genuine effort, and always hand the final step back to the student. That's a
+        pedagogical specification, and I'd write it with learning specialists, not with engineers."</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 2 — define inputs</span>
+        <p>"The tutor needs: the student's question, the learner model — current mastery, recent errors, grade
+        level — the specific curriculum context they're working in, and the approved content it's allowed to
+        draw on. Without the learner model it's a chatbot; with it, it's a tutor, because it can pitch the
+        explanation at the right level and reference what they got wrong last week."</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 3 — architecture</span>
+      </div>
+      <pre><code>Student message
+      ↓
+Intent classification (small model)
+   ├── "solve this for me"  → redirect to Socratic path
+   ├── conceptual question  → explain
+   ├── stuck on a step      → hint
+   └── off-topic / safety   → handle separately
+      ↓
+Retrieve: approved content (RAG) + learner profile + curriculum node
+      ↓
+Generate: pedagogy system prompt + retrieved content + learner level
+      ↓
+Guard: grounded? age-appropriate? gives the answer away? on-syllabus?
+      ↓
+Respond with citation
+      ↓
+Log: interaction → learner model update → eval pipeline</code></pre>
+      <div class="say">
+        <span class="label">Step 4 — how you'd measure it (never skip this)</span>
+        <p>"Three layers. <b>Response quality</b> — grounding rate, citation accuracy, and expert-rated
+        pedagogical quality on a sampled set, because 'is this good tutoring' cannot be measured automatically
+        at first. <b>Behavioural</b> — does the student complete the problem themselves afterwards, do they
+        return, does hint depth decrease over time. And <b>learning</b>, which is the only one that really
+        matters: mastery gain and retention for students who used the tutor versus a matched group who
+        didn't."</p>
+        <p>"The metric I'd specifically watch as a warning sign is a rise in engagement with a flat or falling
+        learning gain. That's the signature of a tutor that's become pleasant and useless."</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 5 — how you'd ship it</span>
+        <p>"Narrow first. One subject, one grade, one language, with human review of a sample of transcripts
+        daily at launch. An AI tutor is a product where the cost of being wrong is borne by a child, so I'd
+        rather be slow across subjects and confident within one. Expand when the eval numbers hold."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> "if our tutor solves the homework we've built a cheating tool that looks
+        impressive in a demo" is the best single line available on this question — it demonstrates product
+        judgement, pedagogical understanding and scepticism about demos in one sentence.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm19">
+    <summary>19. How would you handle automated grading of open-ended answers?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'd segment by stakes first, because that determines everything else."</p>
+        <p>"<b>Low stakes — formative practice.</b> Automated feedback is fine and genuinely valuable, because
+        the alternative is no feedback at all. Speed matters more than perfection; a student gets a response in
+        seconds instead of a week."</p>
+        <p>"<b>High stakes — anything that affects a grade, a placement or a certificate.</b> Human in the loop,
+        without exception. AI proposes a score and a justification against the rubric; a teacher confirms. The
+        value is a large reduction in marking time, not the removal of the teacher, and I'd be explicit about
+        that framing internally and externally."</p>
+        <p>"<b>How I'd build it:</b> the rubric is the product. Retrieve the rubric and exemplar answers at
+        each score band, have the model evaluate criterion by criterion with a justification and a quote from
+        the student's answer, and return a per-criterion breakdown rather than a single number. That's better
+        feedback for the learner and it makes the grade auditable."</p>
+        <p>"<b>How I'd validate it:</b> against human graders, and I'd measure agreement the way education
+        research does — not just exact match but adjacent agreement, and I'd hold it to at least the level of
+        inter-rater agreement between two humans. If two teachers disagree 15% of the time, demanding 99% from
+        the model is the wrong bar. That framing is usually what makes the conversation with academic
+        stakeholders productive."</p>
+        <p>"<b>What I'd watch for:</b> bias — whether scores differ systematically by dialect, by non-native
+        phrasing, by answer length, or by handwriting quality if OCR is involved. That's a mandatory
+        pre-launch analysis, not a monitoring nice-to-have. In an Arabic context specifically I'd test whether
+        answers written in dialect-influenced MSA are marked down for language when the question was about
+        science."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> the inter-rater agreement benchmark is a sophisticated, field-specific standard.
+        The dialect bias test is one almost no candidate will raise, and it's a genuine risk in this market.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm20">
+    <summary>20. How would you generate practice questions automatically?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Generation is the easy half; validation is the product. An LLM will produce a hundred plausible
+        questions in a minute and a meaningful share will be subtly broken — ambiguous phrasing, two defensible
+        answers, a distractor that's actually correct, or an answer key that's simply wrong."</p>
+        <p>"So the pipeline I'd build has generation as one step in five:"</p>
+      </div>
+      <pre><code>1  Generate      from a curriculum node + target difficulty + question type
+2  Self-solve    independently solve it with a separate call — does the model
+                 reach the stated answer key? Disagreement → reject
+3  Rule checks   exactly one correct option · distractors plausible but wrong ·
+                 no answer leakage in the stem · reading level appropriate ·
+                 no duplicate of an existing item
+4  Human review  subject expert approves — mandatory before first use
+5  Calibrate     once live, measure real difficulty (p-value, discrimination).
+                 Items nobody gets right, or everybody does, get pulled.</code></pre>
+      <div class="say">
+        <span class="label">Then close on this</span>
+        <p>"Step 5 is the one people forget and it's the most valuable. Real student response data tells you
+        the true difficulty of an item, which is what the adaptive engine needs. A question the model labelled
+        'medium' that 95% of students answer correctly is an easy question, whatever the label says. Item
+        calibration turns a generated question bank into a measuring instrument."</p>
+        <p>"And I'd frame the goal honestly: this doesn't remove the subject expert, it changes their job from
+        authoring to reviewing. That's still a large throughput gain — maybe several times the items per
+        expert-hour — and it's a claim I can actually defend, unlike 'fully automated content generation'."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 5 ===================== -->
+  <h2 id="r5"><span class="num">5</span>Round 5 — Arabic and the MENA market</h2>
+  <p class="section-note">Your strongest section and the one you should steer toward. Native Tunisian Arabic
+  means you can answer these from lived experience — nobody else in their pipeline will.</p>
+
+  <details class="q" id="pm21">
+    <summary>21. How would you handle Arabic educational content? <span class="tag">Your edge</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'd start by saying that Arabic isn't a harder version of English localisation — it's a structurally
+        different problem, and I'd want that understood before anyone commits to a timeline."</p>
+        <p>"<b>Diglossia</b> is the central issue. Modern Standard Arabic is the language of instruction,
+        textbooks and exams. It is nobody's mother tongue. Students speak a dialect at home and in the
+        classroom informally — Egyptian, Levantine, Gulf, Maghrebi — and these differ enough that speakers can
+        struggle to understand each other. I'm Tunisian, so I speak Derja, which is the furthest from MSA and
+        the one models handle worst."</p>
+        <p>"The product consequence: a student will <i>ask</i> in dialect and needs to be <i>taught</i> in MSA,
+        because that's what the exam is in. So the tutor has to understand dialect input, retrieve MSA content,
+        and decide deliberately which register to answer in. My instinct is to explain in a register close to
+        the student's, then reinforce the MSA terminology they'll be assessed on — but I'd want to test that,
+        because it's a pedagogical question, not a technical one."</p>
+        <p>"<b>Technically</b>, several things bite. Tokenisation — Arabic consumes considerably more tokens per
+        word than English on most tokenizers, so cost and latency are materially worse and context limits bind
+        sooner. Diacritics are usually omitted in real text, which creates genuine ambiguity between words.
+        Morphology is rich, so keyword search underperforms and you need proper stemming in hybrid
+        retrieval. Right-to-left rendering breaks in mixed content, and maths and code are left-to-right inside
+        a right-to-left paragraph, which is a real front-end problem for a STEM product. And code-switching is
+        constant — students write Arabizi, Latin characters with numbers for Arabic sounds, especially in the
+        Maghreb where French mixes in too."</p>
+        <p>"<b>Evaluation</b> is the gap I'd flag hardest. English benchmarks tell you little. There are far
+        fewer Arabic educational evaluation sets and almost none for dialects. I'd budget for building our own
+        with native-speaker teachers per target dialect, and I'd treat that as infrastructure rather than as a
+        one-off task."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> this is expertise they cannot get from a generalist PM. Naming your own dialect
+        as the hardest case is credible and memorable. "I'd want that understood before anyone commits to a
+        timeline" is a Product Lead protecting the roadmap from an underestimate.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm22">
+    <summary>22. Dialect versus Modern Standard Arabic — what's your product decision?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'd split it by direction, because the answer differs for input and output."</p>
+        <p>"<b>Input: accept everything.</b> Dialect, MSA, Arabizi, code-switched French or English. A student
+        who types the way they speak and gets told the system doesn't understand has been failed by the
+        product, and it's also the moment a twelve-year-old decides the app is stupid. Normalising dialect input
+        toward MSA before retrieval is a solvable engineering problem and it's non-negotiable."</p>
+        <p>"<b>Output: MSA by default, with dialect scaffolding.</b> The exam is in MSA, the textbook is in MSA,
+        and a tutor that only ever answers in Derja would leave a student unable to recognise the terminology on
+        the paper. But pure formal MSA for a struggling ten-year-old is cold and hard to follow. So my starting
+        hypothesis is: explain the intuition in an accessible register, then name the concept in the MSA term
+        they'll be tested on, explicitly. Teach the word as well as the idea."</p>
+        <p>"<b>How I'd decide rather than guess:</b> this is a testable question. Two variants, measured on
+        comprehension and on mastery gain — not on satisfaction, because students will prefer the easier
+        register regardless of whether they learn more from it. I'd be genuinely uncertain about the answer and
+        I'd want the data."</p>
+        <p>"<b>Sequencing:</b> I'd launch one dialect region first rather than all of MENA. Pick the largest
+        market, get quality right, then expand — and I'd resist the pressure to claim pan-Arab coverage at
+        launch, because a tutor that's mediocre in five dialects is worse for the brand than one that's
+        excellent in one."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> "students will prefer the easier register regardless of whether they learn more"
+        shows you understand that satisfaction and learning can diverge — the central measurement trap in
+        EdTech. And you separated input from output, which most people don't.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 6 ===================== -->
+  <h2 id="r6"><span class="num">6</span>Round 6 — Metrics and product craft</h2>
+
+  <details class="q" id="pm23">
+    <summary>23. What metrics would you own for an AI learning platform? <span class="tag">Product Lead question</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Open with the trap</span>
+        <p>"I'd start with what I would <i>not</i> optimise for. Time on platform, and engagement generally, is
+        the default metric for consumer products and it's actively dangerous in education. A student spending
+        longer might be more engaged — or lost, or re-reading something badly explained. Efficient learning
+        means <i>less</i> time for the same mastery. If we optimise for engagement we'll build something
+        addictive and pedagogically worthless, and we won't notice for a year."</p>
+      </div>
+      <div class="say">
+        <span class="label">Then the framework — three layers</span>
+        <p>"<b>Learning outcomes — the layer that justifies the product's existence.</b> Mastery gain, measured
+        as normalised learning gain from pre-test to post-test. Retention, re-tested at 7 and 30 days, because
+        learning that doesn't survive a month isn't learning. Transfer — can they apply it to an unseen problem
+        type. And where we can get it, real-world outcome: exam results, school grades. That last one is slow
+        and it's the only one that ultimately convinces a ministry or a parent."</p>
+        <p>"<b>Product health.</b> Activation — did a new student reach a first genuine learning moment in
+        session one. Weekly active learners, which I'd prefer to DAU for a study product because the natural
+        rhythm isn't daily. Streak and return behaviour. Completion of learning paths. Conversion and retention
+        commercially. Teacher adoption if there's an institutional channel, which is usually where the
+        contracts live."</p>
+        <p>"<b>AI system health.</b> Grounding rate, citation accuracy, expert-rated tutor quality on a sample,
+        retrieval recall at k, recommendation acceptance and downstream success, p95 latency, cost per active
+        learner per month, and safety incident rate."</p>
+      </div>
+      <div class="say">
+        <span class="label">Then land the north star</span>
+        <p>"If I had to pick one north star I'd propose <b>concepts mastered and retained per active learner per
+        week</b>. It's composite on purpose. Mastered stops us rewarding activity without learning. Retained
+        stops us rewarding cramming that evaporates. Per active learner keeps it honest about engagement
+        quality rather than raw volume. And per week gives us a cadence we can actually move."</p>
+        <p>"The guardrail I'd put alongside it: if that number rises while completion or return rate falls,
+        we're pushing students too hard and losing the ones who struggle most — which are exactly the ones the
+        product is supposed to help."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> opening by rejecting engagement is a strong, confident move that demonstrates
+        domain understanding immediately. A composite north star with a stated reason for each component, plus a
+        guardrail against its own failure mode, is a senior answer.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm24">
+    <summary>24. How would you prove an AI feature actually improves learning?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Properly — which in education means being willing to run a real experiment and accept a null
+        result."</p>
+        <p>"<b>Design.</b> Randomise at student level, not session. Pre-test to establish baseline mastery,
+        exposure period, post-test on matched-difficulty items, then a delayed post-test at 30 days for
+        retention. The primary outcome is normalised learning gain, declared before we start. Secondary
+        outcomes: completion, return rate, time to mastery. Guardrails: frustration, drop-off, and support
+        contacts."</p>
+        <p>"<b>Why the delayed test matters.</b> Almost any intervention improves immediate performance,
+        including ones that harm long-term learning. Showing worked examples raises the immediate score and can
+        reduce retention because the student never struggled. If you only measure at the end of the session you
+        will confidently ship things that make students worse. The 30-day measure is the one I'd fight to
+        keep."</p>
+        <p>"<b>Practical constraints I'd be honest about.</b> Learning effects are small and slow, so these
+        tests need more users and more time than a conversion experiment — often weeks, and if the population
+        is small we may be underpowered for anything but a large effect. I'd say that up front rather than run
+        an underpowered test and interpret the noise."</p>
+        <p>"There's also an ethics dimension people skip: withholding a feature you believe helps children learn
+        is not a neutral act. My position is that it's justified precisely because we <i>don't</i> know it
+        helps — that's the honest reason to test — and I'd keep exposure periods short and monitor guardrails
+        closely."</p>
+        <p>"<b>Where an RCT isn't feasible</b> — a small B2B pilot, say — I'd use staged rollout with matched
+        cohorts, pre/post comparison against historic baseline, and be explicit that it's suggestive rather than
+        causal. Overclaiming causation from a before-and-after is the most common analytical failure in EdTech,
+        and it's how products keep features that don't work."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> the worked-examples point — that immediate performance and long-term learning can
+        move in opposite directions — is real learning science and it's exactly the kind of thing that
+        distinguishes someone who has thought about education from someone applying generic A/B practice.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm25">
+    <summary>25. You have 10 requested features and capacity for 3. How do you decide?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'd resist scoring them immediately, because the first question is whether all ten are even
+        addressing the same goal. Usually two or three are the same underlying need described by different
+        stakeholders, and one or two don't serve the current strategy at all — dropping those is cheaper than
+        ranking them."</p>
+        <p>"Then I'd assess each on four things: the size and importance of the problem it solves, evidence that
+        it actually solves it, cost including ongoing cost — which for AI features is substantial and recurring,
+        not one-off — and strategic fit, meaning does it compound into what we're building or is it a
+        one-off."</p>
+        <p>"For an AI product I'd add two filters most frameworks miss. <b>Confidence</b>: some AI features are
+        genuinely uncertain until you build a prototype, so the right move is a two-week spike to reduce
+        uncertainty rather than a full commitment or a rejection. And <b>risk</b>: a feature that touches
+        minors, grading or student data carries a review and compliance cost that must be in the estimate, not
+        discovered in month three."</p>
+        <p>"Then I'd sequence rather than just rank — some of the ten unlock the others. A prerequisite graph or
+        a decent eval harness isn't a feature anyone asked for and it makes three later features cheap. I'd
+        fight for that kind of item explicitly, because it always loses a naive scoring exercise."</p>
+        <p>"And I'd communicate the seven nos properly, with the reason and what would change my mind.
+        Stakeholders accept 'not now, here's the condition under which it moves up' far better than silence.
+        The unmanaged backlog is where PM credibility goes to die."</p>
+      </div>
+      <div class="followup">
+        <b>Back it with your real story:</b> "The clearest example I have is killing an outbound inspection
+        programme at Jumia. It was the intuitive fix for rising returns and it would have added cost to every
+        single order. The data showed the dominant cause was listing accuracy, concentrated in a few sellers —
+        so the right investment was a fraction of the cost and addressed the actual driver. Saying no to the
+        obvious thing, with evidence, is most of this job."
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm26">
+    <summary>26. What would your first 90 days look like?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"<b>Days 1–30 — learn, and resist the urge to have opinions.</b> Talk to students and teachers
+        directly, not just to internal stakeholders — I'd want to watch real sessions, including ones that go
+        badly. Understand the current state of the AI: what's shipped, what the eval numbers actually are, what
+        the team is worried about. Read the last two quarters of decisions and find out which ones people
+        regret. And meet the ML engineers and data scientists early, because my credibility with them determines
+        whether I get told the truth for the rest of my time here."</p>
+        <p>"I'd specifically audit two things: what we measure and whether anyone trusts it, and what our
+        evaluation harness looks like. In my experience the first real finding is always that two teams have
+        different numbers for the same thing."</p>
+        <p>"<b>Days 30–60 — find and fix the measurement.</b> Write down the metric framework and get agreement
+        on it, because ambiguity there poisons every later prioritisation argument. Build or fix the eval set
+        for the AI features if it's weak. Identify the one or two highest-leverage gaps — and my prior, which I'd
+        hold loosely, is that it's usually retrieval quality or content structure rather than the model."</p>
+        <p>"<b>Days 60–90 — ship something and commit to a plan.</b> One meaningful improvement delivered, so
+        the team sees what working with me looks like. A roadmap for the next two quarters with explicit bets
+        and explicit non-goals. And the beginning of a discovery cadence so we're not deciding from
+        opinion."</p>
+        <p>"What I'd deliberately avoid is arriving with a reorganisation or a grand strategy in week two. I'd
+        also be honest with myself that as someone stepping up into this level, the first 90 days need to build
+        credibility through judgement and delivery, not through having the loudest view in the room."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm27">
+    <summary>27. How do you work with ML engineers and data scientists?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"The main thing I've learned is to bring them the problem and the constraints, not the solution.
+        Handing an ML engineer a spec that says 'build a BERT classifier' wastes the most valuable thing they
+        have, which is knowing that a much simpler approach would work. What they need from me is: here's the
+        decision we're trying to improve, here's what accuracy is good enough and why, here's the latency and
+        cost budget, and here's how we'll know it worked."</p>
+        <p>"<b>Defining 'good enough' is my job, not theirs.</b> An engineer can push accuracy indefinitely. Only
+        the PM can say that 85% is sufficient because of what the product does with a wrong answer, and that
+        going to 92% isn't worth two months. That requires understanding the cost of each error type — in a
+        tutor, a false 'you've mastered this' is much more damaging than a false 'let's practise more', and
+        that asymmetry should drive the threshold. Handing over a single accuracy target without that is the
+        most common PM failure with ML teams."</p>
+        <p>"<b>I plan for uncertainty differently.</b> ML work isn't estimable the way feature work is — you
+        genuinely don't know if the approach will hit the bar until you try. So I structure it as time-boxed
+        exploration with a decision point, and I make sure the business understands that a spike ending in 'this
+        doesn't work' is a successful outcome, not a failure. Protecting the team from being punished for
+        negative results is a large part of the job."</p>
+        <p>"<b>What helps me specifically</b> is that I can read the work. I've served a model in production and
+        built an evaluation. So when someone says the model is at 0.82 AUC I can ask what the baseline is, what
+        the class balance looks like, and whether the test set leaks — and I can tell the difference between a
+        real result and a number. That earns trust quickly, and it means I'm harder to sell an inflated metric
+        to."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> the error-asymmetry point (false mastery is worse than false non-mastery) is
+        concrete, domain-specific and exactly the contribution a PM should make to an ML spec. "A spike ending
+        in 'this doesn't work' is a successful outcome" signals you'd be a good manager of research work.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm28">
+    <summary>28. How would you launch an MVP of an AI tutor?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Narrow and instrumented, with a human watching."</p>
+        <p>"<b>Narrow the scope aggressively:</b> one subject, one grade, one language, one clearly defined
+        use case — say, help while doing practice problems, rather than a general-purpose assistant. The
+        temptation is to ship broad because the model is general, and it's the wrong instinct: quality is
+        unverifiable across a wide surface, and the first bad viral screenshot is expensive."</p>
+        <p>"<b>Before any student sees it:</b> an eval set built with teachers, red-teaming for safety and for
+        prompt injection, and a defined refusal behaviour. And a kill switch — a feature flag that turns it off
+        instantly without a deploy. For a student-facing AI feature that's mandatory, not optional."</p>
+        <p>"<b>Launch as a limited pilot,</b> ideally with a cohort we can talk to. Daily human review of a
+        sample of transcripts in week one — not automated review, actual people reading actual conversations.
+        That's where you find the failure modes no eval anticipated, and it's the single highest-value activity
+        in the first month."</p>
+        <p>"<b>What I'd measure to decide whether to expand:</b> grounding and safety first as gates, then
+        expert-rated quality, then early learning signal. I'd want a pre-committed expansion criterion — 'we go
+        to the next subject when X' — because otherwise expansion happens by enthusiasm and calendar pressure
+        rather than by evidence."</p>
+        <p>"<b>And I'd set expectations externally</b> to match. Call it a beta, tell students and teachers it
+        can be wrong, give them a one-click way to report it, and make the reports go somewhere a human
+        reads. Underclaiming is cheap; being caught overclaiming in education is not."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm29">
+    <summary>29. How would you build the roadmap and product vision?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Vision first, and it shouldn't mention AI. Something like: 'every student gets the attention of a
+        tutor who knows exactly where they are.' AI is how we deliver that affordably, but if the vision is
+        'an AI-powered learning platform' then every decision becomes an argument about which model to use
+        instead of about what students need."</p>
+        <p>"Then I'd structure the roadmap around <b>outcomes and bets, not features and dates</b>. Each quarter
+        has a small number of problems we're trying to move, with a measurable target, and the specific
+        solutions are allowed to change as we learn. For AI work in particular, committing to a feature by a
+        date is committing to something you can't estimate — you can commit to a problem and a date, and to
+        killing the approach if it doesn't reach the bar."</p>
+        <p>"I'd be explicit about three horizons: what we're confident about and are building now; what we're
+        testing and could go either way; and what's directional for next year. Mixing those together is how
+        stakeholders end up treating an experiment as a commitment."</p>
+        <p>"And I'd publish the non-goals. Saying clearly 'we are not building X this year' is worth more than
+        most of the roadmap, because it stops the recurring conversation and it tells the team what to say no
+        to without asking me."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 7 ===================== -->
+  <h2 id="r7"><span class="num">7</span>Round 7 — Responsible AI and student data</h2>
+
+  <details class="q" id="pm30">
+    <summary>30. How would you protect student data? <span class="tag hard">Minors — high stakes</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"The starting position is that these are minors, so the default isn't 'comply with the regulation',
+        it's 'collect as little as possible and be able to explain every field to a parent.'"</p>
+        <p>"<b>Data minimisation first.</b> For each field, why do we need it and what breaks if we don't have
+        it? A learner model needs mastery states and interaction history. It very rarely needs a full name,
+        precise location, or a photograph. The cheapest way to protect data is not to hold it."</p>
+        <p>"<b>Consent and age.</b> Under-13s require verifiable parental consent under COPPA in the US; GDPR
+        sets the digital-consent age between 13 and 16 depending on member state, with parental authorisation
+        below it. In schools, FERPA governs education records in the US and the school often acts as the
+        consenting party — which changes the product, because the contract is with the institution but the
+        rights belong to the family. I'd want counsel on the specific markets rather than assume, and I'd
+        design for the strictest one."</p>
+        <p>"<b>Third-party model providers</b> is the question specific to AI, and it's the one I'd raise
+        first. If student conversations go to an external LLM, we need contractual guarantees on retention and
+        on training — zero-retention arrangements where available — and we need to know the processing
+        location for residency requirements. I'd also strip identifiers before they leave our systems: the model
+        doesn't need the child's name to explain fractions."</p>
+        <p>"<b>Never train on student data without explicit, separate, informed consent</b>, and I'd be
+        conservative even with it. 'We may use your child's conversations to improve our models' is a sentence
+        most parents would decline, and they'd be entitled to."</p>
+        <p>"<b>Operationally:</b> encryption in transit and at rest, role-based access enforced at the data
+        layer rather than in the UI, audit logging of every access to a student record, defined retention with
+        actual deletion, and export and deletion that work. I built exactly that pattern in HR Insight AI —
+        query-level RBAC and full audit logging — for the same reason: sensitive data about identifiable
+        people."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> naming the regimes accurately, flagging that you'd take legal advice rather than
+        bluffing, and connecting it to something you actually built is the right combination. "The model doesn't
+        need the child's name to explain fractions" is the line that will stick.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm31">
+    <summary>31. What happens when the AI teaches something factually wrong?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I'd treat it as an incident with a defined process, because it will happen and the question is
+        whether we're ready."</p>
+        <p>"<b>Detect.</b> Don't rely on students noticing — a student who doesn't know the material can't
+        evaluate the answer, which is the whole difficulty. So: automated grounding checks on every response, a
+        prominent report mechanism for students and teachers, and routine sampled expert review. I'd treat
+        teacher reports as the highest-signal channel and route them to a human within hours."</p>
+        <p>"<b>Contain.</b> Assess blast radius — is this one bad response or a systematic error affecting a
+        whole topic? A misconception embedded in a retrieved document is far worse than a one-off generation,
+        because it's reproducible and it's been taught consistently. For a systematic error, the kill switch on
+        that topic, not on the whole product."</p>
+        <p>"<b>Correct — the part specific to education.</b> Other products fix forward and move on. Here,
+        students have learned something wrong. I'd want to identify who received the incorrect content and
+        proactively correct it: a targeted message, a corrected explanation, and re-practice on the affected
+        concept. That's an unusual requirement and it's the right one. I'd build the logging to make it
+        possible before we ever need it."</p>
+        <p>"<b>Root cause.</b> Was it bad source content, a retrieval failure that pulled the wrong passage,
+        a generation failure despite good grounding, or a gap where we had nothing and it improvised? Each has a
+        different fix and conflating them means fixing the wrong layer."</p>
+        <p>"<b>And be honest externally.</b> Tell the teachers. An institution that discovers a systematic error
+        themselves will not renew; one that was told about it and saw the response often trusts you more
+        afterwards."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> "students have learned something wrong, so we have to go back and correct them"
+        is a requirement almost no candidate will think of, and it demonstrates you understand what makes this
+        domain different from ordinary software.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm32">
+    <summary>32. What are the ethical risks of an AI tutor beyond privacy?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Five I'd actively manage."</p>
+        <p>"<b>Cognitive offloading.</b> The biggest one. A tutor that's too helpful produces students who can
+        complete tasks with it and not without it — the appearance of learning with none of the substance. This
+        is why the Socratic constraint isn't a nice touch, it's the core product requirement. I'd measure it
+        directly: unassisted performance after tutor use, not performance with the tutor available."</p>
+        <p>"<b>Bias.</b> Models perform unevenly across dialects, names and phrasings. In a grading context
+        that's a fairness issue with real consequences for a child's record. Mandatory pre-launch analysis by
+        dialect and by demographic proxy where we can measure it."</p>
+        <p>"<b>Over-trust.</b> A fluent, confident tutor is believed more than it deserves, especially by
+        younger students. Citations, visible uncertainty, and explicitly teaching students that the tutor can be
+        wrong and how to check — which is itself a valuable thing to learn."</p>
+        <p>"<b>Equity of access.</b> If the AI features sit behind a paywall or require good connectivity and a
+        decent device, we widen the gap the product claims to close. In this region that's not hypothetical. I'd
+        want a meaningful offline or low-bandwidth path and to be careful about what goes in the premium
+        tier."</p>
+        <p>"<b>Displacement framing.</b> Teachers are the adoption channel and also the people most reasonably
+        worried. I'd position and design this as teacher augmentation — reducing marking load, surfacing which
+        students are struggling — rather than replacement. That's both the honest position and the commercially
+        correct one, because teacher resistance kills institutional deals."</p>
+        <p>"And one governance point: I'd want a clear owner for these questions and a review gate before
+        student-facing AI ships. If responsible AI is everyone's job it's nobody's."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 8 ===================== -->
+  <h2 id="r8"><span class="num">8</span>Round 8 — The design case</h2>
+  <p class="section-note">The most important exercise. Expect 30–45 minutes. Structure over cleverness — and ask
+  clarifying questions before you start.</p>
+
+  <details class="q" id="pm33">
+    <summary>33. "Design an AI-powered personalised learning platform." <span class="tag">Full walkthrough</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Step 0 — clarify (2 minutes, never skip)</span>
+        <p>"Before I start, four questions. Who's the buyer — parents directly, schools, or a ministry? Because
+        B2C and B2B2G are different products. What age range and subjects? What's the market and language — I'd
+        design differently for MENA than for a single-language market. And are we greenfield, or is there an
+        existing platform and content library I'm adding AI to?"</p>
+        <p><i>Assume: B2C plus school channel, ages 10–16, maths and science, Arabic-speaking MENA, existing
+        content library.</i></p>
+      </div>
+      <div class="say">
+        <span class="label">Step 1 — users and their jobs</span>
+        <p>"<b>Student</b> — wants to pass the exam and to stop feeling stuck. Not intrinsically motivated by
+        learning, and I'd design for that honestly rather than for an idealised learner."</p>
+        <p>"<b>Parent</b> — usually the payer in this market. Wants evidence their child is progressing and
+        reassurance it's safe. The product they experience is mostly the progress report, which means that
+        report is a first-class surface, not an afterthought."</p>
+        <p>"<b>Teacher</b> — the adoption channel for the school segment. Wants reduced marking load and to know
+        who's struggling before the test, not after. Will actively resist anything that looks like
+        replacement."</p>
+        <p>"<b>School admin</b> — wants outcome data, and procurement wants compliance."</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 2 — the problem, stated sharply</span>
+        <p>"A classroom teaches thirty students the same thing at the same pace. Roughly speaking, some are
+        bored, some are lost, and a small number are correctly targeted. The students who fall behind
+        accumulate gaps in prerequisites, so each new topic is harder than the last, and by the time it shows up
+        in an exam result the gap is years old. The intervention that works — one-to-one tutoring — is a luxury
+        good."</p>
+        <p>"So the product problem is: <b>identify each student's actual gaps, target them, and do it at a price
+        a family can afford.</b>"</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 3 — the product</span>
+        <p>"Four surfaces, and I'd sequence them rather than build all four."</p>
+        <p>"<b>Diagnostic</b> — a short adaptive placement that finds real gaps, including in prerequisites from
+        earlier years, which is usually where the problem actually is. Short, because a long test loses the
+        student before they start."</p>
+        <p>"<b>Adaptive practice</b> — the engine. Serves the right item at the right difficulty, updates the
+        learner model on every response, schedules review by forgetting curve."</p>
+        <p>"<b>AI tutor</b> — available at the moment of being stuck, Socratic, grounded in our content."</p>
+        <p>"<b>Progress reporting</b> — for student, parent and teacher, with three different designs. The
+        student needs motivation and a visible next step. The parent needs evidence and reassurance. The teacher
+        needs a class-level view with the students who need attention surfaced."</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 4 — architecture (draw this)</span>
+      </div>
+      <pre><code>Student activity  (answers · time · hints used · attempts · drop-offs)
+        ↓
+Event / data platform
+        ↓
+┌───────────────────────────────────────────────┐
+│  LEARNER MODEL                                │
+│  mastery per concept · error patterns ·       │
+│  learning rate · review schedule              │
+│  ← knowledge tracing updates this each answer │
+└───────────────────────────────────────────────┘
+        ↓                              ↓
+Recommendation engine          AI tutor
+(what next?)                   (help me now)
+  · prerequisite graph           · RAG over approved content
+  · weak concepts                · learner context injected
+  · spaced review                · Socratic constraint
+  · difficulty targeting         · safety + citation layer
+        ↓                              ↓
+        └──────────┬───────────────────┘
+                   ↓
+        Personalised learning experience
+                   ↓
+        Outcomes → back into the learner model
+                   └→ analytics for parent / teacher / us</code></pre>
+      <div class="say">
+        <span class="label">Step 5 — the foundation nobody asks for</span>
+        <p>"I'd flag one thing that isn't on that diagram and determines whether any of it works: the
+        <b>curriculum knowledge graph</b> — every concept, its prerequisites, and every content item and
+        question tagged to a node. It's slow expert work, it's invisible to users, and the recommendation
+        engine, the diagnostic, the tutor's context and every analytics view all depend on it. If I inherited a
+        platform without it, building it would be my first quarter, and I'd expect to have to defend that
+        choice against pressure to ship a visible AI feature."</p>
+      </div>
+      <div class="say">
+        <span class="label">Step 6 — metrics and sequencing</span>
+        <p>"North star: concepts mastered and retained per active learner per week. Layered underneath: learning
+        outcomes, product health, AI system health — as I described earlier."</p>
+        <p>"Sequencing, and I'd be explicit that this is a bet on order: knowledge graph and learner model
+        first, then adaptive practice, then the tutor, then the reporting layer for parents and teachers. The
+        tutor is the most impressive demo and it's third, because without the learner model it's a chatbot and
+        without content tagging it can't retrieve properly. I'd expect that to be the most contested decision
+        in the room and I'd want to argue it explicitly rather than let it be reordered quietly."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> clarifying first, sharp problem statement, four user types with distinct jobs,
+        an architecture you can draw, and then — the part that wins it — naming the unglamorous foundation and
+        pre-committing to defend it. Saying "I expect this to be contested and here's my argument" is how a
+        Product Lead talks.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm34">
+    <summary>34. Follow-up: you have six months and a team of eight. What do you actually ship?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"With six months I'd ship one subject, one grade, done properly, rather than a thin version of the
+        whole vision — and I'd want that agreed as the goal on day one, because the failure mode here is
+        building four halves of things."</p>
+        <p>"<b>Months 1–2:</b> curriculum graph and content tagging for that one subject and grade — this is
+        mostly expert time, not engineering, so it parallelises with the platform work. Event pipeline and
+        learner model schema. Basic knowledge tracing, Bayesian, because it works with no data."</p>
+        <p>"<b>Months 3–4:</b> adaptive practice loop end to end — diagnostic, item selection, mastery update,
+        review scheduling. This is the thing that produces learning outcomes, and it's also what generates the
+        data everything else needs. Ship it to a pilot cohort."</p>
+        <p>"<b>Months 5–6:</b> the AI tutor on top, scoped to help-while-practising rather than open chat, with
+        RAG over the tagged content. Plus a first progress view for parents, because in a B2C market that's what
+        gets renewed."</p>
+        <p>"<b>What I'd cut:</b> multi-subject, multi-grade, the teacher dashboard, automated content
+        generation, and anything agentic. I'd write those down as explicit non-goals with the reason, so they
+        don't leak back in."</p>
+        <p>"<b>The risk I'd name up front:</b> six months is aggressive for the content tagging if the library
+        is large and the graph doesn't exist. That's the thing most likely to slip and it's the dependency
+        everything sits on. I'd want a real estimate from whoever owns curriculum in week one, and if it doesn't
+        fit, I'd narrow the scope further rather than start the engineering on a foundation that won't be ready."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> naming the single biggest schedule risk, and saying you'd cut scope rather than
+        hope, is exactly what distinguishes a lead from an optimist. Explicit non-goals is the other senior
+        move.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 9 ===================== -->
+  <h2 id="r9"><span class="num">9</span>Round 9 — Behavioral (your 6 stories)</h2>
+  <p class="section-note">Prepare these six and you can answer almost any behavioral question by selecting from
+  them. All are drawn from your real experience — none require you to have been a PM.</p>
+
+  <div class="card">
+    <h3>Your story bank — know which story answers which question</h3>
+    <table>
+      <tr><th>Story</th><th>Answers</th></tr>
+      <tr><td><b>Killing the outbound inspection</b></td><td>Prioritisation · data-driven decision · influencing without authority · saying no · challenging the prevailing view</td></tr>
+      <tr><td><b>Central-team process rollout</b></td><td>Leadership · cross-functional influence · change management · scaling beyond your scope</td></tr>
+      <tr><td><b>HR Insight AI</b></td><td>AI experience · technical complexity · product thinking · responsible AI · what you'd do differently</td></tr>
+      <tr><td><b>The intake process rolled out without a pilot</b></td><td>Failure · learning from mistakes · humility</td></tr>
+      <tr><td><b>The Retool → NestJS migration</b></td><td>Technical complexity · legacy · incremental delivery · conflict with a colleague</td></tr>
+      <tr><td><b>The help centre that got you the job</b></td><td>Initiative · ambiguity · shipping under constraint · why you</td></tr>
+    </table>
+  </div>
+
+  <details class="q" id="pm35">
+    <summary>35. Tell me about a time you made a decision with data that others disagreed with. <span class="tag star">STAR</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p><b>Situation.</b> "At Jumia, returns were rising and the prevailing view was that it was a warehouse
+        quality problem. The proposal on the table was to add an inspection step to every outbound order —
+        significant recurring labour cost, applied to every single order."</p>
+        <p><b>Task.</b> "I wasn't convinced, because our existing outbound packing checks weren't finding much.
+        I wanted to know the actual cause distribution before we committed to a permanent cost."</p>
+        <p><b>Action.</b> "The data to answer it didn't exist — returns were logged as free text, which is
+        unanalysable. So I changed the collection first: a fixed reason-code list, short enough that people
+        wouldn't default to 'other', worded the way the team actually spoke. A few months later I had consistent
+        data and built the analysis three ways — by cause, by category, and by seller measured against the
+        category average rather than in absolute terms, because return rates differ enormously by category and
+        an absolute threshold flags the wrong people."</p>
+        <p>"The finding contradicted the assumption. Transit damage was a minority. The dominant cause was
+        products not matching their listings, and it was heavily concentrated in a small group of sellers."</p>
+        <p><b>Result.</b> "The inspection programme was dropped. We corrected listings for the worst offenders,
+        tightened packaging only where damage was genuinely the cause, and put the concentrated sellers on
+        corrective plans. Return rate moved <span class="fill">[by X]</span>, at a fraction of the cost of the
+        original proposal."</p>
+        <p>"What I take from it for a product role: the most valuable thing I did wasn't the analysis, it was
+        fixing the instrumentation first. And the decision that mattered most was a <i>no</i> — stopping an
+        expensive, intuitive solution that addressed a minority cause."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm36">
+    <summary>36. Tell me about a time something you shipped failed. <span class="tag star">STAR</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p><b>Situation.</b> "I redesigned the warehouse intake process based on what I'd observed working well
+        on one shift, documented it, trained it, and rolled it out to everyone at once."</p>
+        <p><b>What went wrong.</b> "It didn't hold. The shift I'd designed it on had a stock profile that didn't
+        match the others — different mix, different arrival patterns — and a step that was trivial there was a
+        bottleneck elsewhere. Within two weeks people had quietly reverted, which is worse than never changing
+        it: now half the team is doing one thing and half the other, and the data is meaningless."</p>
+        <p><b>Action.</b> "I pulled it back rather than pushing harder, piloted it on one other shift, fixed the
+        step that broke, and re-rolled it. It worked the second time."</p>
+        <p><b>Result and lesson.</b> "The permanent change was to my own default: I don't roll anything out
+        from a single sample any more. Pilot, adjust, then scale. That habit is a large part of why the later
+        cross-site rollout succeeded — I'd already paid for the lesson."</p>
+        <p>"It's also directly relevant to AI product work, which is why I'd offer this one. The temptation with
+        a model that performs well on one cohort is to assume it generalises, and it frequently doesn't — the
+        distribution shifts and the thing that worked in the pilot degrades. Staged rollout with per-segment
+        measurement isn't caution, it's the only way to find that out before your users do."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> the bridge at the end is what makes a non-PM story land in a PM interview.
+        Explicitly translating the lesson into the domain they're hiring for does the work for them.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm37">
+    <summary>37. This role manages other PMs. You haven't managed PMs. <span class="tag hard">Hard</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I haven't managed product managers, and I won't pretend the craft transfers perfectly. What I have
+        done is lead a team — I ran a warehouse operation with <span class="fill">[N]</span> people across
+        shifts, including performance management, training, and the harder conversations."</p>
+        <p>"What I learned there that I'd carry over: go to the process before you go to the person. When
+        someone on my team was underperforming, I looked at the pattern in their errors before I concluded
+        anything about them — and usually found a process trap rather than a motivation problem. I'd apply the
+        same instinct to a PM who's struggling: is the brief unclear, are they blocked by a dependency nobody
+        owns, or is it genuinely them."</p>
+        <p>"I'd also say what I think managing PMs specifically requires, so you can judge whether I've
+        understood it. It's coaching judgement rather than reviewing output — being the person they think out
+        loud with, pushing on whether they've defined the problem properly, and resisting the urge to make the
+        decision for them, which for someone who came from doing the work is the main failure mode. And it's
+        holding the seams between their areas, because the gaps between PMs are where products break."</p>
+        <p>"Honestly, if you told me the right move was to hire me a level down with one or two PMs rather than
+        a full team, I'd take that seriously. I'd rather do the job well at the level I'm ready for than
+        struggle at one I'm not."</p>
+      </div>
+      <div class="why">
+        <b>Why this works:</b> real leadership evidence, an accurate description of what the job actually is
+        (which proves you understand it even without having done it), and a genuine willingness to take a lower
+        level. That last offer often converts a rejection into a different offer.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="pm38">
+    <summary>38. Tell me about a disagreement with engineering. <span class="tag star">STAR</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p><b>Situation.</b> "On the HR platform rebuild there was pressure to keep the existing data structure
+        to move faster, where I wanted to remodel the schema properly first. Both positions were reasonable —
+        theirs was the delivery date, mine was the cost of building on a bad foundation."</p>
+        <p><b>Action.</b> "I stopped arguing in the abstract. I took two features we had coming and wrote out
+        what each would require under both schemas — the queries, the edge cases, the migration risk. That
+        turned 'the model is wrong' from an opinion into a comparison of two pieces of work anyone could
+        evaluate."</p>
+        <p>"I also proposed a middle path rather than all-or-nothing: remodel the core entities where the pain
+        was concentrated, leave the periphery. That was something someone could say yes to."</p>
+        <p><b>Result.</b> "We did the partial remodel and the later features were straightforward on the new
+        core. The lesson is that technical disagreements last much longer when they're argued at the level of
+        principle — the moment I made it concrete about next quarter's work, it resolved in one conversation.
+        And I'd genuinely have gone the other way if the comparison had come out differently."</p>
+      </div>
+      <div class="why">
+        <b>The last sentence is essential.</b> It shows you argue to reach the right answer rather than to win —
+        which is precisely what they're screening for in someone who'll sit between engineering and the
+        business.
+      </div>
+    </div>
+  </details>
+
+  <!-- ===================== ROUND 10 ===================== -->
+  <h2 id="r10"><span class="num">10</span>Your questions, closing, follow-up</h2>
+
+  <div class="card">
+    <h3>Ask three or four — these are chosen to make you look like the Lead</h3>
+    <ul>
+      <li><b>"How do you currently measure whether an AI feature improves learning, as opposed to
+      engagement?"</b> — The best question on this list. If they don't have a good answer, you've found the gap
+      you'd fill, and you can say so.</li>
+      <li><b>"What's the state of the curriculum knowledge graph and content tagging?"</b> — Immediately marks
+      you as someone who knows where these products actually fail.</li>
+      <li><b>"Who owns the evaluation harness today, and how much do you trust the numbers?"</b></li>
+      <li><b>"What's the split between B2C and institutional, and which one is driving the roadmap?"</b> — These
+      pull in opposite directions; the answer tells you what the job really is.</li>
+      <li><b>"How do you handle dialect versus MSA today?"</b> — Opens the door to your differentiator without
+      you forcing it.</li>
+      <li><b>"What's an AI feature you shipped that didn't work, and what happened to it?"</b> — Tests whether
+      they can kill things.</li>
+      <li><b>"Given my background isn't a standard PM track, what would worry you most about hiring me — and is
+      there anything I can address now?"</b> — <b>Ask this one.</b> It's direct, it shows confidence, and it
+      surfaces the objection while you can still answer it rather than after you've left the room.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Closing statement</h3>
+    <div class="say">
+      <span class="label">Say this</span>
+      <p>"Let me be direct about the trade you'd be making. You'd be hiring someone without eight years of
+      formal product management — that's real and I'm not going to talk you out of it."</p>
+      <p>"What you'd get instead is someone who has owned outcomes and been accountable for a metric set,
+      who has killed an expensive initiative on evidence against the prevailing view, who has built and shipped
+      an AI product end to end rather than written requirements for one, who can read an evaluation and tell
+      you whether the number means anything — and who is a native Arabic speaker who can tell you why your
+      tutor will struggle with a Tunisian student before you find out from the data."</p>
+      <p>"I think that combination is harder to hire than the eight years. But I'd rather you make that call
+      with the trade stated plainly than have me pretend the gap isn't there. I'd very much like to do this
+      job."</p>
+    </div>
+    <div class="why">
+      <b>Why this works:</b> naming the trade-off explicitly is disarming and unusually confident. It also
+      frames the decision the way you want it framed — as a choice between two kinds of value, not as a
+      shortfall against a checklist.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Follow-up email — within 24 hours</h3>
+    <pre><code>Subject: Thank you — AI Product conversation
+
+Dear [Name],
+
+Thank you for the time today. The discussion about [specific: the tutor's
+Socratic constraint / how you're handling dialect / your evaluation setup]
+was the most interesting conversation I've had about a product in a while.
+
+I've been thinking about [the thing you discussed] since. [Two or three
+sentences of actual additional thinking — a risk you'd want to check, an
+approach you'd try. This is the paragraph that matters.]
+
+On the experience question: I know my background isn't a standard eight-year
+PM track. What I'd point to is that I've owned outcomes and metric sets,
+made prioritisation calls with real cost attached, and built an AI product
+end to end — an XGBoost service behind a NestJS API with query-level access
+control and LLM-generated summaries. Plus native Arabic, which I suspect
+matters more for this product than it looks on a CV.
+
+If the level isn't right but the direction is, I'd genuinely welcome that
+conversation too.
+
+Best regards,
+Syrine Larbi
++216 24 428 833</code></pre>
+    <div class="why">
+      <b>The second paragraph is the whole email.</b> Additional thinking about their actual problem, sent the
+      next day, is the strongest signal of genuine interest available to you — and for a stretch role it's often
+      what converts a "no" into a "let's talk about a different level."
+    </div>
+  </div>
+
+  <!-- ===================== MOCK ===================== -->
+  <h2 id="mock"><span class="num">11</span>Full mock interview — read out loud</h2>
+  <p class="section-note">A VP of Product who is sceptical about your experience and will test whether your AI
+  knowledge is real. This is the hardest of the four mock interviews — read it twice.</p>
+
+  <div class="transcript">
+
+    <div class="stage">Round 2 · VP Product · 45 minutes</div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>I'll be honest with you — we wrote eight years on that posting for a reason. Your CV has zero years of
+      product management. Convince me I should keep going.</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>I'm not going to argue the number — you're right, and if it's a hard requirement we should both know
+      that now rather than in round four.</p>
+      <p>What I'd ask you to weigh is what I've actually done. I've owned a metric set in front of leadership
+      and been accountable for it. I've made prioritisation calls with real money attached and defended them
+      against the prevailing view. I've rolled a process out across sites I had no authority over. And I've
+      built and shipped an AI product end to end — not written requirements for one.</p>
+      <p>What I don't have is formal PM craft at scale — running discovery as a programme, managing a portfolio
+      of PMs. I'd be learning parts of that.</p>
+      <p>Where I'd back myself is the thing that's hardest to hire: someone who can sit between the ML team and
+      the business and be believed by both. Most PM candidates can do one side. Most engineers can do the other.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Everyone says that. Let's test it. Why would you use RAG rather than just fine-tuning a model on our
+      curriculum?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Because they solve different problems. RAG gives the model knowledge; fine-tuning gives it behaviour.</p>
+      <p>Your curriculum is knowledge — it's factual, it changes when the syllabus changes, students need to see
+      where an answer came from, and access has to be filtered so a grade-8 student never gets a grade-11
+      explanation. You can't implement a grade filter inside model weights, and you can't update a fine-tune in
+      an afternoon when a textbook changes.</p>
+      <p>Where I <i>would</i> fine-tune is the tutoring behaviour — holding a Socratic style consistently across
+      a long conversation is genuinely hard with prompting alone. And Arabic dialect handling, if we had good
+      examples.</p>
+      <p>Realistically it's both: a fine-tuned model for the style, retrieving from the curriculum.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Okay. Our tutor is grounded in approved content and it still gives wrong answers sometimes. What's
+      going on?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>I'd want to know which of four layers is failing before I'd guess, because they have completely
+      different fixes and teams conflate them constantly.</p>
+      <p>One — the source content is wrong. Rare but the worst case, because it's reproducible and it's been
+      taught consistently to everyone who asked.</p>
+      <p>Two — retrieval pulled the wrong passage. This is the most common one in my experience, and it gets
+      misdiagnosed as a model problem. The model faithfully explained something irrelevant.</p>
+      <p>Three — retrieval was fine and generation went beyond it. That's grounding failure, and you catch it by
+      measuring what proportion of claims in the answer are supported by the retrieved passages.</p>
+      <p>Four — we had nothing good to retrieve and the model improvised rather than saying so. That's usually a
+      prompt problem: "I don't know" has to be an acceptable output or the model will fill the gap.</p>
+      <p>So the first thing I'd ask for is whether we measure retrieval separately from generation. If we only
+      look at final answer quality, we can't tell these apart and we'll keep fixing the wrong layer.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p><i>[writing]</i> Say we build a great tutor. Students love it, usage is way up, NPS is excellent. Are
+      we winning?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>I don't know yet, and I'd be uncomfortable celebrating on those numbers.</p>
+      <p>Engagement and satisfaction can both go up while learning goes down. The specific way it happens: the
+      tutor becomes too helpful. It gives away answers, students complete their homework faster, they feel
+      great, they rate it highly — and they've learned less than if they'd struggled. If we optimise for that
+      signal we'll build something addictive and pedagogically worthless, and we won't find out for a year.</p>
+      <p>What I'd want to see is unassisted performance. Can the student do the next problem <i>without</i> the
+      tutor? Mastery gain, and retention re-tested at 30 days, against a matched group who didn't use it.</p>
+      <p>Honestly, the warning sign I'd watch for is exactly the pattern you described — engagement climbing
+      with learning gain flat. That's the signature of a tutor that's become pleasant and useless.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Our biggest market is Egypt, and we're looking at the Gulf. What's your view on the Arabic problem?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>That it's not a localisation problem, it's a structural one, and I'd want that understood before
+      anyone commits to a timeline.</p>
+      <p>Diglossia is the core of it. MSA is the language of the textbook and the exam and it's nobody's mother
+      tongue. Your Egyptian students speak Egyptian, your Gulf students speak Gulf Arabic, and those differ
+      enough to matter. I'm Tunisian — I speak Derja, which is the furthest from MSA and the one models handle
+      worst, so I have a fairly direct feel for where this breaks.</p>
+      <p>The product consequence is that a student asks in dialect and has to be taught in MSA, because that's
+      what the exam is in. So the tutor needs to accept dialect input, retrieve MSA content, and make a
+      deliberate decision about which register to answer in. My hypothesis would be: explain the intuition
+      accessibly, then explicitly name the MSA term they'll be tested on — teach the word as well as the idea.
+      But I'd test that rather than assert it.</p>
+      <p>Two practical things I'd flag. Tokenisation — Arabic eats considerably more tokens per word than
+      English on most tokenizers, so your cost per interaction and your context limits are both worse than an
+      English benchmark suggests. That belongs in the model selection criteria, not as a footnote.</p>
+      <p>And evaluation. English benchmarks tell you nothing useful here, and there's very little for dialects.
+      I'd budget for building our own eval sets with native-speaker teachers per market, and treat that as
+      infrastructure.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p><i>[pause]</i> That's more than our current PM knows. Last one — you'd be managing two PMs. You've
+      never managed a PM.</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Correct, and the craft doesn't transfer perfectly. I have led a team — a warehouse operation across
+      shifts, with performance management and the difficult conversations — so people leadership isn't new,
+      but managing PMs specifically is.</p>
+      <p>What I think the job is, so you can judge whether I've understood it: coaching judgement rather than
+      reviewing output. Being the person they think out loud with, pushing on whether they've framed the
+      problem properly, and resisting the urge to just make the decision myself — which for someone who came
+      from doing the work is the obvious failure mode. And holding the seams between their areas, because the
+      gaps between PMs are where products break.</p>
+      <p>And I'd say this plainly: if you think the right move is to bring me in a level down, with one PM or
+      none, I'd take that seriously. I'd rather do the job well at the level I'm ready for than struggle at one
+      I'm not.</p>
+    </div>
+
+    <div class="line them"><span class="who">Interviewer</span>
+      <p>Anything you want to ask me?</p>
+    </div>
+
+    <div class="line you"><span class="who">You</span>
+      <p>Three things. What's the state of your curriculum knowledge graph and content tagging — because
+      everything adaptive depends on it and it's usually the real bottleneck.</p>
+      <p>How do you currently measure whether an AI feature improves learning rather than engagement?</p>
+      <p>And the direct one: given my background isn't a standard PM track, what would worry you most about
+      hiring me — and is there anything I can address right now, while I'm still in the room?</p>
+    </div>
+
+    <div class="stage">End of segment</div>
+
+  </div>
+
+  <!-- ===================== CHEAT SHEET ===================== -->
+  <h2><span class="num">12</span>Cheat sheet — the lines that win</h2>
+
+  <div class="card">
+    <h3>Memorise these ten</h3>
+    <table>
+      <tr><th>Topic</th><th>Your line</th></tr>
+      <tr><td>RAG vs fine-tuning</td><td>"RAG gives the model knowledge. Fine-tuning gives it behaviour."</td></tr>
+      <tr><td>Building a tutor</td><td>"If our tutor solves the homework, we've built a cheating tool that looks impressive in a demo."</td></tr>
+      <tr><td>Metrics</td><td>"Engagement rising with learning gain flat is a tutor that's become pleasant and useless."</td></tr>
+      <tr><td>Mastery</td><td>"Mastery is a belief with uncertainty, not a score. A score measures the past; a belief predicts the future."</td></tr>
+      <tr><td>Recommendation</td><td>"Netflix optimises for what you'll engage with. We optimise for mastery — often the thing the student wouldn't choose."</td></tr>
+      <tr><td>Retrieval</td><td>"If retrieval is bad, the best model gives a bad answer — and teams misdiagnose that as a model problem."</td></tr>
+      <tr><td>Knowledge tracing</td><td>"Right-right-wrong-wrong and wrong-wrong-right-right are the same score and opposite stories."</td></tr>
+      <tr><td>Privacy</td><td>"The model doesn't need the child's name to explain fractions."</td></tr>
+      <tr><td>Agents</td><td>"If I can't evaluate it, I can't ship it to students."</td></tr>
+      <tr><td>Why you</td><td>"Someone who can sit between the ML team and the business and be believed by both."</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Concepts you must be able to define in one sentence</h3>
+    <table>
+      <tr><td><b>Embedding</b></td><td>A numeric representation of meaning, so similar text sits close together and can be searched semantically.</td></tr>
+      <tr><td><b>Vector database</b></td><td>Storage optimised for finding the nearest embeddings to a query, with metadata filtering.</td></tr>
+      <tr><td><b>Chunking</b></td><td>Splitting content into retrievable units — the size and boundaries materially affect retrieval quality.</td></tr>
+      <tr><td><b>Hybrid retrieval</b></td><td>Combining keyword and semantic search, because each catches what the other misses.</td></tr>
+      <tr><td><b>Re-ranking</b></td><td>A second, more expensive model that re-orders retrieved candidates for precision.</td></tr>
+      <tr><td><b>Grounding</b></td><td>The proportion of claims in an answer actually supported by the retrieved sources.</td></tr>
+      <tr><td><b>Temperature</b></td><td>Randomness in generation — low for factual explanation, higher for creative variety.</td></tr>
+      <tr><td><b>Context window</b></td><td>How much text the model can consider at once; forces you to choose what to include.</td></tr>
+      <tr><td><b>Prompt injection</b></td><td>Instructions hidden in content the model reads, hijacking its behaviour.</td></tr>
+      <tr><td><b>LLM-as-judge</b></td><td>Using a model to score outputs at scale — only trustworthy once validated against human labels.</td></tr>
+      <tr><td><b>BKT</b></td><td>Bayesian Knowledge Tracing — interpretable per-skill mastery belief updated after each answer.</td></tr>
+      <tr><td><b>DKT</b></td><td>Deep Knowledge Tracing — a neural sequence model; more accurate at scale, far less explainable.</td></tr>
+      <tr><td><b>IRT</b></td><td>Item Response Theory — models student ability and item difficulty on one scale; the basis of adaptive testing.</td></tr>
+      <tr><td><b>Spaced repetition</b></td><td>Scheduling review against the forgetting curve so knowledge survives.</td></tr>
+      <tr><td><b>Zone of proximal development</b></td><td>The difficulty band where learning happens — roughly a 70–85% success rate.</td></tr>
+      <tr><td><b>Normalised learning gain</b></td><td>Improvement from pre-test to post-test as a fraction of the improvement that was available.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Your 7-day plan</h3>
+    <table>
+      <tr><th>Day</th><th>Do this</th></tr>
+      <tr><td>1</td><td>Read this file end to end. Fill the highlighted blanks. Don't memorise yet.</td></tr>
+      <tr><td>2</td><td>GenAI + RAG (sections 2–3). Draw the RAG diagram from memory five times until it takes under a minute.</td></tr>
+      <tr><td>3</td><td>Learning AI (section 4). This is your differentiator — knowledge tracing and recommendation, out loud.</td></tr>
+      <tr><td>4</td><td>Arabic (section 5) and metrics (section 6). Both are yours to win.</td></tr>
+      <tr><td>5</td><td>The design case (section 8). Do the full 30-minute walkthrough out loud, twice, with a timer.</td></tr>
+      <tr><td>6</td><td>Rewrite your six stories in your own words, with real numbers. Say each in 90 seconds.</td></tr>
+      <tr><td>7</td><td>The mock transcript, both parts, out loud. Then compress everything to one page.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Two things to do before the interview that aren't in this file</h3>
+    <ul>
+      <li><b>Use their product for two hours.</b> Sign up as a student. Find three things that are good and two
+      that are broken, and have a view on why. "I spent an evening in your platform and here's what I noticed"
+      is worth more than any answer in this document, and it's the fastest way to compensate for the
+      experience gap.</li>
+      <li><b>Write a one-page teardown</b> of one AI feature they've shipped — what it does well, what you'd
+      measure, what you'd change. Bring it, or send it with your follow-up. For a stretch role this is the
+      single highest-leverage thing you can do: it demonstrates the job rather than describing it.</li>
+    </ul>
+  </div>
+
+  <footer>
+    AI Product Manager simulation · built from your Jumia ownership record, HR Insight AI, and native Arabic ·
+    <a href="index.html">back to Interview Room</a> ·
+    <a href="supply-chain-manager.html">Supply Chain</a> ·
+    <a href="data-analyst.html">Data Analyst</a> ·
+    <a href="developer.html">Developer</a>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
