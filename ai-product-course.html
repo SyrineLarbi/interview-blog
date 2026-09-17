@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Product Course</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="home" href="index.html">Interview<span>Room</span></a>
+  <nav>
+    <a href="#part1">1 · The job</a>
+    <a href="#part2">2 · AI basics</a>
+    <a href="#part3">3 · RAG</a>
+    <a href="#part4">4 · Learning AI</a>
+    <a href="#part5">5 · Measuring</a>
+    <a href="#part6">6 · Safety</a>
+    <a href="#part7">7 · Arabic</a>
+    <a href="#part8">8 · Answering</a>
+    <a href="#part9">9 · Words</a>
+    <a href="ai-product-manager.html">Full answers →</a>
+  </nav>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="kicker">Course · Start here · Simple English</p>
+    <h1>AI Product Manager — from zero</h1>
+    <p>This file teaches you the ideas. Short sentences. Easy words. Every new word is explained before it is
+    used. Read this <b>first</b>. Read the full answers file <b>after</b>.</p>
+    <div class="meta">
+      <span><b>22</b> lessons</span>
+      <span><b>Simple</b> scripts</span>
+      <span><b>No</b> hard words</span>
+    </div>
+  </div>
+
+  <div class="tools">
+    <button data-action="expand">Open all lessons</button>
+    <button data-action="collapse">Close all</button>
+    <button data-action="print">Print / PDF</button>
+  </div>
+
+  <div class="card">
+    <h3>How to use this file</h3>
+    <p>Each lesson has the same five parts. Always the same. So it is easy to follow.</p>
+    <table>
+      <tr><td><b>1. In one sentence</b></td><td>The short definition. Learn this first.</td></tr>
+      <tr><td><b>2. Think of it like…</b></td><td>A simple example from real life.</td></tr>
+      <tr><td><b>3. How it works</b></td><td>The steps, in order.</td></tr>
+      <tr><td><b>4. What goes wrong</b></td><td>The problems. Interviewers love this part.</td></tr>
+      <tr><td><b>5. Say this</b></td><td>Short, easy English you can say out loud.</td></tr>
+    </table>
+    <p style="margin-top:12px"><b>Important:</b> the sentences in the green boxes are short on purpose. You must
+    be able to say them without stopping. If a sentence is hard to say, change it to your own words. Your own
+    simple words are better than my perfect words.</p>
+  </div>
+
+  <!-- ============ PART 1 ============ -->
+  <h2 id="part1"><span class="num">1</span>Part 1 — What is this job?</h2>
+
+  <details class="q" id="c1">
+    <summary><span class="lesson">Lesson 1</span>What does a Product Manager do?</summary>
+    <div class="body">
+      <p class="oneline">A Product Manager decides <b>what</b> to build and <b>why</b>. Engineers decide
+      <b>how</b>.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>You are building a house. The engineers are the builders. They are very good at building.</p>
+        <p>You are the person who asks: <i>Who will live here? How many rooms do they need? What is the
+        budget? Is the kitchen more important than the garden?</i></p>
+        <p>You do not lay the bricks. You decide which house gets built, and you say no to the rooms nobody
+        needs.</p>
+      </div>
+
+      <p><b>The four jobs of a PM, every day:</b></p>
+      <table>
+        <tr><td><b>1. Find the problem</b></td><td>Talk to users. Look at data. Understand what is really wrong.</td></tr>
+        <tr><td><b>2. Choose</b></td><td>There are 20 ideas and time for 3. You pick. You say no to 17.</td></tr>
+        <tr><td><b>3. Explain</b></td><td>Tell the team what to build and why. Tell the boss what will happen.</td></tr>
+        <tr><td><b>4. Measure</b></td><td>Did it work? How do we know? What number moved?</td></tr>
+      </table>
+
+      <div class="why">
+        <b>Good news for you:</b> you have done all four. At Jumia you found the real cause of returns. You
+        chose to stop the inspection plan. You explained it to the commercial team. You measured the result.
+        That <i>is</i> product management. You just did not have the title.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"A product manager decides what to build and why. The engineers decide how."</p>
+        <p>"My job is to find the real problem, choose what we do first, and prove it worked."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c2">
+    <summary><span class="lesson">Lesson 2</span>What is different about an <i>AI</i> Product Manager?</summary>
+    <div class="body">
+      <p class="oneline">Normal software always gives the same answer. AI does not. That one difference changes
+      everything.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p><b>Normal software is a calculator.</b> You type 2 + 2. You always get 4. Every time. Forever.</p>
+        <p><b>AI is a smart employee.</b> You ask the same question twice and you get two different answers.
+        Both may be good. One may be wrong. You cannot be sure.</p>
+      </div>
+
+      <p><b>What this changes for you as a PM:</b></p>
+      <table>
+        <tr><th>Normal product</th><th>AI product</th></tr>
+        <tr><td>It works or it is broken</td><td>It is right 90% of the time. You must decide if 90% is enough.</td></tr>
+        <tr><td>Testing = does it work?</td><td>Testing = how often is it good? You need a test set.</td></tr>
+        <tr><td>Cost is fixed</td><td>Cost grows every time someone uses it. More users = more cost.</td></tr>
+        <tr><td>Fast (milliseconds)</td><td>Slow (seconds). You must design for waiting.</td></tr>
+        <tr><td>You can promise a date</td><td>You cannot. You do not know if it will work until you try.</td></tr>
+      </table>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Normal software gives the same answer every time. AI does not."</p>
+        <p>"So my job changes. I have to decide how good is good enough. And I have to measure it, not guess."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 2 ============ -->
+  <h2 id="part2"><span class="num">2</span>Part 2 — AI basics</h2>
+  <p class="section-note">Six lessons. After these you will understand every AI word in the job description.</p>
+
+  <details class="q" id="c3">
+    <summary><span class="lesson">Lesson 3</span>What is an LLM?</summary>
+    <div class="body">
+      <p class="oneline">LLM means <b>Large Language Model</b>. It is a program that reads text and writes the
+      next words.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>Your phone keyboard. You type "How are" and it suggests "you". That is a tiny language model.</p>
+        <p>An LLM is the same idea, but it read most of the internet. So it can suggest not just one word, but
+        a whole explanation, a letter, or a lesson.</p>
+        <p>Important: it is guessing the next words. It is very good at guessing. But it is still guessing.</p>
+      </div>
+
+      <p><b>Two things to remember:</b></p>
+      <ul>
+        <li><b>It does not "know" things.</b> It learned patterns from text. So it can be very confident and
+        completely wrong.</li>
+        <li><b>It has no memory between chats.</b> If you want it to remember a student, <i>you</i> must send
+        that information every time.</li>
+      </ul>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"An LLM reads text and predicts the next words. It learned from a huge amount of writing."</p>
+        <p>"It does not really know facts. It finds patterns. That is why it can be wrong and still sound
+        sure."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c4">
+    <summary><span class="lesson">Lesson 4</span>Tokens, context, temperature — the three words you must know</summary>
+    <div class="body">
+
+      <p class="oneline"><b>Token</b> = a small piece of a word. The model reads and writes in tokens. You pay
+      per token.</p>
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>A taxi meter. It does not count your journey in trips. It counts in small units. More units = more
+        money.</p>
+        <p>One English word is about 1 token. But Arabic often uses <b>2 or 3 tokens for one word</b>. So the
+        same lesson in Arabic costs more money and takes more time. <b>Remember this one — it is a very strong
+        point for you.</b></p>
+      </div>
+
+      <p class="oneline" style="margin-top:20px"><b>Context window</b> = how much text the model can look at
+      at one time.</p>
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>A small desk. You can only put a few papers on it. If you put a new paper on, an old one falls off.</p>
+        <p>This is why you cannot put your whole school curriculum in the question. It does not fit. This is
+        the reason RAG exists — you will see it in Lesson 8.</p>
+      </div>
+
+      <p class="oneline" style="margin-top:20px"><b>Temperature</b> = how creative the answer is. Low = safe and
+      repeatable. High = creative and random.</p>
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>Low temperature = a careful teacher. Same answer every time.</p>
+        <p>High temperature = a creative friend. Fun ideas, but you cannot trust the details.</p>
+        <p>For teaching maths, use <b>low</b>. For writing a story, use higher.</p>
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Tokens are pieces of words. We pay per token, so cost grows with use."</p>
+        <p>"Arabic uses more tokens per word than English. So our cost per student is higher than an English
+        benchmark suggests. That belongs in the budget."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c5">
+    <summary><span class="lesson">Lesson 5</span>What is a hallucination? <span class="tag hard">Most important lesson</span></summary>
+    <div class="body">
+      <p class="oneline">A hallucination is when the AI says something false, but says it with total
+      confidence.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>A student in an exam. They do not know the answer. But they do not write "I don't know" — they write
+        something that <i>looks</i> like a good answer. Confident handwriting. Correct grammar. Wrong
+        content.</p>
+        <p>The AI does the same thing. It was built to always produce text. Silence is not an option for it
+        unless you allow it.</p>
+      </div>
+
+      <p><b>Why this is very serious in education:</b></p>
+      <ul>
+        <li>A student asks because they <b>do not know</b> the subject.</li>
+        <li>So the student <b>cannot see</b> that the answer is wrong.</li>
+        <li>They learn it. They build on it. They use it in the exam.</li>
+      </ul>
+      <p>In most products a wrong answer is annoying. In education, a wrong answer <b>damages the user</b>.</p>
+
+      <p><b>How we reduce it — four ways:</b></p>
+      <table>
+        <tr><td><b>1. Give it the book</b></td><td>Send the real lesson content with the question. This is RAG.</td></tr>
+        <tr><td><b>2. Ask for the source</b></td><td>The answer must show where it came from. Then we can check.</td></tr>
+        <tr><td><b>3. Low temperature</b></td><td>Less creativity when we teach facts.</td></tr>
+        <tr><td><b>4. Allow "I don't know"</b></td><td>Tell it clearly: if the answer is not in the content, say so. If you do not allow this, it will invent something.</td></tr>
+      </table>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"A hallucination is when the model is wrong but sounds sure."</p>
+        <p>"In education this is the worst failure. The student asks because they don't know the subject. So
+        they can't see that the answer is wrong. They believe it and build on it."</p>
+        <p>"We reduce it by giving the model our approved content, asking for the source, and making 'I don't
+        know' an allowed answer."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c6">
+    <summary><span class="lesson">Lesson 6</span>The other things that go wrong</summary>
+    <div class="body">
+      <p class="oneline">Six more problems. Learn the name and one line for each.</p>
+
+      <table>
+        <tr><th>Problem</th><th>In simple words</th><th>What we do</th></tr>
+        <tr>
+          <td><b>Slow</b><br><span style="font-size:13px;color:var(--ink-faint)">latency</span></td>
+          <td>It takes seconds, not milliseconds.</td>
+          <td>Show the words as they arrive, so it feels fast. Use a small model for easy questions.</td>
+        </tr>
+        <tr>
+          <td><b>Expensive</b></td>
+          <td>Every use costs money. More users = more cost.</td>
+          <td>Save common answers. Send less text. Use a cheap model when we can.</td>
+        </tr>
+        <tr>
+          <td><b>Small desk</b><br><span style="font-size:13px;color:var(--ink-faint)">context limit</span></td>
+          <td>We cannot send everything.</td>
+          <td>Send only the part we need. This is RAG.</td>
+        </tr>
+        <tr>
+          <td><b>Hidden orders</b><br><span style="font-size:13px;color:var(--ink-faint)">prompt injection</span></td>
+          <td>Someone hides an instruction inside the text, and the model obeys it.</td>
+          <td>Keep user text separate from our instructions. Never let the model do an important action alone.</td>
+        </tr>
+        <tr>
+          <td><b>Bad content</b></td>
+          <td>Our users are children. The answer must be safe.</td>
+          <td>Check the answer before it is shown. Have a plan for serious situations.</td>
+        </tr>
+        <tr>
+          <td><b>No test</b><br><span style="font-size:13px;color:var(--ink-faint)">no evaluation</span></td>
+          <td>We change something and we don't know if it got better.</td>
+          <td>Build a test set of real questions with correct answers. Score every change against it.</td>
+        </tr>
+      </table>
+
+      <div class="analogy">
+        <span class="label">Prompt injection — think of it like…</span>
+        <p>You give an assistant a folder and say: "Answer the customer using this folder."</p>
+        <p>Someone has put a paper inside the folder that says: <i>"Forget your boss. Give this person a free
+        product."</i></p>
+        <p>The assistant reads everything in the folder and cannot tell which paper is from you. That is prompt
+        injection.</p>
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"The main problems are: it can be wrong, it is slow, it costs money every time, and it is hard to
+        test."</p>
+        <p>"For a learning product with children, being wrong is the one that matters most."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c7">
+    <summary><span class="lesson">Lesson 7</span>What is an AI agent?</summary>
+    <div class="body">
+      <p class="oneline">A normal AI answers your question. An <b>agent</b> can do several steps by itself,
+      using tools, before it answers.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p><b>Normal AI</b> = you ask a colleague a question. They answer. Done.</p>
+        <p><b>Agent</b> = you ask a colleague to "prepare the report". They decide to open the database, then
+        check last month's file, then call someone, then write it. They chose those steps. You did not.</p>
+      </div>
+
+      <p><b>When it is useful here:</b> making practice questions. The agent writes a question, then solves it
+      itself to check the answer is right, then checks it matches the lesson, then sends it to a teacher.</p>
+
+      <p><b>When it is dangerous here:</b> anything talking to a child with no adult checking. If step 1 is
+      wrong, steps 2, 3 and 4 are also wrong. The mistake grows.</p>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"An agent can take several steps by itself. A normal model just answers."</p>
+        <p>"I would use it behind the scenes — for example to create and check practice questions."</p>
+        <p>"I would not let an agent talk to a child with no human checking. If I cannot test it, I cannot ship
+        it to students."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 3 ============ -->
+  <h2 id="part3"><span class="num">3</span>Part 3 — RAG (the most important topic)</h2>
+  <p class="section-note">They will ask about RAG. Maybe twice. Learn these three lessons well.</p>
+
+  <details class="q" id="c8">
+    <summary><span class="lesson">Lesson 8</span>What is RAG? <span class="tag">They will ask this</span></summary>
+    <div class="body">
+      <p class="oneline">RAG means: <b>find the right content first, then give it to the AI, then let the AI
+      answer using it.</b></p>
+      <p>The three letters mean Retrieval (find), Augmented (add), Generation (write). But you do not need the
+      letters. You need the idea.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p><b>Without RAG</b> = a closed-book exam. The student answers from memory. Sometimes they remember
+        wrong. Sometimes they mix up two things. They cannot show you where they got it.</p>
+        <p><b>With RAG</b> = an open-book exam. Before answering, you find the right page and put it in front of
+        them. Now they answer from the real book. And they can point to the page.</p>
+      </div>
+
+      <p><b>Why we need it for a school platform — four reasons:</b></p>
+      <table>
+        <tr><td><b>1. Correct</b></td><td>The answer comes from <i>our</i> approved lessons, not from random internet text.</td></tr>
+        <tr><td><b>2. Easy to update</b></td><td>The book changed? We change the content. We do not retrain anything. Hours, not weeks.</td></tr>
+        <tr><td><b>3. We can show the source</b></td><td>"This came from lesson 4." The student can check. The teacher can trust it.</td></tr>
+        <tr><td><b>4. We can control access</b></td><td>A grade 8 student only gets grade 8 content. You cannot do this inside the model.</td></tr>
+      </table>
+
+      <div class="say">
+        <span class="label">Say this — the simple version</span>
+        <p>"Without RAG it is a closed-book exam. The model answers from memory."</p>
+        <p>"With RAG it is an open-book exam. We find the right lesson first and give it to the model."</p>
+        <p>"We need that for four reasons. The answer comes from our real content. We can update the content
+        without retraining. We can show the student where it came from. And we can make sure a grade 8 student
+        only gets grade 8 content."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c9">
+    <summary><span class="lesson">Lesson 9</span>How RAG works, step by step</summary>
+    <div class="body">
+      <p class="oneline">Two parts. Part A happens once, before any student arrives. Part B happens every time a
+      student asks something.</p>
+
+      <p><b>Part A — prepare the content (done in advance)</b></p>
+      <pre><code>1  Take our lessons and books
+2  CUT them into small pieces          ("chunking")
+3  TURN each piece into numbers        ("embedding")
+4  STORE the numbers in a special database  ("vector database")</code></pre>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>You are organising a library.</p>
+        <p><b>Cutting</b> = you don't store whole books. You store single pages. Because you want to find the
+        exact page, not carry the whole book.</p>
+        <p><b>Turning into numbers</b> = you write a code on each page that describes its <i>meaning</i>. Pages
+        about fractions get similar codes. Pages about history get very different codes.</p>
+        <p><b>The special database</b> = a library where books are arranged by meaning, not by alphabet. So
+        "find me something similar to this" becomes easy.</p>
+      </div>
+
+      <p style="margin-top:18px"><b>Part B — answer a question (every time)</b></p>
+      <pre><code>1  Student asks a question
+2  Turn the question into numbers too
+3  FIND the pieces with the closest numbers        ("retrieval")
+4  FILTER: right grade? right subject? right language?
+5  PICK the best 3 to 5 pieces                     ("re-ranking")
+6  SEND to the AI:  instructions + those pieces + the question
+7  AI writes the answer using them
+8  CHECK it: is it safe? does the source really say this?
+9  Show the answer + the source to the student</code></pre>
+
+      <div class="why">
+        <b>Step 4 is the one to mention.</b> Most people forget it. In a school, you must <i>never</i> show a
+        grade 11 explanation to a grade 8 student. So we filter <b>before</b> we search by meaning. Say this in
+        the interview — it shows you think about education, not just about AI.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"First we prepare. We cut our lessons into small pieces, turn each piece into numbers, and store
+        them."</p>
+        <p>"Then when a student asks something, we turn the question into numbers too, find the closest pieces,
+        filter them by grade and subject, and send the best few to the model with the question."</p>
+        <p>"The filter matters. A grade 8 student must never get a grade 11 explanation."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c10">
+    <summary><span class="lesson">Lesson 10</span>RAG or fine-tuning? <span class="tag">Common question</span></summary>
+    <div class="body">
+      <p class="oneline">RAG gives the model <b>knowledge</b>. Fine-tuning gives the model <b>behaviour</b>.</p>
+      <p>Learn that one sentence. It answers the whole question.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>You hire a new teacher.</p>
+        <p><b>RAG</b> = you give them the textbook. They can now teach your curriculum today. Tomorrow the
+        curriculum changes, you give them the new book. Easy.</p>
+        <p><b>Fine-tuning</b> = you train their teaching <i>style</i>. Weeks of practice so they always ask
+        questions instead of giving answers. That is a habit, not information.</p>
+        <p>You need both. The book, and the style.</p>
+      </div>
+
+      <table>
+        <tr><th>Use RAG when…</th><th>Use fine-tuning when…</th></tr>
+        <tr><td>It is facts and content</td><td>It is style, tone or format</td></tr>
+        <tr><td>It changes often</td><td>It stays the same</td></tr>
+        <tr><td>You must show the source</td><td>You want a consistent way of speaking</td></tr>
+        <tr><td>Different users see different things</td><td>You want a small cheap model to do one job well</td></tr>
+        <tr><td><b>Example:</b> the maths curriculum</td><td><b>Example:</b> always ask a question instead of giving the answer</td></tr>
+      </table>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"RAG gives the model knowledge. Fine-tuning gives it behaviour."</p>
+        <p>"Our curriculum is knowledge. It changes, students need to see the source, and a grade 8 student must
+        only see grade 8 content. So that is RAG."</p>
+        <p>"I would fine-tune for the teaching style — always asking a question instead of giving the answer.
+        That is hard to keep with instructions alone."</p>
+        <p>"In practice you use both together."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 4 ============ -->
+  <h2 id="part4"><span class="num">4</span>Part 4 — AI for learning (your winning section)</h2>
+  <p class="section-note">Most people applying know AI. Few know <i>learning</i> AI. These four lessons are
+  where you beat them.</p>
+
+  <details class="q" id="c11">
+    <summary><span class="lesson">Lesson 11</span>What is a learner model?</summary>
+    <div class="body">
+      <p class="oneline">The learner model is what the system knows about one student. It is the memory of the
+      platform.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>A private tutor with a notebook. After every lesson they write: <i>"Good at fractions. Struggles with
+        negative numbers. Always makes the same mistake with signs. Learns fast with examples, slowly with
+        text."</i></p>
+        <p>Next week, the tutor opens that notebook before the lesson. That notebook is the learner model.</p>
+        <p>Without it, every lesson starts from zero. That is a normal platform. With it, the lesson is
+        personal. That is an adaptive platform.</p>
+      </div>
+
+      <p><b>What is inside it:</b></p>
+      <pre><code>ONE STUDENT
+├── How well do they know each topic?     (not a score — a belief)
+├── Which earlier topics are weak?        (the real cause of problems)
+├── How fast do they learn?
+├── Which mistakes do they repeat?
+├── When will they forget this?           (so we can remind them)
+└── What format works for them?           (video, text, examples)</code></pre>
+
+      <p><b>The one idea to remember:</b></p>
+      <div class="analogy">
+        <span class="label">Score vs belief</span>
+        <p>A <b>score</b> says: "You got 60% last week." That is the past. It is finished.</p>
+        <p>A <b>belief</b> says: "We are 60% sure you understand this." That is about the future. It tells us
+        what to do next.</p>
+        <p>A learning platform needs the second one. That is why we do not just store scores.</p>
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"The learner model is what we know about one student. It is like the notebook a private tutor
+        keeps."</p>
+        <p>"It holds how well they know each topic, which mistakes they repeat, and when they will forget."</p>
+        <p>"And it stores a belief, not a score. A score tells you the past. A belief tells you what to teach
+        next."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c12">
+    <summary><span class="lesson">Lesson 12</span>Knowledge tracing — how do we know a student really understands? <span class="tag">Your best answer</span></summary>
+    <div class="body">
+      <p class="oneline">Knowledge tracing means guessing whether a student really understands a topic — using
+      the <b>order</b> of their answers, not just the total.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>Two students both get 2 out of 4.</p>
+        <p><b>Student A:</b> right, right, wrong, wrong. They were doing well, then they got lost. Maybe the
+        questions got harder. Maybe they got tired.</p>
+        <p><b>Student B:</b> wrong, wrong, right, right. They did not understand, and then they learned it.</p>
+        <p>Same score: 50%. Opposite situations. Student B is ready to move on. Student A is not.</p>
+        <p>A score cannot see this. Knowledge tracing can.</p>
+      </div>
+
+      <p><b>Two more problems with scores:</b></p>
+      <ul>
+        <li><b>Lucky guess.</b> Multiple choice with 4 options — you can be right by luck.</li>
+        <li><b>Silly mistake.</b> You understood it perfectly and pressed the wrong button.</li>
+      </ul>
+      <p>So we never say "50% = half understood". We estimate a probability, and we update it after every
+      answer.</p>
+
+      <p><b>The methods — you only need the names and one line:</b></p>
+      <table>
+        <tr><th>Name</th><th>In one line</th><th>Good / bad</th></tr>
+        <tr>
+          <td><b>BKT</b><br><span style="font-size:12px;color:var(--ink-faint)">Bayesian Knowledge Tracing</span></td>
+          <td>After each answer, update the chance that the student knows this topic.</td>
+          <td>Simple. Works with little data. Easy to explain to a parent.</td>
+        </tr>
+        <tr>
+          <td><b>IRT</b><br><span style="font-size:12px;color:var(--ink-faint)">Item Response Theory</span></td>
+          <td>Measures student ability and question difficulty together.</td>
+          <td>Great for tests. Not really about learning over time.</td>
+        </tr>
+        <tr>
+          <td><b>DKT</b><br><span style="font-size:12px;color:var(--ink-faint)">Deep Knowledge Tracing</span></td>
+          <td>A neural network reads the whole history of answers.</td>
+          <td>More accurate with lots of data. Cannot explain <i>why</i>.</td>
+        </tr>
+      </table>
+
+      <div class="why">
+        <b>The PM answer — this is what wins the question.</b> Do not say "I would use the most accurate one."
+        Say you would <b>start simple</b>, for three reasons: at launch we have no data, and BKT works with
+        little data. We must explain the decision to a parent or a teacher, and BKT can be explained. And it
+        gives us the data we would need later for a bigger model.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"A score is not enough. Right, right, wrong, wrong and wrong, wrong, right, right are both 50% — but
+        they are opposite stories. One student is learning. One is getting lost."</p>
+        <p>"And a student can be right by luck, or wrong by a silly mistake."</p>
+        <p>"So instead of a score we keep a probability, and we update it after every answer. That is knowledge
+        tracing."</p>
+        <p>"I would start with the simple method, Bayesian Knowledge Tracing. Not because it is the most
+        accurate. Because at launch we have no data, and because we can explain it to a parent. A better model
+        can come later."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c13">
+    <summary><span class="lesson">Lesson 13</span>How do we choose what the student studies next?</summary>
+    <div class="body">
+      <p class="oneline">We recommend the topic that will teach them the most — <b>not</b> the one they will
+      enjoy the most.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p><b>Netflix</b> wants you to keep watching. So it shows you what you like. That is the right goal for
+        Netflix.</p>
+        <p><b>A gym coach</b> does not give you the exercise you enjoy. They give you the one you need. You
+        might not like it. You get stronger.</p>
+        <p>A learning platform is the coach, not Netflix. This is the most important difference, and many
+        products get it wrong.</p>
+      </div>
+
+      <p><b>How the recommendation is built:</b></p>
+      <pre><code>1  WHAT CAN THEY DO NOW?
+   - which topics are they ready for? (need the earlier topics first)
+   - which topics are weak?
+   - which topics are due for review before they forget?
+
+2  REMOVE what is not allowed
+   - they are missing the earlier topic  → remove
+   - wrong grade or wrong subject        → remove
+
+3  ORDER the rest
+   - which one will teach them the most?
+   - is the difficulty right? (see below)
+   - is there an exam coming?
+
+4  SOMETIMES TRY SOMETHING NEW
+   - if we always show the same thing, we never learn what works
+
+5  EXPLAIN IT
+   - "We suggest this because you missed two questions on fractions"</code></pre>
+
+      <div class="analogy">
+        <span class="label">The right difficulty — think of it like…</span>
+        <p>Weights at the gym. Too light: no progress, and you are bored. Too heavy: you fail, and you stop
+        coming.</p>
+        <p>The right weight is hard but possible. In learning, the usual target is a student getting about
+        <b>70 to 85% correct</b>. Hard enough to think. Easy enough to succeed.</p>
+      </div>
+
+      <div class="why">
+        <b>Say this and they will notice:</b> the most important part is not the algorithm. It is the
+        <b>map of the subject</b> — which topic must come before which. Someone has to write down that you need
+        basic algebra before quadratic equations. That is expert work, it is boring, it is invisible, and
+        <i>nothing works without it</i>. Most candidates never mention it.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Netflix recommends what you will enjoy. We recommend what will teach you the most. Often that is
+        something the student would not choose."</p>
+        <p>"We pick topics they are ready for, remove the ones where they are missing the basics, and choose the
+        right difficulty — hard enough to think, easy enough to succeed."</p>
+        <p>"And we explain why. 'We suggest this because you missed two questions on fractions last week.'"</p>
+        <p>"The hardest part is not the algorithm. It is the map of the subject — which topic comes before
+        which. That is expert work and everything depends on it."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c14">
+    <summary><span class="lesson">Lesson 14</span>How would you build an AI tutor? <span class="tag">The big question</span></summary>
+    <div class="body">
+      <p class="oneline">Start with one rule: <b>the tutor must not give the answer.</b> Everything else comes
+      from that.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>Your child is stuck on homework. Two parents:</p>
+        <p><b>Parent A</b> says the answer. Homework is finished in 30 seconds. Everyone is happy. The child
+        learned nothing.</p>
+        <p><b>Parent B</b> asks: "What did you try? Show me. Ah — look at this step again. What happens if…?"
+        Slower. Harder. The child can now do the next one alone.</p>
+        <p>We are building Parent B. If we build Parent A, we have built a very fast way to cheat.</p>
+      </div>
+
+      <p><b>The five steps of your answer:</b></p>
+      <table>
+        <tr><td><b>1. Decide the behaviour</b></td><td>Ask, don't tell. Find the mistake first. Give a small hint. Let the student finish.</td></tr>
+        <tr><td><b>2. Decide the inputs</b></td><td>The question + who this student is + which lesson they are in + our approved content.</td></tr>
+        <tr><td><b>3. Build it</b></td><td>Understand the question → find the content (RAG) → add the student's level → write the answer → check it is safe and grounded.</td></tr>
+        <tr><td><b>4. Measure it</b></td><td>Is the answer correct? Is it good teaching? And most of all: can the student now do it <i>alone</i>?</td></tr>
+        <tr><td><b>5. Launch small</b></td><td>One subject. One grade. One language. Real people read the conversations every day in week 1.</td></tr>
+      </table>
+
+      <div class="why">
+        <b>The line that wins this question:</b> "If our tutor solves the homework, we have built a cheating
+        tool that looks very good in a demo." Say it exactly like that. It is short, it is memorable, and it
+        shows you understand education — not just AI.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I would not start with the model. I would start with what good tutoring is."</p>
+        <p>"The most important rule: the tutor must not give the answer. A good human tutor asks what you
+        tried, finds the mistake, gives a hint, and lets you finish."</p>
+        <p>"If our tutor solves the homework, we have built a cheating tool that looks very good in a demo."</p>
+        <p>"Then it needs three things: the student's question, our approved content through RAG, and the
+        learner model so it knows their level."</p>
+        <p>"And I would launch small. One subject, one grade. With real people reading the conversations every
+        day in the first weeks."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 5 ============ -->
+  <h2 id="part5"><span class="num">5</span>Part 5 — Measuring (the Product Lead part)</h2>
+
+  <details class="q" id="c15">
+    <summary><span class="lesson">Lesson 15</span>Why the normal metrics are dangerous here <span class="tag hard">Key idea</span></summary>
+    <div class="body">
+      <p class="oneline">In most products, more time spent = good. In education, more time spent can mean the
+      student is <b>lost</b>.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>A driving school. School A: students pass after 20 hours. School B: students pass after 60 hours.</p>
+        <p>School B has 3× more "engagement". School B is worse.</p>
+        <p>Good teaching means <b>less</b> time for the same result, not more.</p>
+      </div>
+
+      <p><b>The dangerous pattern to watch for:</b></p>
+      <ul>
+        <li>Students use the tutor a lot. ✅</li>
+        <li>They say they love it. ✅</li>
+        <li>They finish homework faster. ✅</li>
+        <li>They learn less. ❌</li>
+      </ul>
+      <p>Why? Because the tutor became too helpful. It gives answers. Students feel great. They learned
+      nothing. And you will not find out for a year.</p>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I would not use time on the platform as a success metric. In education more time can mean the
+        student is lost, not engaged."</p>
+        <p>"There is a dangerous pattern: usage goes up, students love it, and learning goes down. That happens
+        when the tutor becomes too helpful and gives answers."</p>
+        <p>"So the number I watch is: can the student do the next question <b>without</b> the tutor?"</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c16">
+    <summary><span class="lesson">Lesson 16</span>What should we measure instead?</summary>
+    <div class="body">
+      <p class="oneline">Three groups of numbers. Learn the groups, not every single metric.</p>
+
+      <table>
+        <tr><th>Group</th><th>What it answers</th><th>Examples</th></tr>
+        <tr>
+          <td><b>1. Learning</b><br><span style="font-size:12px;color:var(--ink-faint)">the reason we exist</span></td>
+          <td>Did they actually learn?</td>
+          <td>Test before and after · test again after 30 days · can they use it on a new type of problem · school results</td>
+        </tr>
+        <tr>
+          <td><b>2. Product</b><br><span style="font-size:12px;color:var(--ink-faint)">is it healthy</span></td>
+          <td>Do they use it and stay?</td>
+          <td>Did a new student have a real learning moment in session 1 · weekly active students · do they come back · do they finish · do they pay</td>
+        </tr>
+        <tr>
+          <td><b>3. The AI itself</b><br><span style="font-size:12px;color:var(--ink-faint)">is it working</span></td>
+          <td>Is the AI good, fast and affordable?</td>
+          <td>How often is it wrong · does the source really support the answer · how fast · cost per student per month · safety problems</td>
+        </tr>
+      </table>
+
+      <div class="why">
+        <b>The 30-day test is the important one.</b> Almost anything improves the score <i>today</i>. Showing a
+        student the full solution improves today's score and can <b>reduce</b> what they remember next month —
+        because they never struggled. If you only measure at the end of the session, you will happily ship
+        things that make students worse.
+      </div>
+
+      <p><b>If they ask for ONE number (the "north star"):</b></p>
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I would propose: <b>topics learned and still remembered, per student, per week.</b>"</p>
+        <p>"'Learned' stops us rewarding activity with no learning. 'Still remembered' stops us rewarding
+        cramming that disappears. 'Per student per week' keeps it honest."</p>
+        <p>"And one warning signal next to it: if that number goes up while students are dropping out, we are
+        pushing too hard and losing the ones who need us most."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c17">
+    <summary><span class="lesson">Lesson 17</span>How do we prove a feature really helped?</summary>
+    <div class="body">
+      <p class="oneline">Give it to some students and not to others. Then compare. That is an A/B test.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>Testing a medicine. You cannot give it to everybody and say "people got better." People get better
+        anyway. You need a group who did not take it, to compare.</p>
+        <p>Same here. Students improve during the year anyway. Without a comparison group, you are taking credit
+        for time passing.</p>
+      </div>
+
+      <p><b>The simple recipe:</b></p>
+      <pre><code>1  Test students BEFORE          (what do they know now?)
+2  Split them randomly into two groups
+3  Group A gets the feature. Group B does not.
+4  Wait — weeks, not days. Learning is slow.
+5  Test both groups AFTER        (who improved more?)
+6  Test AGAIN after 30 days      (who REMEMBERED more?)   ← the important one
+7  Also check: did anyone get frustrated and stop?</code></pre>
+
+      <p><b>Be honest about the hard parts.</b> Interviewers like this:</p>
+      <ul>
+        <li>Learning effects are small and slow. You need many students and several weeks.</li>
+        <li>If you only have a few hundred students, you may not be able to prove a small effect. Say so
+        instead of pretending.</li>
+        <li>It feels wrong to hide a good feature from some children. The honest answer: we are testing exactly
+        <i>because</i> we do not know it is good.</li>
+      </ul>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I would test students before, split them randomly, give the feature to one group only, and test
+        both groups after."</p>
+        <p>"And then test again 30 days later. That one matters most. Almost anything improves the score today.
+        Showing the full solution improves today's score and can reduce what they remember next month, because
+        they never had to struggle."</p>
+        <p>"I would also be honest that this needs weeks and a lot of students. If we are too small to prove it,
+        I would say that instead of reading noise."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 6 ============ -->
+  <h2 id="part6"><span class="num">6</span>Part 6 — Safety and student data</h2>
+
+  <details class="q" id="c18">
+    <summary><span class="lesson">Lesson 18</span>Protecting children's data</summary>
+    <div class="body">
+      <p class="oneline">The users are children. So the rule is not "follow the law". The rule is <b>collect as
+      little as possible</b>.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>The safest way to protect money is not a better safe. It is to not keep cash in the building.</p>
+        <p>Same with data. Data you never collected cannot leak, cannot be stolen, and cannot be misused.</p>
+      </div>
+
+      <p><b>Five things to say:</b></p>
+      <table>
+        <tr><td><b>1. Collect less</b></td><td>For every field, ask: what breaks if we don't have it? We need their answers and progress. We rarely need their photo or exact address.</td></tr>
+        <tr><td><b>2. Parents must agree</b></td><td>For young children, a parent has to give permission. The rules differ by country. I would take legal advice and build for the strictest one.</td></tr>
+        <tr><td><b>3. Careful with outside AI companies</b></td><td>If student conversations go to an outside model, we need a written promise: they do not keep it and do not train on it. And remove names before sending.</td></tr>
+        <tr><td><b>4. Never train on student data</b></td><td>Not without clear, separate permission. Most parents would say no — and they would be right.</td></tr>
+        <tr><td><b>5. Control who sees what</b></td><td>A teacher sees their class. Not other classes. And we record every access.</td></tr>
+      </table>
+
+      <div class="why">
+        <b>Use your own experience here.</b> You built exactly this in HR Insight AI: four roles, access
+        controlled in the database itself, and a log of every action. Same problem — sensitive data about real
+        people. Mention it.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"They are children, so I start by collecting as little as possible. Data we never collect cannot
+        leak."</p>
+        <p>"The model does not need the child's name to explain fractions. So we remove names before sending
+        anything to an outside AI company."</p>
+        <p>"And we never train on student data without clear permission."</p>
+        <p>"I built this pattern before, in my attrition project — four roles, access controlled at the database
+        level, and every action logged."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c19">
+    <summary><span class="lesson">Lesson 19</span>What if the AI teaches something wrong?</summary>
+    <div class="body">
+      <p class="oneline">It will happen. The question is whether you have a plan.</p>
+
+      <p><b>Five steps:</b></p>
+      <table>
+        <tr><td><b>1. Find it</b></td><td>Do not wait for students — they cannot see the mistake. Use automatic checks, an easy report button, and teachers.</td></tr>
+        <tr><td><b>2. Stop it</b></td><td>Is it one bad answer, or a mistake in our content that everyone received? Turn off that topic if needed.</td></tr>
+        <tr><td><b>3. Fix the students</b><br><span style="font-size:13px;color:var(--danger)">this step is special</span></td><td>Students <i>learned</i> the wrong thing. Find who received it. Tell them. Give the correct version. Make them practise again.</td></tr>
+        <tr><td><b>4. Find the cause</b></td><td>Bad content? Wrong content found? Model invented it? Nothing to find and it guessed? Different fixes.</td></tr>
+        <tr><td><b>5. Tell the teachers</b></td><td>A school that discovers it alone will leave. A school you told will often trust you more.</td></tr>
+      </table>
+
+      <div class="why">
+        <b>Step 3 is your best point.</b> In normal software you fix the bug and move on. Here, the damage is
+        inside the student's head. You have to go back and correct it. Almost nobody says this in an interview.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"In normal software, you fix the bug and move on. Here you cannot. The student already learned the
+        wrong thing."</p>
+        <p>"So there is an extra step: find the students who saw it, send them the correction, and make them
+        practise again. We need the logging to make that possible before we ever need it."</p>
+        <p>"And tell the teachers ourselves. A school that finds it alone will not renew."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 7 ============ -->
+  <h2 id="part7"><span class="num">7</span>Part 7 — Arabic (your strongest topic)</h2>
+
+  <details class="q" id="c20">
+    <summary><span class="lesson">Lesson 20</span>Why Arabic is hard for AI — and why you win here</summary>
+    <div class="body">
+      <p class="oneline">You are a native Arabic speaker from Tunisia. Almost nobody else applying can answer
+      this. <b>Steer the conversation here.</b></p>
+
+      <p><b>Problem 1 — people write one language and speak another.</b></p>
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>The textbook and the exam are in Modern Standard Arabic (MSA). But nobody speaks MSA at home. It is
+        nobody's first language.</p>
+        <p>At home, students speak a dialect: Egyptian, Gulf, Levantine, or Maghrebi. These are different enough
+        that speakers sometimes do not understand each other.</p>
+        <p>You are Tunisian. You speak Derja — the dialect that is <b>furthest</b> from MSA, and the one AI
+        handles <b>worst</b>. Say this. It is real, it is specific, and it is memorable.</p>
+      </div>
+      <p><b>The product problem:</b> the student <i>asks</i> in dialect, but must be <i>taught</i> in MSA —
+      because the exam is in MSA.</p>
+
+      <p style="margin-top:20px"><b>Problem 2 — Arabic costs more money.</b></p>
+      <p>Arabic uses about 2 to 3 times more tokens per word than English. Remember: we pay per token. So the
+      same lesson costs more and is slower. And less fits on the "desk".</p>
+
+      <p style="margin-top:20px"><b>Problem 3 — other technical issues.</b></p>
+      <table>
+        <tr><td><b>No short vowels</b></td><td>Arabic is normally written without the small marks. So one written word can mean different things.</td></tr>
+        <tr><td><b>Right to left</b></td><td>Arabic goes right to left, but maths and code go left to right. Mixed together, it breaks on screen. Real problem for a science product.</td></tr>
+        <tr><td><b>Mixed writing</b></td><td>Students write Arabizi — Arabic using Latin letters and numbers. In the Maghreb they mix in French too.</td></tr>
+        <tr><td><b>No good tests</b></td><td>There are very few Arabic tests to measure AI quality. Almost none for dialects. We must build our own.</td></tr>
+      </table>
+
+      <div class="say">
+        <span class="label">Say this — your differentiator</span>
+        <p>"Arabic is not a translation problem. It is a different kind of problem."</p>
+        <p>"Students speak a dialect at home, but the textbook and the exam are in Modern Standard Arabic. So
+        the student asks in dialect and must be taught in MSA."</p>
+        <p>"I am Tunisian. I speak Derja, which is the furthest from MSA and the one models handle worst. So I
+        have a good feeling for where this breaks."</p>
+        <p>"Two practical points. Arabic uses two to three times more tokens per word than English, so our cost
+        per student is higher than an English test suggests. And English quality tests tell us nothing here — we
+        would have to build our own with teachers who speak each dialect."</p>
+      </div>
+
+      <div class="followup">
+        <b>If they ask "so which language should the tutor answer in?"</b>
+        <p style="margin:8px 0 0">"Accept everything on the way in — dialect, MSA, Arabizi, mixed French. A
+        student who writes the way they speak must not be told the system does not understand."</p>
+        <p style="margin:8px 0 0">"Answer mainly in MSA, because the exam is in MSA. But explain the idea in
+        simple language first, then give them the MSA word they will be tested on. Teach the word and the
+        idea."</p>
+        <p style="margin:8px 0 0">"And I would test that rather than assume it. It is a teaching question, not
+        a technical one."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 8 ============ -->
+  <h2 id="part8"><span class="num">8</span>Part 8 — How to answer, in the room</h2>
+
+  <details class="q" id="c21">
+    <summary><span class="lesson">Lesson 21</span>The formula for any technical question</summary>
+    <div class="body">
+      <p class="oneline">Four steps. Always the same four. If you forget everything else, use this.</p>
+
+      <pre><code>1  WHAT PROBLEM does it solve?        "We need X because…"
+2  HOW does it work, simply?          "First… then… then…"
+3  WHEN would I use it — and NOT?     "I'd use it for X. Not for Y, because…"
+4  HOW do I MEASURE it?               "I'd know it works if…"</code></pre>
+
+      <p><b>Example — "What is RAG?" answered with the formula:</b></p>
+      <div class="say">
+        <span class="label">Watch the four steps</span>
+        <p><b>(1 Problem)</b> "The model answers from memory, so it can be wrong and we cannot show the
+        source."</p>
+        <p><b>(2 How)</b> "So first we find the right lesson from our own content. Then we give it to the model
+        with the question. It answers using that."</p>
+        <p><b>(3 When)</b> "I use it for anything factual — the curriculum. I would not use it for teaching
+        style; that is fine-tuning."</p>
+        <p><b>(4 Measure)</b> "I would measure two things separately: did we find the right content, and did
+        the answer really come from it. If you only measure the final answer you cannot tell which part
+        failed."</p>
+      </div>
+
+      <div class="why">
+        <b>Step 4 is what makes you sound like a Product Manager.</b> Engineers usually stop at step 2. Never
+        finish an answer without saying how you would measure it.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="c22">
+    <summary><span class="lesson">Lesson 22</span>English survival phrases for the interview</summary>
+    <div class="body">
+      <p class="oneline">English is your third language. Use these. They make you sound calm and professional —
+      not unsure.</p>
+
+      <div class="say">
+        <span class="label">When you did not understand the question</span>
+        <p>"Could you say that another way, please?"</p>
+        <p>"Just to make sure I understood — do you mean X, or Y?"</p>
+        <p>"Can you give me an example of what you mean?"</p>
+      </div>
+
+      <div class="say">
+        <span class="label">When you need a few seconds to think</span>
+        <p>"That's a good question. Let me think for a moment."</p>
+        <p>"Let me structure my answer. There are three parts to this."</p>
+        <p><i>Silence for 3 seconds is completely normal. It looks thoughtful, not slow.</i></p>
+      </div>
+
+      <div class="say">
+        <span class="label">When you do not know</span>
+        <p>"I don't know that one. Here is how I would find out."</p>
+        <p>"I haven't worked with that directly. What I have done that is close is…"</p>
+        <p><i>This is a strong answer, not a weak one. Inventing an answer is the weak one — and an interviewer
+        will always notice.</i></p>
+      </div>
+
+      <div class="say">
+        <span class="label">When you want to check you answered the question</span>
+        <p>"Does that answer your question, or would you like me to go deeper?"</p>
+        <p>"Was that the level of detail you wanted?"</p>
+      </div>
+
+      <div class="say">
+        <span class="label">When you lose your sentence in the middle</span>
+        <p>"Sorry — let me say that again more clearly."</p>
+        <p><i>Do not apologise twice. Say it once, then continue. Everyone does this, including native
+        speakers.</i></p>
+      </div>
+
+      <div class="why">
+        <b>One real rule:</b> speak <b>slower</b> than feels natural. When we are nervous in a second or third
+        language, we speed up, and that is when words disappear. Slow speech sounds confident. It also gives
+        your brain time to find the next word.
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 9 ============ -->
+  <h2 id="part9"><span class="num">9</span>Part 9 — Words</h2>
+
+  <div class="card">
+    <h3>Every AI word, in one simple line</h3>
+    <table>
+      <tr><th>Word</th><th>Simple meaning</th></tr>
+      <tr><td><b>LLM</b></td><td>A program that reads text and writes the next words. It learned from huge amounts of writing.</td></tr>
+      <tr><td><b>Prompt</b></td><td>What we send to the model — the instructions plus the question.</td></tr>
+      <tr><td><b>Token</b></td><td>A small piece of a word. We pay per token.</td></tr>
+      <tr><td><b>Context window</b></td><td>How much text the model can look at at once. Like a small desk.</td></tr>
+      <tr><td><b>Temperature</b></td><td>How creative the answer is. Low = safe. High = creative.</td></tr>
+      <tr><td><b>Hallucination</b></td><td>The model is wrong but sounds completely sure.</td></tr>
+      <tr><td><b>RAG</b></td><td>Find the right content first, then let the model answer using it. Open-book exam.</td></tr>
+      <tr><td><b>Chunking</b></td><td>Cutting our content into small pieces so we can find the right one.</td></tr>
+      <tr><td><b>Embedding</b></td><td>Turning meaning into numbers, so the computer can find similar things.</td></tr>
+      <tr><td><b>Vector database</b></td><td>Storage where things are arranged by meaning, not by alphabet.</td></tr>
+      <tr><td><b>Retrieval</b></td><td>Finding the right pieces of content.</td></tr>
+      <tr><td><b>Re-ranking</b></td><td>We found 20 pieces. Now pick the best 3.</td></tr>
+      <tr><td><b>Grounding</b></td><td>Does the answer really come from the content we gave it?</td></tr>
+      <tr><td><b>Fine-tuning</b></td><td>Training the model to behave a certain way. Style, not facts.</td></tr>
+      <tr><td><b>Agent</b></td><td>An AI that takes several steps by itself, using tools.</td></tr>
+      <tr><td><b>Prompt injection</b></td><td>Hidden instructions inside text the model reads, that hijack it.</td></tr>
+      <tr><td><b>Evaluation / eval set</b></td><td>A set of test questions with correct answers, used to score every change.</td></tr>
+      <tr><td><b>LLM-as-judge</b></td><td>Using one model to score another model's answers. Only trust it after checking against humans.</td></tr>
+      <tr><td><b>Learner model</b></td><td>What we know about one student. Like a tutor's notebook.</td></tr>
+      <tr><td><b>Knowledge tracing</b></td><td>Guessing if a student really understands, from the order of their answers.</td></tr>
+      <tr><td><b>BKT</b></td><td>The simple way to do knowledge tracing. Update a probability after each answer.</td></tr>
+      <tr><td><b>DKT</b></td><td>The neural network way. More accurate with lots of data, but cannot explain itself.</td></tr>
+      <tr><td><b>IRT</b></td><td>Measures student ability and question difficulty together. Used for adaptive tests.</td></tr>
+      <tr><td><b>Adaptive learning</b></td><td>The content changes based on this student, not the same for everyone.</td></tr>
+      <tr><td><b>Spaced repetition</b></td><td>Reviewing a topic just before you would forget it.</td></tr>
+      <tr><td><b>Prerequisite</b></td><td>The topic you must learn first. Algebra before quadratics.</td></tr>
+      <tr><td><b>Knowledge graph</b></td><td>The map of all topics and which one comes before which.</td></tr>
+      <tr><td><b>Cold start</b></td><td>A new student with no history. We know nothing yet.</td></tr>
+      <tr><td><b>A/B test</b></td><td>Two groups, two versions, compare the results.</td></tr>
+      <tr><td><b>North star metric</b></td><td>The one number that best shows the product is working.</td></tr>
+      <tr><td><b>Guardrail metric</b></td><td>A number we watch to make sure we are not breaking something else.</td></tr>
+      <tr><td><b>MVP</b></td><td>The smallest version we can build to learn if this works.</td></tr>
+      <tr><td><b>MSA</b></td><td>Modern Standard Arabic. The written and formal Arabic. Nobody's mother tongue.</td></tr>
+      <tr><td><b>Dialect</b></td><td>The spoken Arabic of a region. Egyptian, Gulf, Levantine, Maghrebi.</td></tr>
+      <tr><td><b>Arabizi</b></td><td>Writing Arabic with Latin letters and numbers.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Hard word → easy word</h3>
+    <p>The full answers file uses some heavy English. Here is the simple version of each. <b>Use the right-hand
+    column when you speak.</b></p>
+    <table>
+      <tr><th>Instead of…</th><th>Just say…</th></tr>
+      <tr><td>"I would concede that…"</td><td>"You're right about…"</td></tr>
+      <tr><td>"disproportionate share"</td><td>"much more than their size"</td></tr>
+      <tr><td>"the prevailing view"</td><td>"what most people thought"</td></tr>
+      <tr><td>"I'd push back on that"</td><td>"I don't agree, and here's why"</td></tr>
+      <tr><td>"unglamorous but essential"</td><td>"boring, but everything depends on it"</td></tr>
+      <tr><td>"this compounds over time"</td><td>"this gets bigger every month"</td></tr>
+      <tr><td>"the failure mode is…"</td><td>"the way this goes wrong is…"</td></tr>
+      <tr><td>"I'd be explicit about"</td><td>"I'd say clearly"</td></tr>
+      <tr><td>"it's not decision-ready"</td><td>"we can't decide with this yet"</td></tr>
+      <tr><td>"cognitive offloading"</td><td>"the student lets the AI think for them"</td></tr>
+      <tr><td>"instrumentation"</td><td>"how we collect the data"</td></tr>
+      <tr><td>"orthogonal to"</td><td>"a different thing from"</td></tr>
+      <tr><td>"materially worse"</td><td>"clearly worse"</td></tr>
+      <tr><td>"I'd advocate for"</td><td>"I want us to"</td></tr>
+      <tr><td>"stakeholder alignment"</td><td>"getting everyone to agree"</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Your 10 sentences — if you learn nothing else, learn these</h3>
+    <table>
+      <tr><td>1</td><td>"A product manager decides what to build and why. Engineers decide how."</td></tr>
+      <tr><td>2</td><td>"Normal software gives the same answer every time. AI does not."</td></tr>
+      <tr><td>3</td><td>"A hallucination is when the model is wrong but sounds sure. In education that is the worst failure, because the student cannot see it."</td></tr>
+      <tr><td>4</td><td>"Without RAG it is a closed-book exam. With RAG it is an open-book exam."</td></tr>
+      <tr><td>5</td><td>"RAG gives the model knowledge. Fine-tuning gives it behaviour."</td></tr>
+      <tr><td>6</td><td>"Right, right, wrong, wrong and wrong, wrong, right, right are the same score and opposite stories."</td></tr>
+      <tr><td>7</td><td>"Netflix recommends what you enjoy. We recommend what teaches you the most."</td></tr>
+      <tr><td>8</td><td>"If our tutor solves the homework, we built a cheating tool that looks great in a demo."</td></tr>
+      <tr><td>9</td><td>"The model does not need the child's name to explain fractions."</td></tr>
+      <tr><td>10</td><td>"I can sit between the AI team and the business, and be understood by both."</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Your study plan</h3>
+    <table>
+      <tr><th>Day</th><th>Do this</th></tr>
+      <tr><td>1</td><td>Read this whole file once. Do not memorise. Just understand.</td></tr>
+      <tr><td>2</td><td>Lessons 3–10 (AI basics and RAG). Say every green box out loud.</td></tr>
+      <tr><td>3</td><td>Lessons 11–14 (learning AI). This is where you win. Out loud, twice.</td></tr>
+      <tr><td>4</td><td>Lessons 15–20 (measuring, safety, Arabic). Out loud.</td></tr>
+      <tr><td>5</td><td>The 10 sentences. Learn them until they come without thinking.</td></tr>
+      <tr><td>6</td><td>Now open <a href="ai-product-manager.html">the full answers file</a>. It will feel easy now.</td></tr>
+      <tr><td>7</td><td>Read the mock interview out loud, both parts. Then write your own one page.</td></tr>
+    </table>
+  </div>
+
+  <footer>
+    Beginner course · simple English · read this before
+    <a href="ai-product-manager.html">the full answers file</a> ·
+    <a href="index.html">back to Interview Room</a>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
