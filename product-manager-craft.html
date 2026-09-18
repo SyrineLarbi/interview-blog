@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Manager Craft</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="home" href="index.html">Interview<span>Room</span></a>
+  <nav>
+    <a href="#p0">0 · Product vs Project</a>
+    <a href="#p1">1 · The job</a>
+    <a href="#p2">2 · Discovery</a>
+    <a href="#p3">3 · Deciding</a>
+    <a href="#p4">4 · Writing</a>
+    <a href="#p5">5 · The team</a>
+    <a href="#p6">6 · Stakeholders</a>
+    <a href="#p7">7 · Launch</a>
+    <a href="#p8">8 · Managing PMs</a>
+    <a href="#p9">9 · Questions</a>
+    <a href="#p10">10 · Templates</a>
+  </nav>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="kicker">For the AI Product Lead offer · The manager side</p>
+    <h1>Product Manager — the craft</h1>
+    <p>The AI part of that job is covered in two other files. This one covers everything else: how you find the
+    real problem, how you choose what to build, how you write it down, how you work with engineers, and how
+    you handle people who outrank you. Simple English. Real templates.</p>
+    <div class="meta">
+      <span><b>30</b> lessons</span>
+      <span><b>6</b> templates you can copy</span>
+      <span><b>16</b> interview questions</span>
+    </div>
+  </div>
+
+  <div class="tools">
+    <button data-action="expand">Open all</button>
+    <button data-action="collapse">Close all</button>
+    <button data-action="print">Print / PDF</button>
+  </div>
+
+  <div class="card">
+    <h3>The three files for this job, and what each one does</h3>
+    <table>
+      <tr><td><b>1. <a href="ai-product-course.html">AI course</a></b></td><td>Learn the AI ideas from zero. Simple English. RAG, tutors, knowledge tracing.</td></tr>
+      <tr><td><b>2. This file</b></td><td>Learn the product manager job itself. Discovery, roadmap, priorities, PRDs, teams, stakeholders.</td></tr>
+      <tr><td><b>3. <a href="ai-product-manager.html">Full answers</a></b></td><td>The polished answers you actually say in the room.</td></tr>
+    </table>
+    <p style="margin-top:12px">Read 1 and 2 first. Then 3 will feel easy.</p>
+  </div>
+
+  <!-- ============ PART 0 ============ -->
+  <h2 id="p0"><span class="num">0</span>First — product manager is not project manager</h2>
+
+  <details class="q" id="q0">
+    <summary><span class="lesson">Lesson 0</span>The difference, and why it matters in this interview</summary>
+    <div class="body">
+      <p class="oneline">A <b>Product</b> Manager decides <b>what</b> to build and <b>why</b>. A <b>Project</b>
+      Manager makes sure it gets <b>delivered</b> — on time, with the right people.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>A restaurant opens a new branch.</p>
+        <p>The <b>product manager</b> asks: who eats here? What should be on the menu? Do we need a kids' menu?
+        Should we deliver? Which dish do we drop because nobody orders it?</p>
+        <p>The <b>project manager</b> asks: when do the tables arrive? Is the kitchen ready before the opening
+        date? Who is missing? What will make us late?</p>
+        <p>Both matter. They are different jobs.</p>
+      </div>
+
+      <table>
+        <tr><th></th><th>Product Manager</th><th>Project Manager</th></tr>
+        <tr><td><b>Main question</b></td><td>Are we building the right thing?</td><td>Will we finish on time?</td></tr>
+        <tr><td><b>Owns</b></td><td>The problem, the priorities, the outcome</td><td>The plan, the schedule, the risks</td></tr>
+        <tr><td><b>Success is</b></td><td>Users' lives got better and the business grew</td><td>Delivered on time, in scope, in budget</td></tr>
+        <tr><td><b>Ends when</b></td><td>Never. The product keeps living.</td><td>The project is finished.</td></tr>
+        <tr><td><b>Says</b></td><td>"We are not building that."</td><td>"That will take three more weeks."</td></tr>
+      </table>
+
+      <div class="why">
+        <b>Your job offer is Product Manager.</b> So every answer should be about <i>choosing</i> and
+        <i>outcomes</i>, not about schedules and Gantt charts. If you talk too much about planning and
+        deadlines, they will think you misread the role.
+      </div>
+
+      <div class="say">
+        <span class="label">If they ask you the difference — say this</span>
+        <p>"A product manager decides what to build and why. A project manager makes sure it gets delivered."</p>
+        <p>"I am accountable for the outcome — did this actually help the student and the business. Not for the
+        schedule."</p>
+        <p>"In a small team one person often does both. But if I had to choose where my attention goes, it goes
+        to whether we chose the right problem. Delivering the wrong thing on time is still a failure."</p>
+      </div>
+
+      <div class="dont">
+        <b>Don't say</b> "they are basically the same." They are not, and this is a quick way for an
+        interviewer to decide you don't know the job.
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 1 ============ -->
+  <h2 id="p1"><span class="num">1</span>Part 1 — What the job actually is</h2>
+
+  <details class="q" id="q1">
+    <summary><span class="lesson">Lesson 1</span>The five jobs of a Product Manager</summary>
+    <div class="body">
+      <p class="oneline">Everything a PM does fits in five boxes. Learn the five. You can answer almost any
+      question from them.</p>
+
+      <table>
+        <tr><th>#</th><th>The job</th><th>What it looks like in real life</th></tr>
+        <tr>
+          <td><b>1</b></td><td><b>Find the real problem</b></td>
+          <td>Talk to users. Look at data. Find out what is actually wrong — not what people say is wrong.</td>
+        </tr>
+        <tr>
+          <td><b>2</b></td><td><b>Decide what to do first</b></td>
+          <td>20 good ideas, room for 3. Choose. Say no to 17 and explain why.</td>
+        </tr>
+        <tr>
+          <td><b>3</b></td><td><b>Explain it clearly</b></td>
+          <td>Write it down so engineers know what to build, and so the boss knows what will change.</td>
+        </tr>
+        <tr>
+          <td><b>4</b></td><td><b>Help the team ship it</b></td>
+          <td>Answer questions fast. Remove blockers. Make the small decisions so the team is not waiting.</td>
+        </tr>
+        <tr>
+          <td><b>5</b></td><td><b>Measure and learn</b></td>
+          <td>Did it work? How do we know? Keep it, fix it, or kill it.</td>
+        </tr>
+      </table>
+
+      <div class="analogy">
+        <span class="label">The honest version</span>
+        <p>A PM has almost no power. You cannot order the engineers. You cannot order the designer. You cannot
+        order the sales team.</p>
+        <p>You have only three things: <b>a clear problem</b>, <b>evidence</b>, and <b>the ability to
+        explain</b>. That is the whole job. People follow you because your reasoning is good, not because of
+        your title.</p>
+      </div>
+
+      <div class="why">
+        <b>You have done all five at Jumia.</b> You found the real cause of returns (1). You decided to stop the
+        inspection plan (2). You explained it to the commercial team with numbers (3). You ran the fix (4). You
+        measured the return rate after (5). Use this example — it covers all five boxes in one story.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"My job is five things: find the real problem, decide what we do first, explain it clearly, help the
+        team ship it, and prove whether it worked."</p>
+        <p>"And I have no authority over anyone. People follow the reasoning, not the title. So the quality of
+        my thinking is the whole job."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q2">
+    <summary><span class="lesson">Lesson 2</span>What a real week looks like</summary>
+    <div class="body">
+      <p class="oneline">If they ask "what does a normal week look like for you?", this is the answer. It proves
+      you understand the job in practice, not in theory.</p>
+
+      <pre><code>MONDAY      Look at the numbers from last week. What moved? What broke?
+            Sprint planning with the team — what we do for the next two weeks.
+
+TUESDAY     User interviews. 2 or 3 students or teachers. Always be talking to users.
+            Write up what you heard.
+
+WEDNESDAY   Writing day. Specs, PRDs, decisions. This needs quiet time —
+            protect it or it disappears.
+
+THURSDAY    Stakeholders. Update the boss. Talk to sales/support/content.
+            Answer the "when will X be ready" questions.
+
+FRIDAY      Review what the team built. Test it yourself.
+            Look ahead — what is coming in 4 to 8 weeks, and what will block it?
+
+EVERY DAY   15-minute standup with the team.
+            Answer team questions quickly — a blocked engineer is expensive.</code></pre>
+
+      <div class="why">
+        <b>The two things new PMs get wrong:</b>
+        <ul>
+          <li><b>They stop talking to users.</b> Meetings fill the week. Then you are deciding from opinion.
+          Put user conversations in the calendar as a fixed appointment, every week, or they will not
+          happen.</li>
+          <li><b>They answer the team too slowly.</b> If an engineer asks you a question and waits two days, you
+          just wasted two days of their work. Fast, clear answers are more valuable than perfect ones.</li>
+        </ul>
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"My week has four fixed parts. Monday I look at the numbers and plan with the team. Tuesday I talk
+        to users — I protect that time or it disappears. Wednesday I write. Thursday is stakeholders."</p>
+        <p>"And every day, I answer the team fast. A blocked engineer is the most expensive thing in the
+        room."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q3">
+    <summary><span class="lesson">Lesson 3</span>The three questions behind every product decision</summary>
+    <div class="body">
+      <p class="oneline">Before building anything, a PM answers three questions. If any answer is no, stop.</p>
+
+      <table>
+        <tr><th>Question</th><th>Meaning</th><th>Who helps you</th></tr>
+        <tr><td><b>Do people want it?</b></td><td>Is the problem real and painful? Will they use it?</td><td>Users, research, data</td></tr>
+        <tr><td><b>Can we build it?</b></td><td>Is it possible with our team, our time, our technology?</td><td>Engineers</td></tr>
+        <tr><td><b>Should we build it?</b></td><td>Does it help the business? Is it legal and safe?</td><td>Business, legal</td></tr>
+      </table>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>Opening a shop. People must want what you sell. You must be able to get the stock. And you must make
+        enough money to pay the rent.</p>
+        <p>Miss any one, and the shop closes. It does not matter how good the other two are.</p>
+      </div>
+
+      <div class="why">
+        <b>For an AI product, add a fourth:</b> <i>is it reliable enough?</i> An AI feature can be wanted,
+        buildable and good for business — and still be wrong 20% of the time. In education, that fourth
+        question can stop a project on its own. Say this if they ask about AI product decisions.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Before we build I want three answers. Do people want it — is the problem real. Can we build it. And
+        should we build it — does it help the business."</p>
+        <p>"For AI features I add a fourth: is it reliable enough. Something can be wanted and buildable and
+        still be wrong too often to put in front of a child."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 2 ============ -->
+  <h2 id="p2"><span class="num">2</span>Part 2 — Discovery: finding the real problem</h2>
+  <p class="section-note">This is the part most people skip. It is also the part that separates a good PM from a
+  ticket writer.</p>
+
+  <details class="q" id="q4">
+    <summary><span class="lesson">Lesson 4</span>How to talk to users — what to ask and what never to ask</summary>
+    <div class="body">
+      <p class="oneline">Ask about the <b>past</b>, not the future. People are bad at predicting what they will
+      do. They are good at remembering what they did.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>Ask someone: "Would you buy a healthy frozen meal?" Almost everyone says yes. It makes them feel
+        good to say yes.</p>
+        <p>Now ask: "What did you eat for dinner last night? And the night before?" Now you get the truth.</p>
+      </div>
+
+      <table>
+        <tr><th>❌ Never ask</th><th>✅ Ask instead</th></tr>
+        <tr><td>"Would you use a feature that…?"</td><td>"Tell me about the last time you had this problem."</td></tr>
+        <tr><td>"Do you like this idea?"</td><td>"What did you do about it? Walk me through it."</td></tr>
+        <tr><td>"How often would you use it?"</td><td>"How many times did that happen last month?"</td></tr>
+        <tr><td>"What features do you want?"</td><td>"What is the most frustrating part of studying right now?"</td></tr>
+        <tr><td>"Would you pay for it?"</td><td>"What do you pay for today to solve this?"</td></tr>
+      </table>
+
+      <p><b>Three rules while you talk:</b></p>
+      <ul>
+        <li><b>Do not sell.</b> The moment you explain your idea, they become polite. Polite people give you
+        useless data.</li>
+        <li><b>Be quiet.</b> After they answer, wait 3 seconds. The second thing they say is usually the real
+        thing.</li>
+        <li><b>Ask "why" three times.</b> "It's hard." Why? "I don't understand it." Why? "The video goes too
+        fast and I can't stop and ask." Now you have something you can build.</li>
+      </ul>
+
+      <div class="why">
+        <b>How many people?</b> 5 to 8 users per group is usually enough to see the pattern. You are not doing
+        statistics. You are looking for the repeated story. If three people describe the same pain in the same
+        words, that is real.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I ask about the past, not the future. People cannot predict what they will do, but they remember
+        what they did."</p>
+        <p>"So instead of 'would you use this', I ask 'tell me about the last time this happened, and what did
+        you do'."</p>
+        <p>"And I do not describe my idea during the interview. The moment I do, they become polite, and polite
+        answers are useless."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q5">
+    <summary><span class="lesson">Lesson 5</span>Personas and "jobs to be done"</summary>
+    <div class="body">
+      <p class="oneline">A <b>persona</b> is a short description of one type of user. A <b>job to be done</b> is
+      what they are really trying to achieve.</p>
+
+      <div class="analogy">
+        <span class="label">The famous example</span>
+        <p>People do not buy a drill because they want a drill. They want a <b>hole</b>. Actually they want a
+        <b>shelf</b>. Actually they want <b>a tidy room</b>.</p>
+        <p>If you only think "they want a drill", you build a better drill. If you understand the real job, you
+        might build something completely different — and better.</p>
+      </div>
+
+      <p><b>For the learning platform, the four users and their real jobs:</b></p>
+      <table>
+        <tr><th>User</th><th>What they say they want</th><th>What they really want</th></tr>
+        <tr><td><b>Student</b></td><td>"Help with my homework"</td><td>To stop feeling stupid. To pass the exam. To finish quickly and go out.</td></tr>
+        <tr><td><b>Parent</b></td><td>"A learning app"</td><td>Proof their money is working. Less stress at home about school.</td></tr>
+        <tr><td><b>Teacher</b></td><td>"A tool for my class"</td><td>Less marking. To know who is struggling <i>before</i> the test, not after.</td></tr>
+        <tr><td><b>School</b></td><td>"Better results"</td><td>Numbers they can show to parents and to the ministry.</td></tr>
+      </table>
+
+      <div class="why">
+        <b>Be honest about the student.</b> Most students are not excited about learning. They want to finish
+        and go out. A good PM designs for the real person, not for a perfect imaginary student. Saying this in
+        the interview shows maturity — many candidates describe a fantasy user.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"People do not want a drill. They want a hole. Actually they want a tidy room."</p>
+        <p>"So for a student, the real job is not 'learn maths'. It is 'stop feeling stupid, pass the exam, and
+        finish quickly'. I would design for that real person, not for an imaginary student who loves
+        studying."</p>
+        <p>"And the parent is usually the one paying. Their job is proof that the money is working. So the
+        progress report is not a small feature — for them it <i>is</i> the product."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q6">
+    <summary><span class="lesson">Lesson 6</span>How do you know a problem is real?</summary>
+    <div class="body">
+      <p class="oneline">One person complaining is a story. A pattern in the data is a problem. You need both.</p>
+
+      <p><b>The four sources, and what each is good for:</b></p>
+      <table>
+        <tr><th>Source</th><th>Tells you</th><th>Does not tell you</th></tr>
+        <tr><td><b>User interviews</b></td><td><b>Why</b> something happens</td><td>How often, how many people</td></tr>
+        <tr><td><b>Data / analytics</b></td><td><b>What</b> and <b>how many</b></td><td>Why</td></tr>
+        <tr><td><b>Support tickets</b></td><td>The loudest problems</td><td>The silent ones — people who quit without complaining</td></tr>
+        <tr><td><b>Sales / teachers</b></td><td>What blocks a deal</td><td>What everyday users feel</td></tr>
+      </table>
+
+      <div class="why">
+        <b>The rule that matters:</b> data tells you <b>what</b>, interviews tell you <b>why</b>. You need both.
+        Data alone gives you "40% of students stop at lesson 3" and no idea what to do. Interviews alone give
+        you one angry parent and no idea if it matters.
+      </div>
+
+      <div class="analogy">
+        <span class="label">Watch out for the silent users</span>
+        <p>Support tickets only show you people who cared enough to complain. The students who opened the app,
+        felt lost, closed it and never came back — they wrote no ticket.</p>
+        <p>They are usually the biggest group and the biggest problem. You only find them in the data.</p>
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Data tells me what is happening and how big it is. Interviews tell me why. I need both — one without
+        the other leads to bad decisions."</p>
+        <p>"And I look for the silent users. Support tickets only show people who complained. The ones who
+        opened the app, felt lost and never came back wrote nothing. They are usually the bigger group."</p>
+      </div>
+      <div class="followup">
+        <b>Use your Jumia story here:</b> "I saw this at Jumia. Returns were logged as free text, so nobody
+        could analyse them. I changed the collection first — a fixed list of reasons. A few months later I had
+        real data, and it showed the cause everybody assumed was wrong. Sometimes the first job is fixing how
+        you collect information, before you can answer anything."
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 3 ============ -->
+  <h2 id="p3"><span class="num">3</span>Part 3 — Deciding what to build</h2>
+
+  <details class="q" id="q7">
+    <summary><span class="lesson">Lesson 7</span>Prioritisation — how to choose <span class="tag">They will ask this</span></summary>
+    <div class="body">
+      <p class="oneline">You have 20 ideas and room for 3. Prioritisation is how you choose, and how you explain
+      the choice to people who disagree.</p>
+
+      <p><b>The simplest method — value vs effort:</b></p>
+      <pre><code>            HIGH VALUE
+                 │
+   DO FIRST      │      DO IF YOU CAN
+   (easy + big)  │      (big but hard)
+   ──────────────┼──────────────────────  →  HIGH EFFORT
+   DO LATER      │      DO NEVER
+   (easy, small) │      (hard and small)
+                 │</code></pre>
+      <p>Two questions per idea: how much does it help, and how hard is it. Put them on the square. Start top
+      left. This is enough for most decisions and takes 20 minutes.</p>
+
+      <p style="margin-top:20px"><b>The named method they may ask about — RICE:</b></p>
+      <table>
+        <tr><td><b>R — Reach</b></td><td>How many people does this affect? (per month)</td></tr>
+        <tr><td><b>I — Impact</b></td><td>How much does it help each one? (big / medium / small)</td></tr>
+        <tr><td><b>C — Confidence</b></td><td>How sure am I? (100% / 80% / 50%)</td></tr>
+        <tr><td><b>E — Effort</b></td><td>How much work? (person-months)</td></tr>
+      </table>
+      <pre><code>Score  =  Reach × Impact × Confidence
+          ─────────────────────────────
+                    Effort
+
+Example — AI tutor for maths grade 8:
+   Reach       8,000 students/month
+   Impact      3  (big)
+   Confidence  0.5  (we are not sure it improves learning)
+   Effort      4 person-months
+   Score = (8000 × 3 × 0.5) / 4 = 3,000</code></pre>
+
+      <div class="why">
+        <b>The honest part — say this and they will trust you.</b> RICE looks scientific and it is not. You
+        choose the numbers. Two people score the same idea very differently.
+        <br><br>
+        Its real value is not the score. It is that it forces the conversation into the open: <i>"you said
+        impact is high — based on what?"</i> The argument becomes about evidence instead of about who speaks
+        loudest. That is the actual benefit, and most candidates do not know it.
+      </div>
+
+      <p><b>The two things every framework misses:</b></p>
+      <ul>
+        <li><b>Some items unlock others.</b> Building the map of topics (which subject comes before which) is
+        not a feature anyone asked for. But three later features become cheap because of it. Frameworks score
+        it low. You must argue for it separately.</li>
+        <li><b>Some items reduce risk.</b> A two-week test to find out whether an AI approach even works is not
+        "value". It is information. Sometimes buying information is the best use of two weeks.</li>
+      </ul>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I start simple — how much does it help, how hard is it. That answers most decisions quickly."</p>
+        <p>"For bigger decisions I use RICE: how many people, how much impact, how confident am I, how much
+        work."</p>
+        <p>"But I would be honest that RICE is not science. I choose the numbers. Its real value is that it
+        forces us to say <i>why</i> we think impact is high. The argument becomes about evidence instead of who
+        is most senior in the room."</p>
+        <p>"And I always fight for two things frameworks score badly: the boring foundations that make later
+        work cheap, and short experiments that buy us information."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q8">
+    <summary><span class="lesson">Lesson 8</span>How to say no</summary>
+    <div class="body">
+      <p class="oneline">Saying no is most of the job. Saying it badly is how PMs lose the room.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>"No" closes the door. "Not now, and here is what would change my mind" leaves the door open and keeps
+        the relationship.</p>
+        <p>People can accept not getting their feature. They cannot accept feeling ignored.</p>
+      </div>
+
+      <p><b>The four-step no:</b></p>
+      <table>
+        <tr><td><b>1. Show you understood</b></td><td>"So the problem is that teachers can't see who is struggling until the test. Is that right?"</td></tr>
+        <tr><td><b>2. Give the real reason</b></td><td>"We're not doing it this quarter because we're fixing the content map, and the teacher view depends on it."</td></tr>
+        <tr><td><b>3. Say what would change it</b></td><td>"If we heard this from three more schools, or it blocked a deal, it moves up."</td></tr>
+        <tr><td><b>4. Give them something</b></td><td>"In the meantime, here's a report you can run manually. Would that help for now?"</td></tr>
+      </table>
+
+      <div class="dont">
+        <b>Never say:</b> "It's not on the roadmap." That is not a reason, it is a wall. Also never say "the
+        engineers say it's too hard" — you are hiding behind your team and it will get back to them.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I never just say no. I repeat the problem back so they know I understood, give the real reason, say
+        what would change my mind, and try to offer something small in the meantime."</p>
+        <p>"People can accept not getting their feature. They cannot accept feeling ignored."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q9">
+    <summary><span class="lesson">Lesson 9</span>The roadmap — and why dates are dangerous</summary>
+    <div class="body">
+      <p class="oneline">A roadmap is a plan of <b>problems we will solve</b>, not a list of features with
+      dates.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p><b>Bad roadmap:</b> "AI tutor — 15 March. Teacher dashboard — 30 April."</p>
+        <p>Now every date is a promise. If the AI tutor turns out to need three more months, you have failed —
+        even if stopping was the right decision.</p>
+        <p><b>Good roadmap:</b> "This quarter: students stop getting stuck alone. We think an AI tutor is the
+        answer. We will know by March whether it works."</p>
+        <p>Now you promised an outcome, and you are allowed to change the solution when you learn something.</p>
+      </div>
+
+      <p><b>The three-part roadmap — use this structure:</b></p>
+      <table>
+        <tr><th>Part</th><th>Confidence</th><th>How to talk about it</th></tr>
+        <tr><td><b>Now</b> (this quarter)</td><td>High — we are building it</td><td>You can commit to this</td></tr>
+        <tr><td><b>Next</b> (next quarter)</td><td>Medium — probably, if what we learn now says yes</td><td>"Likely, not promised"</td></tr>
+        <tr><td><b>Later</b> (the year)</td><td>Low — the direction</td><td>"This is where we're heading"</td></tr>
+      </table>
+
+      <div class="why">
+        <b>Always publish the "not doing" list.</b> Writing "we are not building X this year, because Y" is
+        worth more than half the roadmap. It stops the same conversation happening every month, and it tells
+        your team what to refuse without asking you.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I build the roadmap around problems and outcomes, not features and dates."</p>
+        <p>"I use three levels: now, next, later. Now is committed. Next is likely. Later is direction. Mixing
+        them together is how an experiment becomes a promise by accident."</p>
+        <p>"And I publish what we are <b>not</b> doing, with the reason. That saves more time than the roadmap
+        itself."</p>
+      </div>
+      <div class="followup">
+        <b>If they push:</b> <i>"But my CEO wants dates."</i> →
+        "That's fair, and some dates are real — a school year starts when it starts. I give firm dates for the
+        current quarter, and ranges beyond that. What I won't do is give a firm date for something we haven't
+        proven is possible yet. I'd rather say 'I'll know in three weeks' than give a date I'll have to break."
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 4 ============ -->
+  <h2 id="p4"><span class="num">4</span>Part 4 — Writing it down</h2>
+
+  <details class="q" id="q10">
+    <summary><span class="lesson">Lesson 10</span>The PRD — what it is and a template you can copy</summary>
+    <div class="body">
+      <p class="oneline">PRD = Product Requirements Document. It is the document that says what we are building
+      and why, so everyone builds the same thing.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>A brief for a builder. Not a drawing of every brick — that is the engineer's job. But clear enough
+        that they do not build a garage when you wanted a kitchen.</p>
+      </div>
+
+      <p><b>Copy this template:</b></p>
+      <pre><code># [Feature name]
+
+## 1. The problem
+Who has this problem, and what happens to them today.
+Evidence: what data or interviews tell us this is real.
+
+## 2. Why now
+Why this, before the other things we could do.
+
+## 3. Who it is for
+Which user. If it serves everyone, it probably serves nobody.
+
+## 4. What success looks like
+The number we expect to move, and by how much.
+"We will know this worked if ___ goes from ___ to ___."
+
+## 5. What we are building
+Plain description. The user journey, step by step.
+
+## 6. What we are NOT building
+The most important section. Write it early.
+
+## 7. Open questions
+What we do not know yet, and who will answer it.
+
+## 8. Risks
+What could go wrong. For AI: what happens when it is wrong.</code></pre>
+
+      <div class="why">
+        <b>Section 6 is the one to mention in the interview.</b> "What we are NOT building" prevents scope
+        growing quietly. Without it, every conversation adds one more small thing, and three months later the
+        feature is twice the size and nobody decided that.
+        <br><br>
+        <b>Section 4 is the one juniors forget.</b> If you cannot say which number should move, you do not
+        understand the feature yet. Write it before you write section 5.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"My spec has eight parts, but three matter most. The problem with evidence. What success looks like —
+        the actual number we expect to move. And what we are <i>not</i> building."</p>
+        <p>"That last one stops scope growing quietly. Without it, every meeting adds one small thing, and three
+        months later the feature is twice the size and nobody decided that."</p>
+        <p>"I also write the success number <i>before</i> the solution. If I can't say which number should move,
+        I don't understand the problem well enough yet."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q11">
+    <summary><span class="lesson">Lesson 11</span>User stories and acceptance criteria</summary>
+    <div class="body">
+      <p class="oneline">A user story is one small piece of work, written from the user's side. Acceptance
+      criteria say exactly when it is finished.</p>
+
+      <p><b>The format:</b></p>
+      <pre><code>As a [who]
+I want to [do what]
+So that [why — the benefit]</code></pre>
+
+      <p><b>Real example for your product:</b></p>
+      <pre><code>As a grade 8 student
+I want to ask the tutor about a question I got wrong
+So that I understand my mistake instead of just seeing the right answer
+
+ACCEPTANCE CRITERIA
+✓ The tutor can see which question I got wrong and what I answered
+✓ The tutor asks me what I tried before it explains anything
+✓ The tutor never gives the final answer directly
+✓ The answer shows which lesson it came from
+✓ If the topic is not in my curriculum, the tutor says so
+✓ The first words appear in under 3 seconds
+✓ It works in Arabic and in French</code></pre>
+
+      <div class="why">
+        <b>Why acceptance criteria matter:</b> without them, "done" is an opinion. The engineer thinks it is
+        finished. You think it is not. You argue. With them, it is a checklist and there is nothing to argue
+        about.
+        <br><br>
+        Notice criteria 3 and 5. Those are <b>product rules</b>, not technical details. That is your job to
+        specify. An engineer will not invent "never give the final answer" on their own.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"A user story is one small piece of work written from the user's side: as a student, I want to, so
+        that."</p>
+        <p>"Then acceptance criteria — the checklist that says when it is finished. Without them, 'done' is an
+        opinion and you argue about it."</p>
+        <p>"And I put the product rules in the criteria. For a tutor, 'never gives the final answer directly' is
+        a line I write. The engineer will not invent that rule for me."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 5 ============ -->
+  <h2 id="p5"><span class="num">5</span>Part 5 — Working with the team</h2>
+
+  <details class="q" id="q12">
+    <summary><span class="lesson">Lesson 12</span>Agile and Scrum — what actually happens</summary>
+    <div class="body">
+      <p class="oneline">Agile means: build a small piece, show it, learn, adjust. Scrum is one common way to do
+      that, in two-week blocks called sprints.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p><b>Old way:</b> plan everything for a year, build for a year, show it at the end. If you were wrong,
+        you wasted a year.</p>
+        <p><b>Agile:</b> plan two weeks, build, show it, ask "is this right?", adjust. If you were wrong, you
+        wasted two weeks.</p>
+      </div>
+
+      <p><b>The four meetings, and what you do in each:</b></p>
+      <table>
+        <tr><th>Meeting</th><th>When</th><th>Your job in it</th></tr>
+        <tr><td><b>Sprint planning</b></td><td>Start of the sprint</td><td>Explain what matters most and why. The team decides how much they can take. <b>You do not decide that.</b></td></tr>
+        <tr><td><b>Daily standup</b></td><td>Every day, 15 min</td><td>Listen. Catch blockers. Do not turn it into a status report for you.</td></tr>
+        <tr><td><b>Sprint review / demo</b></td><td>End of the sprint</td><td>See the real thing working. Give feedback. Invite stakeholders.</td></tr>
+        <tr><td><b>Retrospective</b></td><td>End of the sprint</td><td>The team talks about <i>how</i> they worked. Often you mostly listen — and you accept criticism of yourself.</td></tr>
+      </table>
+
+      <p><b>The words you need:</b></p>
+      <table>
+        <tr><td><b>Backlog</b></td><td>The list of everything we might build, in priority order. You own the order.</td></tr>
+        <tr><td><b>Sprint</b></td><td>A fixed block of time, usually 2 weeks.</td></tr>
+        <tr><td><b>Story points</b></td><td>How big a task is — relative, not in hours. The team estimates, not you.</td></tr>
+        <tr><td><b>Velocity</b></td><td>How many points the team finishes per sprint. Used to predict, never to push.</td></tr>
+        <tr><td><b>Blocker</b></td><td>Something stopping work. Your top priority to remove.</td></tr>
+        <tr><td><b>Definition of done</b></td><td>The team's shared rule for when work is really finished (tested, reviewed, documented).</td></tr>
+      </table>
+
+      <div class="dont">
+        <b>The mistake that makes engineers hate a PM:</b> using velocity as pressure. "Last sprint you did 30
+        points, so this sprint do 35." Velocity is a prediction tool, not a target. Teams respond by inflating
+        their estimates, and then the number means nothing.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Agile means build a small piece, show it, learn, adjust. Scrum is one way to do that, in two-week
+        sprints."</p>
+        <p>"In planning I explain what matters most and why. The team decides how much fits — that is their
+        call, not mine."</p>
+        <p>"And I never use velocity as a target. It is for predicting, not for pushing. If you push with it,
+        the team just makes the numbers bigger and the number stops meaning anything."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q13">
+    <summary><span class="lesson">Lesson 13</span>What a Product Manager does NOT do</summary>
+    <div class="body">
+      <p class="oneline">Knowing the limits of the job is a sign of experience. Many candidates describe
+      themselves doing everyone else's job.</p>
+
+      <table>
+        <tr><th>You do NOT…</th><th>Because…</th></tr>
+        <tr><td>Decide <b>how</b> to build it</td><td>That is the engineers' expertise. You give the problem and the constraints.</td></tr>
+        <tr><td>Decide how long it takes</td><td>The team estimates. You can ask "what would make this smaller?" — you cannot set the number.</td></tr>
+        <tr><td>Design the screens</td><td>That is the designer. You give the problem and the user, not the layout.</td></tr>
+        <tr><td>Manage the team's daily tasks</td><td>That is the team, or a scrum master. You manage the <i>what</i>, not the <i>who does what today</i>.</td></tr>
+        <tr><td>Write the tickets and disappear</td><td>That is a ticket writer, not a PM. You own the outcome.</td></tr>
+      </table>
+
+      <div class="why">
+        <b>The one exception worth saying:</b> in a small team, you do a bit of everything. The difference is
+        that you know which hat you are wearing. Say this — it shows you understand the theory <i>and</i> the
+        reality.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I decide what and why. I do not decide how — that is the engineers' expertise, and if I take that
+        from them I lose the most valuable thing they have."</p>
+        <p>"I also do not set estimates. I can ask what would make it smaller. I cannot set the number."</p>
+        <p>"In a small team everyone does a bit of everything. The important thing is knowing which hat I am
+        wearing at that moment."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q14">
+    <summary><span class="lesson">Lesson 14</span>Working with engineers — how to be trusted</summary>
+    <div class="body">
+      <p class="oneline">Bring the problem, not the solution. That is the whole rule.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p><b>Bad:</b> "Build me a search box with a dropdown filter."</p>
+        <p><b>Good:</b> "Students can't find last week's lesson. They give up after about 30 seconds. How could
+        we fix that?"</p>
+        <p>In the second version, the engineer might say: "We don't need search. If we just put 'continue where
+        you left off' on the home page, 80% of that problem disappears." That is a week of work saved, and you
+        would never have thought of it.</p>
+      </div>
+
+      <p><b>Four things that build trust fast:</b></p>
+      <ul>
+        <li><b>Answer questions quickly.</b> A blocked engineer costs more than a wrong answer. Decide, and say
+        you will change it if you were wrong.</li>
+        <li><b>Protect them from interruptions.</b> When sales walks in with an urgent request, it comes to you,
+        not to them.</li>
+        <li><b>Explain why, always.</b> "Build this" gets you compliance. "Build this because students drop off
+        here" gets you their brain.</li>
+        <li><b>Take the blame publicly.</b> If the feature failed because it was the wrong idea, that is yours.
+        Say it out loud.</li>
+      </ul>
+
+      <div class="why">
+        <b>Your advantage:</b> you have been the engineer. You know what a vague spec feels like, and you know
+        when "that's hard" is real. Say this — it is genuinely rare and it answers the "can you work with an ML
+        team" question at the same time.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I bring the problem, not the solution. If I say 'build me a search box', I get a search box. If I
+        say 'students can't find last week's lesson and give up after 30 seconds', I often get a better and
+        cheaper answer that I would never have thought of."</p>
+        <p>"I answer their questions fast. A blocked engineer is more expensive than a decision I might have to
+        change later."</p>
+        <p>"And I have been on that side. I have been the developer receiving a vague spec. So I know what is
+        missing before I send it."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 6 ============ -->
+  <h2 id="p6"><span class="num">6</span>Part 6 — Stakeholders and politics</h2>
+
+  <details class="q" id="q15">
+    <summary><span class="lesson">Lesson 15</span>Who your stakeholders are and what each one wants</summary>
+    <div class="body">
+      <p class="oneline">A stakeholder is anyone who cares about your product and is not on your team. Each one
+      wants something different. Speak to each in their own language.</p>
+
+      <table>
+        <tr><th>Who</th><th>What they actually want</th><th>Say it in their words</th></tr>
+        <tr><td><b>CEO / boss</b></td><td>Growth, money, no surprises</td><td>"This affects retention and it is worth about X."</td></tr>
+        <tr><td><b>Sales</b></td><td>Things that close deals</td><td>"This unblocks the three schools you mentioned."</td></tr>
+        <tr><td><b>Marketing</b></td><td>Something to announce, and dates</td><td>"Here is what is confirmed and what is not yet."</td></tr>
+        <tr><td><b>Support</b></td><td>Fewer angry tickets</td><td>"This removes the top complaint this quarter."</td></tr>
+        <tr><td><b>Content / teachers</b></td><td>Quality and respect for their expertise</td><td>"You decide the pedagogy. I'll bring you the data."</td></tr>
+        <tr><td><b>Legal</b></td><td>No risk, especially with children</td><td>"Here is what data we collect and why."</td></tr>
+      </table>
+
+      <div class="analogy">
+        <span class="label">The most useful habit</span>
+        <p>Translate your finding into their currency <i>before</i> you walk into the room.</p>
+        <p>You learned this at Jumia. A returns problem described as a rate went nowhere. The same problem
+        described as a cost got fixed within a week. Same fact. Different unit. Different result.</p>
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I translate the same finding into each person's language before the meeting."</p>
+        <p>"I learned this the hard way at Jumia. I presented a returns problem as a rate and nothing happened.
+        I presented the same problem as a cost and it was fixed in a week. Same fact, different unit."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q16">
+    <summary><span class="lesson">Lesson 16</span>When a senior person wants something you disagree with</summary>
+    <div class="body">
+      <p class="oneline">This happens constantly. How you handle it decides how much people trust you.</p>
+
+      <p><b>The five steps:</b></p>
+      <table>
+        <tr><td><b>1. Find the real need</b></td><td>They said "add a leaderboard". Ask why. Maybe the real problem is "students stop after two weeks". A leaderboard is their solution, not their problem.</td></tr>
+        <tr><td><b>2. Agree on the problem</b></td><td>"So we want students to come back more. Yes?" Now you are on the same side.</td></tr>
+        <tr><td><b>3. Bring evidence, not opinion</b></td><td>"Here is what our data shows about why students stop."</td></tr>
+        <tr><td><b>4. Offer a cheaper test</b></td><td>"Instead of building it for everyone, can we test it with 200 students for two weeks?"</td></tr>
+        <tr><td><b>5. If they still say do it — do it well</b></td><td>Disagree and commit. Then measure it honestly.</td></tr>
+      </table>
+
+      <div class="why">
+        <b>Step 5 matters most.</b> Sometimes you lose. If you then build it badly, or quietly, or with an "I
+        told you so" face — you have damaged the relationship more than the feature ever could. Build it
+        properly, measure it honestly, and let the number speak. If you were right, everyone sees it without
+        you saying anything.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"First I find the real need. If someone asks for a leaderboard, the leaderboard is their solution.
+        The problem might be that students stop after two weeks."</p>
+        <p>"Then I bring evidence instead of my opinion, and I try to offer a cheaper way to find out — test it
+        with 200 students instead of building it for everyone."</p>
+        <p>"And if they still want it, I build it properly and measure it honestly. Disagree and commit. Doing
+        it badly to prove I was right is the worst thing I could do."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q17">
+    <summary><span class="lesson">Lesson 17</span>Status updates — the template</summary>
+    <div class="body">
+      <p class="oneline">Send the same short update every week. Boring and regular beats detailed and
+      occasional.</p>
+
+      <pre><code>SUBJECT: [Product] — week of 12 October
+
+🟢 ON TRACK   AI tutor pilot — grade 8 maths
+   Shipped to 200 students this week. First numbers on Friday.
+
+🟡 AT RISK    Content tagging
+   We are 3 weeks behind. Reason: 2 experts moved to exam season.
+   What I need: 1 more reviewer, or we move the date to 15 December.
+   Decision needed by: Friday.
+
+🔴 BLOCKED    Teacher dashboard
+   Waiting on the content map. Restarts when tagging is done.
+
+DECISIONS MADE
+   - We are not launching in Gulf dialect this quarter. Quality is not there.
+
+NEXT WEEK
+   - First learning results from the pilot
+   - Decision on the tagging resource</code></pre>
+
+      <div class="why">
+        <b>The two rules:</b>
+        <ul>
+          <li><b>Bad news early and plainly.</b> A problem told in week 2 is a problem. The same problem
+          discovered in week 8 is a crisis, and it is now your credibility as well.</li>
+          <li><b>Never say "at risk" without saying what you need.</b> Always attach the decision you want and
+          the deadline for it. Otherwise you have just transferred anxiety with no way to act on it.</li>
+        </ul>
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I send the same short update every week. Green, yellow, red. What we decided. What is next."</p>
+        <p>"Two rules. Bad news goes out early — a problem in week 2 is a problem, the same problem found in
+        week 8 is a crisis. And I never say 'at risk' without saying what I need and by when."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 7 ============ -->
+  <h2 id="p7"><span class="num">7</span>Part 7 — Launch and after</h2>
+
+  <details class="q" id="q18">
+    <summary><span class="lesson">Lesson 18</span>How to launch</summary>
+    <div class="body">
+      <p class="oneline">Launch slowly on purpose. Especially with AI, and especially with children.</p>
+
+      <pre><code>1  INTERNAL      The team uses it. You use it every day for a week.
+2  SMALL PILOT   100–500 users you can actually talk to.
+                 Read what happens. Not dashboards — real sessions.
+3  PERCENTAGE    5% → 25% → 50% → 100%, watching the numbers each time
+4  FULL          Everyone
+
+AT EVERY STEP YOU NEED:
+   ✓ a way to turn it off instantly (without a new release)
+   ✓ a clear rule for when to stop and go back
+   ✓ someone watching the numbers, by name
+   ✓ support and teachers told in advance</code></pre>
+
+      <div class="why">
+        <b>The kill switch is not optional for an AI feature.</b> If something goes wrong with a tutor talking
+        to children, you need it off in one minute, not in one release cycle. Say this — it shows you have
+        thought about the worst day, not just the launch day.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I launch in stages. Internal, then a small pilot I can actually talk to, then a percentage
+        rollout."</p>
+        <p>"For an AI feature with children, two things are mandatory. A switch to turn it off instantly without
+        a release. And real people reading real conversations in the first weeks — not just dashboards. That is
+        where you find the problems no test predicted."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q19">
+    <summary><span class="lesson">Lesson 19</span>After launch — and how to kill a feature</summary>
+    <div class="body">
+      <p class="oneline">Most teams launch and move on. Checking afterwards, and removing what failed, is what
+      separates a senior PM.</p>
+
+      <p><b>Two weeks after launch, answer four questions:</b></p>
+      <table>
+        <tr><td>1</td><td>Did the number we promised actually move?</td></tr>
+        <tr><td>2</td><td>Did anything else get worse? (the guardrails)</td></tr>
+        <tr><td>3</td><td>Are people using it the way we expected — or differently?</td></tr>
+        <tr><td>4</td><td>What did we learn that changes the next thing we build?</td></tr>
+      </table>
+
+      <p><b>Killing a feature — the rules:</b></p>
+      <ul>
+        <li><b>Decide the rule before you launch.</b> "If fewer than 5% use it after 8 weeks, we remove it."
+        Decide it while nobody is emotionally attached.</li>
+        <li><b>Removing costs something too.</b> Every feature you keep must be maintained, tested, explained
+        and supported forever. A feature nobody uses is not free.</li>
+        <li><b>Tell the truth about why.</b> "We were wrong about the problem" is a fine reason and it teaches
+        the team something. "It didn't get priority" teaches nothing.</li>
+      </ul>
+
+      <div class="why">
+        <b>Why this is hard:</b> people become attached to what they built. You will be attached too. That is
+        exactly why the rule must exist before launch, in writing.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Two weeks after launch I check four things: did the number move, did anything else get worse, are
+        people using it the way we expected, and what did we learn."</p>
+        <p>"And I decide the kill rule <i>before</i> launch — while nobody is attached yet. 'If fewer than 5%
+        use it after eight weeks, we remove it.'"</p>
+        <p>"Because a feature nobody uses is not free. We maintain it, test it and explain it forever."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 8 ============ -->
+  <h2 id="p8"><span class="num">8</span>Part 8 — Managing other PMs</h2>
+
+  <details class="q" id="q20">
+    <summary><span class="lesson">Lesson 20</span>What changes when you lead PMs <span class="tag hard">The job asks for this</span></summary>
+    <div class="body">
+      <p class="oneline">You stop making the decisions. You start making sure good decisions get made.</p>
+
+      <div class="analogy">
+        <span class="label">Think of it like…</span>
+        <p>You were the best picker in the warehouse. Now you manage the pickers.</p>
+        <p>If you keep picking, you are doing one person's job and nobody is managing. If you coach, you get the
+        work of the whole team — but you have to let them be slower than you at first.</p>
+      </div>
+
+      <p><b>The four things a PM lead does:</b></p>
+      <table>
+        <tr><td><b>1. Set the direction</b></td><td>They own their area. You own how the areas fit together.</td></tr>
+        <tr><td><b>2. Coach the thinking</b></td><td>Ask questions instead of giving answers. "How do you know that's the problem?" "What would prove you wrong?"</td></tr>
+        <tr><td><b>3. Hold the seams</b></td><td>The gaps <i>between</i> two PMs' areas are where products break. Nobody owns them unless you do.</td></tr>
+        <tr><td><b>4. Remove the blockers</b></td><td>Get them access, budget, and the difficult meeting they cannot get themselves.</td></tr>
+      </table>
+
+      <div class="why">
+        <b>The failure mode to name out loud:</b> taking the decision away from them because you would be
+        faster. It feels efficient. It teaches them nothing, and next time they wait for you instead of
+        deciding. Saying this proves you understand the job even without having done it.
+      </div>
+
+      <div class="say">
+        <span class="label">Say this — the honest version</span>
+        <p>"I have not managed product managers. I have led a team — a warehouse operation across shifts, with
+        performance management and the hard conversations. So leading people is not new."</p>
+        <p>"What I think managing PMs needs is coaching judgement, not reviewing output. Asking 'how do you know
+        that's the real problem' instead of answering it for them."</p>
+        <p>"And holding the seams. The gaps between two PMs' areas are where products break, and nobody owns
+        them unless the lead does."</p>
+        <p>"The failure mode I would watch for in myself is taking the decision because I would be faster. It
+        feels efficient and it teaches them nothing."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 9 ============ -->
+  <h2 id="p9"><span class="num">9</span>Part 9 — Interview questions on the PM craft</h2>
+  <p class="section-note">These are the questions the AI file does not cover. All answers use your real
+  experience.</p>
+
+  <details class="q" id="q21">
+    <summary>1. What does a product manager do?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Five things. Find the real problem, decide what we do first, explain it clearly, help the team ship
+        it, and prove whether it worked."</p>
+        <p>"The part people underestimate is that a PM has no authority. I cannot order the engineers or the
+        designer. So the whole job is having a clear problem, real evidence, and being able to explain it. People
+        follow the reasoning, not the title."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q22">
+    <summary>2. How do you decide what to build next?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I start by checking that the ideas are even solving the same goal. Usually two or three are the same
+        need described by different people, and one or two don't fit the strategy at all. Removing those is
+        cheaper than ranking them."</p>
+        <p>"Then for each one: how big is the problem, how sure am I that this solves it, how much work is it,
+        and does it fit where we are going."</p>
+        <p>"I use RICE when a decision is contested. But I'd be honest that RICE isn't science — I choose the
+        numbers. Its real value is that it forces us to say why we think the impact is high. The argument
+        becomes about evidence instead of about who is most senior."</p>
+        <p>"And I always argue separately for two things that score badly in any framework: the boring
+        foundations that make later work cheap, and short experiments that buy us information."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q23">
+    <summary>3. Tell me about a time you said no to an important stakeholder. <span class="tag star">STAR</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p><b>Situation.</b> "At Jumia, returns were going up. The proposal on the table was to inspect every
+        outbound order — permanent extra cost on every single order. It had support, because it was the obvious
+        answer."</p>
+        <p><b>Task.</b> "I wasn't convinced, because our existing packing checks weren't finding much. But 'I'm
+        not convinced' is an opinion and it loses to a confident proposal."</p>
+        <p><b>Action.</b> "So I got evidence. The data didn't exist — returns were logged as free text, which
+        can't be analysed. So I changed the collection first: a fixed list of reasons, short enough that people
+        wouldn't just choose 'other'."</p>
+        <p>"A few months later I had real data. The dominant cause wasn't damage — it was products not matching
+        their listings, and it was concentrated in a small number of sellers."</p>
+        <p>"I didn't present it as 'your idea is wrong'. I showed what the money would buy in each case:
+        inspection would add cost to 100% of orders to fix a minority cause. Fixing the listings was a fraction
+        of the cost and addressed the real driver."</p>
+        <p><b>Result.</b> "The inspection plan was dropped. We fixed the listings and put the worst sellers on
+        corrective plans. Returns came down at a fraction of the cost."</p>
+        <p>"What I take from it: the most valuable thing I did was fix how we collected information, before I
+        could answer anything at all."</p>
+      </div>
+      <div class="why">
+        <b>Why this works as a PM story:</b> it is prioritisation, evidence, stakeholder management and saying
+        no — all in one. And the ending, "first I had to fix the instrumentation", is exactly what product work
+        really looks like.
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q24">
+    <summary>4. How do you work with engineers?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I bring the problem and the constraints, not the solution. If I say 'build me a search box', I get a
+        search box. If I say 'students can't find last week's lesson and give up after 30 seconds', I often get
+        a simpler answer I would never have thought of."</p>
+        <p>"I answer their questions fast. A blocked engineer costs more than a decision I might have to change
+        later."</p>
+        <p>"And I have been on the other side. I spent two and a half years as a developer, so I know what a
+        vague spec feels like, and I know when 'that's hard' is real and when it means 'I don't want to'."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q25">
+    <summary>5. A feature you launched didn't work. What do you do?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"First I check that it really didn't work, and that we aren't measuring it too early. Learning
+        effects take weeks, so a flat number after five days means nothing."</p>
+        <p>"Then I want to know which part failed. Did people not find it? That's discovery or design. Did they
+        find it and not use it? Then the problem wasn't real, or our solution didn't fit. Did they use it and
+        nothing improved? Then the solution doesn't solve the problem. Three very different lessons."</p>
+        <p>"Then I decide: fix it, or remove it. And I try to have decided that rule before launch, while nobody
+        was attached to it yet."</p>
+        <p>"I'd also say it out loud to the team and to my manager. If it was the wrong idea, that was my call,
+        not theirs. Taking that publicly is part of the job."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q26">
+    <summary>6. How do you handle a stakeholder who keeps changing their mind?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Usually it means we never agreed on the problem — only on a solution. Solutions change easily.
+        Problems don't."</p>
+        <p>"So I go back one level: 'can we agree on what we're trying to fix, and how we'll know it worked?'
+        Once that's written down, new ideas get measured against it instead of replacing it."</p>
+        <p>"I also write decisions down and share them — short, in the weekly update. 'We decided X on this
+        date, for this reason.' Most changes of mind are actually people who were never told the decision, or
+        forgot the reason."</p>
+        <p>"And if it keeps happening, I'd say it directly and kindly: every change costs us two weeks, so can
+        we agree to hold this until the end of the quarter."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q27">
+    <summary>7. Two teams want opposite things. How do you decide?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"I get both in one room rather than negotiating separately by email. Most of these fights survive
+        because each side only hears my version of the other."</p>
+        <p>"Then I make them argue against the goal, not against each other. Not 'sales wants X, content wants
+        Y' but 'which of these moves the number we all agreed on'."</p>
+        <p>"Often there's a smaller version that gives one side 80% of what they need, and I look for that
+        before I pick a winner."</p>
+        <p>"If there's genuinely no overlap, I decide, I say why in writing, and I tell the side that lost
+        directly — not by letting them read it in a document. And I say what would change it."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q28">
+    <summary>8. How do you measure success?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Before we build, not after. If I can't say which number should move and by roughly how much, I don't
+        understand the feature well enough yet."</p>
+        <p>"I use three layers. One main number that says the product is working. A few supporting numbers that
+        explain why it moved. And guardrails — numbers that must <i>not</i> get worse."</p>
+        <p>"For a learning product I'd be careful about engagement. More time on the platform can mean the
+        student is lost, not engaged. Good teaching means less time for the same result. So the number I'd watch
+        is whether the student can do the next problem <i>without</i> help."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q29">
+    <summary>9. What's the hardest part of being a PM?</summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"Saying no, and doing it in a way that keeps the relationship."</p>
+        <p>"The decision itself is usually not that hard once you have the evidence. The hard part is that the
+        person asking has a real problem, and you are telling them it will stay unsolved for another quarter.
+        If you do that badly, they stop bringing you information — and then you're deciding blind."</p>
+        <p>"The other hard part is that you're responsible for the outcome and you control almost nothing. You
+        can't order anyone. You only have the quality of your reasoning."</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="q" id="q30">
+    <summary>10. What would you do in your first 90 days? <span class="tag">Common closer</span></summary>
+    <div class="body">
+      <div class="say">
+        <span class="label">Say this</span>
+        <p>"<b>First month — learn, and hold my opinions.</b> Talk to students and teachers directly, and watch
+        real sessions, including ones that go badly. Understand what's already shipped and what the numbers
+        really are. Meet the engineers and the ML team early, because whether they trust me decides whether I
+        get told the truth later."</p>
+        <p>"I'd also check two things specifically: what we measure and whether anyone believes it, and what our
+        test set for the AI looks like. In my experience the first real finding is always that two teams have
+        different numbers for the same thing."</p>
+        <p>"<b>Second month — fix the measurement and agree the priorities.</b> Write down the metric framework
+        and get agreement, because arguments about priorities are usually arguments about definitions."</p>
+        <p>"<b>Third month — ship something and commit to a plan.</b> One real improvement delivered, so the team
+        sees what working with me is like. Then a roadmap for two quarters with clear bets and clear
+        non-goals."</p>
+        <p>"What I would not do is arrive in week two with a big strategy. I'd rather earn that with one good
+        decision first."</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- ============ PART 10 ============ -->
+  <h2 id="p10"><span class="num">10</span>Part 10 — Words and templates</h2>
+
+  <div class="card">
+    <h3>Product management words, in one line each</h3>
+    <table>
+      <tr><th>Word</th><th>Simple meaning</th></tr>
+      <tr><td><b>Discovery</b></td><td>The work of finding out what to build, before building it.</td></tr>
+      <tr><td><b>Delivery</b></td><td>The work of actually building and shipping it.</td></tr>
+      <tr><td><b>Backlog</b></td><td>The ordered list of everything we might build.</td></tr>
+      <tr><td><b>Roadmap</b></td><td>The plan of which problems we solve, and roughly when.</td></tr>
+      <tr><td><b>PRD / spec</b></td><td>The document that says what we're building and why.</td></tr>
+      <tr><td><b>User story</b></td><td>One small piece of work written from the user's side.</td></tr>
+      <tr><td><b>Acceptance criteria</b></td><td>The checklist that says when it's really finished.</td></tr>
+      <tr><td><b>MVP</b></td><td>The smallest version that lets us learn if this works.</td></tr>
+      <tr><td><b>Scope creep</b></td><td>The feature quietly growing bigger with nobody deciding it.</td></tr>
+      <tr><td><b>Sprint</b></td><td>A fixed block of work time, usually two weeks.</td></tr>
+      <tr><td><b>Velocity</b></td><td>How much the team finishes per sprint. For predicting, not pushing.</td></tr>
+      <tr><td><b>Blocker</b></td><td>Something stopping work. Your top priority to remove.</td></tr>
+      <tr><td><b>Stakeholder</b></td><td>Anyone who cares about your product and isn't on your team.</td></tr>
+      <tr><td><b>North star metric</b></td><td>The one number that best shows the product is working.</td></tr>
+      <tr><td><b>Guardrail metric</b></td><td>A number that must not get worse while you improve another.</td></tr>
+      <tr><td><b>Leading indicator</b></td><td>An early number that predicts the slow one. (Sign-ups predict revenue.)</td></tr>
+      <tr><td><b>Lagging indicator</b></td><td>The slow, true number. (Exam results.)</td></tr>
+      <tr><td><b>Cohort</b></td><td>A group of users who started at the same time, compared over time.</td></tr>
+      <tr><td><b>Churn</b></td><td>People who stop using or stop paying.</td></tr>
+      <tr><td><b>Retention</b></td><td>People who come back.</td></tr>
+      <tr><td><b>Activation</b></td><td>A new user reaching their first real moment of value.</td></tr>
+      <tr><td><b>Feature flag</b></td><td>A switch to turn a feature on or off without a new release.</td></tr>
+      <tr><td><b>Dogfooding</b></td><td>Using your own product every day.</td></tr>
+      <tr><td><b>Disagree and commit</b></td><td>You lost the argument. You support the decision fully anyway.</td></tr>
+      <tr><td><b>Technical debt</b></td><td>Shortcuts taken earlier that make everything slower now.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Template 1 — PRD (copy this)</h3>
+    <pre><code># [Feature name]
+
+## The problem        Who suffers, what happens today, evidence it's real
+## Why now            Why this before the alternatives
+## Who it's for       One user type. Not "everyone".
+## Success            "We'll know this worked if ___ goes from ___ to ___"
+## What we're building  The user journey, step by step
+## What we're NOT building   ← write this early
+## Open questions     What we don't know, and who answers it
+## Risks              What could go wrong. For AI: what if it's wrong?</code></pre>
+  </div>
+
+  <div class="card">
+    <h3>Template 2 — weekly update (copy this)</h3>
+    <pre><code>🟢 ON TRACK   [what] — [one line of progress]
+🟡 AT RISK    [what] — [why] — [what I need] — [by when]
+🔴 BLOCKED    [what] — [waiting on what]
+
+DECISIONS MADE   [decision + one-line reason]
+NEXT WEEK        [2–3 things]</code></pre>
+  </div>
+
+  <div class="card">
+    <h3>Template 3 — user interview (copy this)</h3>
+    <pre><code>1  "Tell me about the last time you [studied for an exam]."
+2  "Walk me through what you actually did. Step by step."
+3  "What was the most frustrating part?"
+4  "Why was that frustrating?"           ← ask why 3 times
+5  "What did you do about it?"
+6  "What have you tried before? Why did you stop?"
+7  "If that problem disappeared tomorrow, what would change for you?"
+
+NEVER:  "Would you use…"  ·  "Do you like…"  ·  "How often would you…"
+ALWAYS: be quiet for 3 seconds after they answer.</code></pre>
+  </div>
+
+  <div class="card">
+    <h3>Your 10 sentences for this side of the job</h3>
+    <table>
+      <tr><td>1</td><td>"A product manager decides what to build and why. A project manager makes sure it gets delivered."</td></tr>
+      <tr><td>2</td><td>"I have no authority. People follow the reasoning, not the title."</td></tr>
+      <tr><td>3</td><td>"I ask about the past, not the future. People can't predict what they'll do."</td></tr>
+      <tr><td>4</td><td>"Data tells me what. Interviews tell me why. I need both."</td></tr>
+      <tr><td>5</td><td>"RICE isn't science — I choose the numbers. Its value is that it forces us to say why."</td></tr>
+      <tr><td>6</td><td>"I never just say no. I give the real reason and say what would change my mind."</td></tr>
+      <tr><td>7</td><td>"A roadmap is problems we'll solve, not features with dates."</td></tr>
+      <tr><td>8</td><td>"The most important section of a spec is what we are NOT building."</td></tr>
+      <tr><td>9</td><td>"I bring the problem, not the solution. That's where engineers give me something better."</td></tr>
+      <tr><td>10</td><td>"If I can't say which number should move, I don't understand the feature yet."</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Study plan for this file</h3>
+    <table>
+      <tr><th>Day</th><th>Do this</th></tr>
+      <tr><td>1</td><td>Lessons 0–3. Understand the job. Especially product vs project.</td></tr>
+      <tr><td>2</td><td>Lessons 4–9. Discovery and prioritisation. Say the green boxes out loud.</td></tr>
+      <tr><td>3</td><td>Lessons 10–14. Writing and the team. Copy the PRD template into your own notes.</td></tr>
+      <tr><td>4</td><td>Lessons 15–20. Stakeholders, launch, managing PMs.</td></tr>
+      <tr><td>5</td><td>The 10 interview questions in Part 9. Out loud, with a timer. 90 seconds each.</td></tr>
+      <tr><td>6</td><td>The 10 sentences. Until they come without thinking.</td></tr>
+      <tr><td>7</td><td>Now do the <a href="ai-product-manager.html">full answers file</a> and its mock interview.</td></tr>
+    </table>
+  </div>
+
+  <footer>
+    The product manager craft, for the AI Product Lead offer ·
+    <a href="ai-product-course.html">AI course</a> ·
+    <a href="ai-product-manager.html">Full answers</a> ·
+    <a href="index.html">back to Interview Room</a>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
